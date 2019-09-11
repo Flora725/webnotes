@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			padding-left: 200px;
+			background-color: pink;
+			text-align: center;
+			position: relative;
+		}
+		span{
+			position: absolute;	
+			/*当text-align: center;存在时，不论父盒子有没有padding，给子盒子加定位后，子盒子的最左侧都会与父盒子内容区的中线对齐。*/
+		}	
+	</style>
+</head>
+<body>
+	<div>
+		<span>text</span>
+	</div>
+	
+</body>
+</html>

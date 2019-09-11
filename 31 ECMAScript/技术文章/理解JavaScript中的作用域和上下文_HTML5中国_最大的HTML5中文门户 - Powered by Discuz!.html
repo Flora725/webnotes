@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://www.html5cn.org/article-9400-1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 -  Powered by Discuz!</title>
+
+<meta name="keywords" content="HTML5应用,HTML5中国,理解JavaScript中的作用域和上下文,html5cn,html5资料,html5文章,html5内容,html5网站,html5中国,html5中文,html5">
+<meta name="description" content="JavaScript对于作用域(Scope)和上下文(Context)的实现是这门语言的一个非常独到的地方，部分归功于其独特的灵活性。 函数可以接收不同的的上下文和作用域。这些概念为JavaScript中的很多强大的设计模式提供了坚实的 ...，HTML5中国，中国最大的HTML5中文门户。 ">
+<meta name="generator" content="Discuz! X3.2">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2013 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<!--<base href="http://www.html5cn.org/">--><base href="."><link rel="stylesheet" type="text/css" href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/style_8_common.css"><link rel="stylesheet" type="text/css" href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/style_8_portal_view.css"><script type="text/javascript">var STYLEID = '8', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'H4H', charset = 'utf-8', discuz_uid = '0', cookiepre = 'jZvn_83e6_', cookiedomain = '.html5cn.org', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread|reply', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy5odG1sNWNuLm9yZy9hcnRpY2xlLTk0MDAtMS5odG1s', SITEURL = 'http://www.html5cn.org/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/common.js.下载" type="text/javascript"></script>
+<meta name="application-name" content="HTML5中国">
+<meta name="msapplication-tooltip" content="HTML5中国">
+<meta name="msapplication-task" content="name=首页;action-uri=http://www.html5cn.org;icon-uri=http://www.html5cn.org/static/image/common/portal.ico"><meta name="msapplication-task" content="name=HTML5论坛;action-uri=http://bbs.html5cn.org;icon-uri=http://www.html5cn.org/static/image/common/bbs.ico">
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/portal.js.下载" type="text/javascript"></script>
+
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/brush.js.下载" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/shCore.css">
+<link type="text/css" rel="stylesheet" href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/shThemeDefault.css">
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = 'static/js/code//scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+<link href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/bdsstyle.css" rel="stylesheet" type="text/css"><script type="text/javascript" id="ZXljeZWYDaYYKIIKJUanPNWXFOOrDrQJ" charset="UTF-8" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/common_extra.js.下载"></script><script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/logger.js.下载"></script><script type="text/javascript" id="seqaajs_qSJIRi3O" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/misc.php"></script></head>
+
+<body id="nv_portal" class="pg_view" onkeydown="if(event.keyCode==27) return false;"><iframe frameborder="0" style="display: none;" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/saved_resource.html"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/saved_resource(1).html"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.html5cn.org/#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.html5cn.org/#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.html5cn.org/#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.html5cn.org/#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.html5cn.org/#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.html5cn.org/#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.html5cn.org/#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.html5cn.org/#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.html5cn.org/#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.html5cn.org/#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.html5cn.org/#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.html5cn.org/#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.html5cn.org/#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.html5cn.org/#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.html5cn.org/#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.html5cn.org/#" class="bds_more">更多...</a></li></ul><p><a href="http://www.html5cn.org/#" class="goWebsite">百度分享</a></p></div></div></div>
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+<div class="wp">
+<div class="z"><a href="javascript:;" onclick="setHomepage(&#39;http://bbs.html5cn.org/&#39;);">设为首页</a><a href="http://bbs.html5cn.org/" onclick="addFavorite(this.href, &#39;HTML5中国&#39;);return false;">收藏本站</a><a href="http://www.html5cn.org/#">最大的HTML5中文门户：HTML5中国，领伍中国</a><script type="text/javascript">var _speedMark = new Date();</script></div>
+<div class="y">
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
+<a href="http://jq.qq.com/?_wv=1027&amp;k=VfgBWI" target="_blank" style="font-weight: bold;color: blue">QQ群：424839972</a></div>
+</div>
+</div>
+
+<div id="qmenu_menu" class="p_pop blk" style="display: none;">
+<div class="ptm pbw hm">
+请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br>没有帐号？<a href="http://www.html5cn.org/member.php?mod=register" class="xi2 xw1">立即注册</a>
+</div>
+<div id="fjump_menu" class="btda"></div></div><div id="hd">
+<div class="wp">
+<div class="hdc cl"><h2><a href="http://html5cn.org/" title="HTML5中国"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/logo_b1.png" alt="HTML5中国" border="0"></a></h2><script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/logging.js.下载" type="text/javascript"></script>
+<form method="post" autocomplete="off" id="lsform" action="http://www.html5cn.org/member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="return lsSubmit();">
+<div class="fastlg cl">
+<span id="return_ls" style="display:none"></span>
+<div class="y pns">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td><label for="ls_username">帐号</label></td>
+<td><input type="text" name="username" id="ls_username" class="px vm xg1" value="用户名/Email" onfocus="if(this.value == &#39;用户名/Email&#39;){this.value = &#39;&#39;;this.className = &#39;px vm&#39;;}" onblur="if(this.value == &#39;&#39;){this.value = &#39;用户名/Email&#39;;this.className = &#39;px vm xg1&#39;;}" tabindex="901"></td>
+<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903">自动登录</label></td>
+<td>&nbsp;<a href="javascript:;" onclick="showWindow(&#39;login&#39;, &#39;member.php?mod=logging&amp;action=login&amp;viewlostpw=1&#39;)">找回密码</a></td>
+</tr>
+<tr>
+<td><label for="ls_password">密码</label></td>
+<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902"></td>
+<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+<td>&nbsp;<a href="http://www.html5cn.org/member.php?mod=register" class="xi2 xw1">立即注册</a></td>
+</tr>
+</tbody></table>
+<input type="hidden" name="quickforward" value="yes">
+<input type="hidden" name="handlekey" value="ls">
+</div>
+
+<div class="fastlg_fm y" style="margin-right: 10px; padding-right: 10px">
+<p><a href="http://www.html5cn.org/connect.php?mod=login&amp;op=init&amp;referer=%3Fmod%3Dview%26aid%3D9400%26page%3D1&amp;statfrom=login_simple"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/qq_login.gif" class="vm" alt="QQ登录"></a></p>
+<p class="hm xg1" style="padding-top: 2px;">只需一步，快速开始</p>
+</div>
+</div>
+</form>
+
+</div>
+
+<div id="nv">
+<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({&#39;ctrlid&#39;:&#39;qmenu&#39;,&#39;pos&#39;:&#39;34!&#39;,&#39;ctrlclass&#39;:&#39;a&#39;,&#39;duration&#39;:2});showForummenu(0);})">快捷导航</a>
+<ul><li class="a" id="mn_portal"><a href="http://www.html5cn.org/" hidefocus="true" title="Portal">首页<span>Portal</span></a></li><li id="mn_P9"><a href="http://news.html5cn.org/" hidefocus="true" title="HTML5全球资讯一览无余">HTML5资讯<span>HTML5全球资讯一览无余</span></a></li><li id="mn_P25"><a href="http://mobile.html5cn.org/" hidefocus="true">移动互联网</a></li><li id="mn_P10" onmouseover="showMenu({&#39;ctrlid&#39;:this.id,&#39;ctrlclass&#39;:&#39;hover&#39;,&#39;duration&#39;:2})"><a href="http://demo.html5cn.org/" hidefocus="true" title="HTML5游戏案例演示">应用推荐<span>HTML5游戏案例演示</span></a></li><li id="mn_P13" onmouseover="showMenu({&#39;ctrlid&#39;:this.id,&#39;ctrlclass&#39;:&#39;hover&#39;,&#39;duration&#39;:2})"><a href="http://course.html5cn.org/" hidefocus="true" title="HTML5教程规范大全">教程视频<span>HTML5教程规范大全</span></a></li><li id="mn_P45"><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=45" hidefocus="true">资源下载</a></li><li id="mn_N8182"><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=62" hidefocus="true">开发工具</a></li><li id="mn_forum"><a href="http://bbs.html5cn.org/" hidefocus="true" title="BBS">HTML5论坛<span>BBS</span></a></li></ul>
+</div>
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">  <li><a href="http://www.html5cn.org/plugin.php?id=dsu_paulsign:sign" id="mn_plink_sign">每日签到</a></li>
+ </ul>
+<ul class="p_pop h_pop" id="mn_P10_menu" style="display: none"><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=20" hidefocus="true">HTML5应用</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=19" hidefocus="true">HTML5游戏</a></li></ul><ul class="p_pop h_pop" id="mn_P13_menu" style="display: none"><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=15" hidefocus="true">HTML5教程</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=64" hidefocus="true">phonegap教程</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=16" hidefocus="true">CSS3教程</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=17" hidefocus="true">实例代码</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=61" hidefocus="true">学习视频</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=39" hidefocus="true">HTML5在线手册</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=41" hidefocus="true">CSS3在线手册</a></li><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=40" hidefocus="true">JavaScript手册</a></li></ul><div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><div id="mu" class="cl">
+<ul class="cl " id="snav_mn_userapp" style="display:none">
+</ul>
+</div><div id="scbar" class="scbar_narrow cl">
+<form id="scbar_form" method="post" autocomplete="off" onsubmit="searchFocus($(&#39;scbar_txt&#39;))" action="http://www.html5cn.org/search.php?searchsubmit=yes" target="_blank">
+<input type="hidden" name="mod" id="scbar_mod" value="forum">
+<input type="hidden" name="formhash" value="2afa0eb1">
+<input type="hidden" name="srchtype" value="title">
+<input type="hidden" name="srhfid" value="0">
+<input type="hidden" name="srhlocality" value="portal::view">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="scbar_icon_td"></td>
+<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容"></td>
+<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">帖子</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+<td class="scbar_hot_td">
+<div id="scbar_hot">
+<strong class="xw1">热搜: </strong>
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=Canvas&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">Canvas</a>
+
+
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=WebGL&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">WebGL</a>
+
+
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=CSS3&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">CSS3</a>
+
+
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=WebSocket&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">WebSocket</a>
+
+
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">离线存储</a>
+
+
+
+<a href="http://www.html5cn.org/search.php?mod=forum&amp;srchtxt=%E5%B7%A5%E5%85%B7&amp;formhash=2afa0eb1&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" class="xi2" sc="1">工具</a>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+</div>
+<ul id="scbar_type_menu" class="p_pop" style="display: none;"><li><a href="javascript:;" rel="article">文章</a></li><li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li><li><a href="javascript:;" rel="user">用户</a></li></ul>
+<script type="text/javascript">
+initSearchmenu('scbar', '');
+</script>
+</div>
+</div>
+
+
+<div id="wp" class="wp">
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/forum_viewthread.js.下载" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1), imagemaxwidth = '600', aimgcount = new Array();</script>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="http://www.html5cn.org/" class="nvhm" title="首页">HTML5中国</a> <em>›</em>
+<a href="http://www.html5cn.org/portal.php">首页</a> <em>›</em><a href="http://demo.html5cn.org/">应用推荐</a><em>›</em>
+<a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=20">HTML5应用</a> <em>›</em>
+查看内容
+</div>
+</div>
+
+<style id="diy_style" type="text/css">#frameP6KEf5 {  border:#cccccc 1px solid !important;}#portal_block_121 .dxb_bc {  font-size:13px !important;margin-right:3px !important;margin-left:3px !important;}#portal_block_121 .dxb_bc a {  font-size:13px !important;}</style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<div class="bm vw">
+<div class="h hm">
+<h1 class="ph">理解JavaScript中的作用域和上下文 </h1>
+<p class="xg1">
+2016-3-10 16:54<span class="pipe">|</span>
+发布者: <a href="http://home.html5cn.org/space-uid-31.html">html5cn</a><span class="pipe">|</span>
+查看: <em id="_viewnum">1196</em><span class="pipe">|</span>
+评论: 0<span class="pipe">|</span>原作者: 景庄</p>
+</div>
+
+<!--[diy=diysummarytop]--><div id="diysummarytop" class="area"></div><!--[/diy]-->
+
+<div class="s"><div><strong>摘要</strong>: JavaScript对于作用域(Scope)和上下文(Context)的实现是这门语言的一个非常独到的地方，部分归功于其独特的灵活性。 函数可以接收不同的的上下文和作用域。这些概念为JavaScript中的很多强大的设计模式提供了坚实的 ...</div></div>
+<!--[diy=diysummarybottom]--><div id="diysummarybottom" class="area"></div><!--[/diy]-->
+
+<div class="d">
+
+<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
+
+<table cellpadding="0" cellspacing="0" class="vwtb"><tbody><tr><td id="article_content"><p><span style="line-height: 1.8em;"><font size="3">　　JavaScript对于作用域(Scope)和上下文(Context)的实现是这门语言的一个非常独到的地方，部分归功于其独特的灵活性。 
+函数可以接收不同的的上下文和作用域。这些概念为<a href="http://www.html5cn.org/article-9355-1.html"><font color="#0000f0">JavaScript</font></a>中的很多强大的<a href="http://www.codeceo.com/article/category/develop/design-patterns"><font color="#0000f0">设计模式</font></a>提供了坚实的基础。 
+然而这也概念也非常容易给开发人员带来困惑。为此，本文将全面的剖析这些概念，并阐述不同的设计模式是如何利用它们的。</font></span></p><p><font size="3">　　</font></p><p><font size="3">　　<b>上下文(Context)和作用域(Scope)</b></font></p><p><font size="3">　　首先需要知道的是，上下文和作用域是两个完全不同的概念。多年来，我发现很多开发者会混淆这两个概念(包括我自己)， 
+错误的将两个概念混淆了。平心而论，这些年来很多术语都被混乱的使用了。</font></p><p><font size="3">　　<a href="http://www.html5cn.org/article-8028-1.html"><font color="#0000f0">函数</font></a>的每次调用都有与之紧密相关的作用域和上下文。从根本上来说，作用域是基于函数的，而上下文是基于对象的。 
+换句话说，作用域涉及到所被调用函数中的变量访问，并且不同的调用场景是不一样的。上下文始终是this关键字的值， 
+它是拥有(控制)当前所执行代码的对象的引用。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b>变量作用域</b></font></p><p><font size="3">　　一个变量可以被定义在局部或者全局作用域中，这建立了在运行时(runtime)期间变量的访问性的不同作用域范围。 
+任何被定义的全局变量，意味着它需要在函数体的外部被声明，并且存活于整个运行时(runtime)，并且在任何作用域中都可以被访问到。 
+在ES6之前，局部变量只能存在于函数体中，并且函数的每次调用它们都拥有不同的作用域范围。 局部变量只能在其被调用期的作用域范围内被赋值、检索、操纵。 &nbsp;&nbsp;</font></p><p><font size="3">　　需要注意，在ES6之前，JavaScript不支持块级作用域，这意味着在if语句、switch语句、for循环、while循环中无法支持块级作用域。 
+也就是说，ES6之前的JavaScript并不能构建类似于Java中的那样的块级作用域(变量不能在语句块外被访问到)。但是， 
+从ES6开始，你可以通过let关键字来定义变量，它修正了var关键字的缺点，能够让你像Java语言那样定义变量，并且支持块级作用域。看两个例子：</font></p><p><font size="3"><span style="line-height: 25.2px;">　　</span><span style="line-height: 25.2px;">ES6之前，我们使用var关键字定义变量：</span></font></p><p><span style="font-size: medium; line-height: 25.2px;"><br></span></p><div><div id="highlighter_804973" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_804973_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_804973" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">func() {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(true) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">tmp = 123;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">console.log(tmp); </code><code class="comments">// 123</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">之所以能够访问，是因为var关键字声明的变量有一个变量提升的过程。而在ES6场景，推荐使用let关键字定义变量：</font></p><p><br></p><div><div id="highlighter_884359" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_884359_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_884359" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">func() {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="keyword">if</code> <code class="plain">(true) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">let tmp = 123;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">console.log(tmp); </code><code class="comments">// ReferenceError: tmp is not defined</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　<font size="3">　</font></p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">这种方式，能够避免很多错误。</font></p><p><font size="3">　　<b>什么是this上下文</b></font></p><p>
+</p><p><font size="3">　　上下文通常取决于函数是如何被调用的。当一个函数被作为对象中的一个方法被调用的时候，this被设置为调用该方法的对象上：</font></p><p><font size="3"><br></font></p><div><div id="highlighter_892403" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_892403_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_892403" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">obj = {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">foo: </code><code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">alert(this === obj);&nbsp;&nbsp;&nbsp; </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">};</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="plain">obj.foo(); </code><code class="comments">// true</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">这个准则也适用于当调用函数时使用new操作符来创建对象的<a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=17" target="_blank" class="relatedlink">实例</a>的情况下。在这种情况下，在函数的作用域内部this的值被设置为新创建的实例：</font></p><p><font size="3"><br></font></p><div><div id="highlighter_863044" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_863044_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_863044" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">foo(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">alert(this);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="keyword">new</code> <code class="plain">foo() </code><code class="comments">// foo</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">foo() </code><code class="comments">// window</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">当调用一个为绑定函数时，this默认情况下是全局上下文，在浏览器中它指向window对象。需要注意的是，ES5引入了严格模式的概念， 
+如果启用了严格模式，此时上下文默认为undefined。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b>执行环境(execution context)</b></font></p><p><font size="3">　　JavaScript是一个单线程语言，意味着同一时间只能执行一个任务。当JavaScript解释器初始化执行代码时， 
+它首先默认进入全局执行环境(execution context)，从此刻开始，函数的每次调用都会创建一个新的执行环境。</font></p><p><font size="3">　　这里会经常引起新手的困惑，这里提到了一个新的术语——执行环境(execution 
+context)，它定义了变量或函数有权访问的其他数据，决定了它们各自的行为。 
+它更偏向于作用域的作用，而不是我们前面讨论的上下文(Context)。请务必仔细的区分执行环境和上下文这两个概念(注：英文容易造成混淆)。 
+说实话，这是个非常糟糕的命名约定，但是它是ECMAScript规范制定的，你还是遵守吧。</font></p><p><font size="3">　　每个函数都有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中(execution 
+stack)。在函数执行完后，栈将其环境弹出， 把控制权返回给之前的执行环境。ECMAScript程序中的执行流正是由这个便利的机制控制着。</font></p><p><font size="3">　　执行环境可以分为创建和执行两个阶段。在创建阶段，解析器首先会创建一个变量对象(variable object，也称为活动对象 activation 
+object)， 它由定义在执行环境中的变量、函数声明、和参数组成。在这个阶段，作用域链会被初始化，this的值也会被最终确定。 
+在执行阶段，代码被解释执行。</font></p><p><font size="3">　　每个执行环境都有一个与之关联的变量对象(variable object)，环境中定义的所有变量和函数都保存在这个对象中。 
+需要知道，我们无法手动访问这个对象，只有解析器才能访问它。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b>作用域链(The Scope Chain)</b></font></p><p> 
+
+
+
+
+
+
+
+</p><p><font size="3">　　当代码在一个环境中执行时，会创建变量对象的一个作用域链(scope chain)。作用域链的用途是保证对执行环境有权访问的所有变量和函数的有序访问。 
+作用域链包含了在环境栈中的每个执行环境对应的变量对象。通过作用域链，可以决定变量的访问和标识符的解析。 
+注意，全局执行环境的变量对象始终都是作用域链的最后一个对象。我们来看一个例子：</font></p><div><h3><br></h3><div id="highlighter_579599" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_579599_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_579599" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">var</code> <code class="plain">color = </code><code class="string">"blue"</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="keyword">function</code> <code class="plain">changeColor(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">anotherColor = </code><code class="string">"red"</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="keyword">function</code> <code class="plain">swapColors(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">tempColor = anotherColor;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">anotherColor = color;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">color = tempColor;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// 这里可以访问color, anotherColor, 和 tempColor</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// 这里可以访问color 和 anotherColor，但是不能访问 tempColor</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">swapColors();</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="plain">changeColor();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="comments">// 这里只能访问color</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>21</code></td><td class="content"><code class="plain">console.log(</code><code class="string">"Color is now "</code> <code class="plain">+ color);</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><font size="3"><span style="line-height: 25.2px;">　　</span>上述代码一共包括三个执行环境：全局环境、changeColor()的局部环境、swapColors()的局部环境。 
+上述程序的作用域链如下图所示：</font></p><p>　　
+</p><center><p><a href="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/160440c0lzvkolvjmr1gv0.png" target="_blank"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/160440c0lzvkolvjmr1gv0.png"></a></p></center><center><br></center><p></p><p>　<font size="3">　从上图发现。内部环境可以通过作用域链访问所有的外部环境，但是外部环境不能访问内部环境中的任何变量和函数。 
+这些环境之间的联系是线性的、有次序的。</font></p><p><font size="3">　　对于标识符解析(变量名或函数名搜索)是沿着作用域链一级一级地搜索标识符的过程。搜索过程始终从作用域链的前端开始， 
+然后逐级地向后(全局执行环境)回溯，直到找到标识符为止。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b><a href="http://www.codeceo.com/article/javascript-bibao.html"><font color="#0000f0">闭包</font></a></b></font></p><p> 
+
+
+
+
+
+</p><p><font size="3">　　闭包是指有权访问另一函数作用域中的变量的函数。换句话说，在函数内定义一个嵌套的函数时，就构成了一个闭包， 
+它允许嵌套函数访问外层函数的变量。通过返回嵌套函数，允许你维护对外部函数中局部变量、参数、和内函数声明的访问。 
+这种封装允许你在外部作用域中隐藏和保护执行环境，并且暴露公共接口，进而通过公共接口执行进一步的操作。可以看个简单的例子：</font></p><div><h3><br></h3><div id="highlighter_553345" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_553345_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_553345" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">foo(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">localVariable = </code><code class="string">'private variable'</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="keyword">function</code> <code class="plain">bar(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">localVariable;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="keyword">var</code> <code class="plain">getLocalVariable = foo();</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="plain">getLocalVariable() </code><code class="comments">// private variable</code></td></tr></tbody></table></div></div></div></div><p> <br></p><p>
+
+
+
+
+
+
+
+
+
+</p><p>　　<font size="3">模块模式最流行的闭包类型之一，它允许你模拟公共的、私有的、和特权成员：</font></p><div><h3><br></h3><div id="highlighter_153799" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_153799_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_153799" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">var</code> <code class="plain">Module = (</code><code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">privateProperty = </code><code class="string">'foo'</code><code class="plain">;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">function</code> <code class="plain">privateMethod(args){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// do something</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">publicProperty: </code><code class="string">''</code><code class="plain">,</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">publicMethod: </code><code class="keyword">function</code><code class="plain">(args){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// do something</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">},</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">privilegedMethod: </code><code class="keyword">function</code><code class="plain">(args){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>17</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">privateMethod(args);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>18</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>19</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">};</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>20</code></td><td class="content"><code class="plain">})();</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><font size="3"><span style="line-height: 25.2px;">　　</span>模块类似于一个单例对象。由于在上面的代码中我们利用了(function() { ... })();的匿名函数形式，因此当编译器解析它的时候会立即执行。 
+在闭包的执行上下文的外部唯一可以访问的对象是位于返回对象中的公共方法和属性。然而，因为执行上下文被保存的缘故， 
+所有的私有属性和方法将一直存在于<a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=20" target="_blank" class="relatedlink">应用</a>的整个生命周期，这意味着我们只有通过公共方法才可以与它们交互。</font></p><p> 
+</p><p><font size="3">　　另一种类型的闭包被称为立即执行的函数表达式(IIFE)。其实它很简单，只不过是一个在全局环境中自执行的匿名函数而已：</font></p><div><h3><br></h3><div id="highlighter_269802" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_269802_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_269802" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="plain">(</code><code class="keyword">function</code><code class="plain">(window){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">foo, bar;</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">function</code> <code class="keyword">private</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// do something</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">window.Module = {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">public</code><code class="plain">: </code><code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// do something </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">};</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>15</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>16</code></td><td class="content"><code class="plain">})(this);</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">对于保护全局命名空间免受变量污染而言，这种表达式非常有用，它通过构建函数作用域的形式将变量与全局命名空间隔离， 
+并通过闭包的形式让它们存在于整个运行时(runtime)。在很多的应用和框架中，这种封装源代码的方式用处非常的流行， 
+通常都是通过暴露一个单一的全局接口的方式与外部进行交互。</font></p><p><font size="3"><br></font></p><p><font size="3">　<b>　Call和Apply</b></font></p><p> 
+
+</p><p><font size="3">　　这两个方法内建在所有的函数中(它们是Function对象的原型方法)，允许你在自定义上下文中执行函数。 
+不同点在于，call函数需要参数列表，而apply函数需要你提供一个参数数组。如下：</font></p><p><font size="3"><br></font></p><div><div id="highlighter_771888" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_771888_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_771888" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">var</code> <code class="plain">o = {};</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="keyword">function</code> <code class="plain">f(a, b) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">a + b;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="comments">// 将函数f作为o的方法，实际上就是重新设置函数f的上下文</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">f.call(o, 1, 2);&nbsp;&nbsp;&nbsp; </code><code class="comments">// 3</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>9</code></td><td class="content"><code class="plain">f.apply(o, [1, 2]); </code><code class="comments">// 3</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">两个结果是相同的，函数f在对象o的上下文中被调用，并提供了两个相同的参数1和2。</font></p><p> 
+</p><p><font size="3">　　在ES5中引入了Function.prototype.bind方法，用于控制函数的执行上下文，它会返回一个新的函数， 
+并且这个新函数会被永久的绑定到bind方法的第一个参数所指定的对象上，无论该函数被如何使用。 
+它通过闭包将函数引导到正确的上下文中。对于低版本浏览器，我们可以简单的对它进行实现如下(polyfill)：</font></p><div><h3><br></h3><div id="highlighter_775996" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_775996_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_775996" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">if</code><code class="plain">(!(</code><code class="string">'bind'</code> <code class="plain">in Function.prototype)){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">Function.prototype.bind = </code><code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">fn = this, </code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">context = arguments[0], </code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">args = Array.prototype.slice.call(arguments, 1);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">fn.apply(context, args.concat(arguments));</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">bind()方法通常被用在上下文丢失的场景下，例如面向对象和事件处理。之所以要这么做， 
+是因为节点的addEventListener方法总是为事件处理器所绑定的节点的上下文中执行回调函数， 
+这就是它应该表现的那样。但是，如果你想要使用高级的面向对象技术，或需要你的回调函数成为某个方法的实例， 
+你将需要手动调整上下文。这就是bind方法所带来的便利之处：</font></p><div><h3><br></h3><div id="highlighter_41364" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_41364_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_41364" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">MyClass(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">this.element = document.createElement(</code><code class="string">'div'</code><code class="plain">);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">this.element.addEventListener(</code><code class="string">'click'</code><code class="plain">, this.onClick.bind(this), false);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="plain">MyClass.prototype.onClick = </code><code class="keyword">function</code><code class="plain">(e){</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// do something</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">};</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">回顾上面bind方法的源代码，你可能会注意到有两次调用涉及到了Array的slice方法：</font></p><div><h3><br></h3><div id="highlighter_672934" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_672934_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_672934" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">Array.prototype.slice.call(arguments, 1);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="plain">[].slice.call(arguments);</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">我们知道，arguments对象并不是一个真正的数组，而是一个类数组对象，虽然具有length属性，并且值也能够被索引， 
+但是它们不支持原生的数组方法，例如slice和push。但是，由于它们具有和数组类似的行为，数组的方法能够被调用和劫持， 
+因此我们可以通过类似于上面代码的方式达到这个目的，其核心是利用call方法。</font></p><p> 
+</p><p><font size="3">　　这种调用其他对象方法的技术也可以被应用到面向对象中，我们可以在JavaScript中模拟经典的继承方式：</font></p><div><h3><br></h3><div id="highlighter_57444" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_57444_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_57444" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="plain">MyClass.prototype.init = </code><code class="keyword">function</code><code class="plain">(){</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">// call the superclass init method in the context of the "MyClass" instance</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">MySuperClass.prototype.init.apply(this, arguments);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">也就是利用call或apply在子类(MyClass)的实例中调用超类(MySuperClass)的方法。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b>ES6中的箭头函数</b></font></p><p><font size="3">　　ES6中的箭头函数可以作为Function.prototype.bind()的替代品。和普通函数不同，箭头函数没有它自己的this值， 
+它的this值继承自外围作用域。</font></p><p> 
+
+
+</p><p><font size="3">　　对于普通函数而言，它总会自动接收一个this值，this的指向取决于它调用的方式。我们来看一个例子：</font></p><div><h3><br></h3><div id="highlighter_267727" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_267727_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_267727" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">var</code> <code class="plain">obj = {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">addAll: </code><code class="keyword">function</code> <code class="plain">(pieces) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">var</code> <code class="plain">self = this;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">_.each(pieces, </code><code class="keyword">function</code> <code class="plain">(piece) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">self.add(piece);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">});</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">},</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>14</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">在上面的例子中，最直接的想法是直接使用this.add(piece)，但不幸的是，在JavaScript中你不能这么做， 
+因为each的回调函数并未从外层继承this值。在该回调函数中，this的值为window或undefined， 
+因此，我们使用临时变量self来将外部的this值导入内部。我们还有两种方法解决这个问题：</font></p><p> 
+</p><p><font size="3">　　使用ES5中的bind()方法</font></p><p><font size="3"><br></font></p><div><div id="highlighter_979345" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_979345_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_979345" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">var</code> <code class="plain">obj = {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">addAll: </code><code class="keyword">function</code> <code class="plain">(pieces) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">_.each(pieces, </code><code class="keyword">function</code> <code class="plain">(piece) {</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">this.add(piece);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}.bind(this));</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">},</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>12</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>13</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p> </p><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">使用ES6中的箭头函数</font></p><p><br></p><div><div id="highlighter_735246" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_735246_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_735246" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="keyword">var</code> <code class="plain">obj = {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">addAll: </code><code class="keyword">function</code> <code class="plain">(pieces) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">_.each(pieces, piece =&gt; this.add(piece));</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">},</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="comments">// ...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3">在ES6版本中，addAll方法从它的调用者处获得了this值，内部函数是一个箭头函数，所以它集成了外部作用域的this值。</font></p><p> 
+</p><p><font size="3">　　注意：对回调函数而言，在浏览器中，回调函数中的this为window或undefined(严格模式)，而在Node.js中， 
+回调函数的this为global。实例代码如下：</font></p><p><br></p><div><div id="highlighter_992481" class="syntaxhighlighter  "><div class="bar"><div class="toolbar"><a href="http://www.html5cn.org/#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><div class="item copyToClipboard"><embed width="16" height="16" id="highlighter_992481_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_992481" menu="false" src="static/js/code//scripts/clipboard.swf"></div><a href="http://www.html5cn.org/#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.html5cn.org/#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="keyword">function</code> <code class="plain">hello(a, callback) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">callback(a);</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="plain">}</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="plain">hello(</code><code class="string">'weiwei'</code><code class="plain">, </code><code class="keyword">function</code><code class="plain">(a) {</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">console.log(this === </code><code class="keyword">global</code><code class="plain">); </code><code class="comments">// true</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">console.log(a); </code><code class="comments">// weiwei</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>8</code></td><td class="content"><code class="plain">});</code></td></tr></tbody></table></div></div></div></div><p>　　</p><p><span style="font-size: medium; line-height: 25.2px;">　　</span><font size="3"><b>小结</b></font></p><p><font size="3">　　在你<a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=13" target="_blank" class="relatedlink">学习</a>高级的设计模式之前，理解这些概念非常的重要，因为作用域和上下文在现代JavaScript中扮演着的最基本的角色。 
+无论我们谈论的是闭包、面向对象、继承、或者是各种原生实现，上下文和作用域都在其中扮演着至关重要的角色。 
+如果你的目标是精通JavaScript语言，并且深入的理解它的各个组成，那么作用域和上下文便是你的起点。</font></p><p><font size="3"><br></font></p><p><font size="3">　　<b>参考资料</b></font></p><p><font size="3">　　<a href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/"><font color="#0000f0">Understanding Scope and Context in JavaScript</font></a></font></p><p><font size="3">　　JavaScript高级程序设计，section 4.2</font></p><p><font size="3">　　<a href="http://www.2ality.com/2016/02/arrow-functions-vs-bind.html"><font color="#0000f0">Arrow functions vs. bind()</font></a></font></p><p> 
+
+
+
+
+
+</p><p><font size="3">　　<a href="http://www.html-js.com/article/Sexy-Javascript-understand-the-callback-function-with-the-use-of-Javascript-in"><font color="#0000f0">理解与使用Javascript中的回调函数</font></a></font></p><p><br></p><p><font size="2">来源：http://ryanmorr.com/understanding-scope-and-context-in-javascript/</font></p></td></tr></tbody></table>
+
+<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"><div id="frameo863N5" class="cl_frame_bm frame move-span cl frame-1"><div id="frameo863N5_left" class="column frame-1-c"><div id="frameo863N5_left_temp" class="move-span temp"></div><div id="portal_block_99" class="block move-span"><div id="portal_block_99_content" class="dxb_bc"><div class="portal_block_summary"><!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+        <a class="bds_baidu" title="分享到百度搜藏" href="http://www.html5cn.org/#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://www.html5cn.org/#"></a>
+        <a class="bds_qzone" title="分享到QQ空间" href="http://www.html5cn.org/#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://www.html5cn.org/#"></a>
+        <a class="bds_fbook" title="分享到Facebook" href="http://www.html5cn.org/#"></a>
+        <a class="bds_ty" title="分享到天涯社区" href="http://www.html5cn.org/#"></a>
+        <a class="bds_xg" title="分享到鲜果" href="http://www.html5cn.org/#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://www.html5cn.org/#"></a>
+        <a class="bds_tsohu" title="分享到搜狐微博" href="http://www.html5cn.org/#"></a>
+        <a class="bds_douban" title="分享到豆瓣网" href="http://www.html5cn.org/#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://www.html5cn.org/#"></a>
+        <a class="bds_mail" title="分享到邮件分享" href="http://www.html5cn.org/#"></a>
+        <span class="bds_more">更多</span>
+		<a class="shareCount" href="http://www.html5cn.org/#"></a>
+    </div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=508534" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/bds_s_v2.js.下载"></script>
+
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END --></div></div></div></div></div></div><!--[/diy]-->
+
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/home.js.下载" type="text/javascript"></script>
+<div id="click_div"><table cellpadding="0" cellspacing="0" class="atd">
+<tbody><tr><td>
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=click&amp;op=add&amp;clickid=1&amp;idtype=aid&amp;id=9400&amp;hash=b746d29206f0bd18db07afc368022700&amp;handlekey=clickhandle" id="click_aid_9400_1" onclick="showWindow(this.id, this.href);doane(event);">
+<img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/xianhua.gif" alt=""><br>鲜花</a>
+</td>
+<td>
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=click&amp;op=add&amp;clickid=2&amp;idtype=aid&amp;id=9400&amp;hash=b746d29206f0bd18db07afc368022700&amp;handlekey=clickhandle" id="click_aid_9400_2" onclick="showWindow(this.id, this.href);doane(event);">
+<img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/woshou.gif" alt=""><br>握手</a>
+</td>
+<td>
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=click&amp;op=add&amp;clickid=3&amp;idtype=aid&amp;id=9400&amp;hash=b746d29206f0bd18db07afc368022700&amp;handlekey=clickhandle" id="click_aid_9400_3" onclick="showWindow(this.id, this.href);doane(event);">
+<img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/leiren.gif" alt=""><br>雷人</a>
+</td>
+<td>
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=click&amp;op=add&amp;clickid=4&amp;idtype=aid&amp;id=9400&amp;hash=b746d29206f0bd18db07afc368022700&amp;handlekey=clickhandle" id="click_aid_9400_4" onclick="showWindow(this.id, this.href);doane(event);">
+<img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/luguo.gif" alt=""><br>路过</a>
+</td>
+<td>
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=click&amp;op=add&amp;clickid=5&amp;idtype=aid&amp;id=9400&amp;hash=b746d29206f0bd18db07afc368022700&amp;handlekey=clickhandle" id="click_aid_9400_5" onclick="showWindow(this.id, this.href);doane(event);">
+<img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/jidan.gif" alt=""><br>鸡蛋</a>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+function errorhandle_clickhandle(message, values) {
+if(values['id']) {
+showCreditPrompt();
+show_click(values['idtype'], values['id'], values['clickid']);
+}
+}
+</script>
+
+</div>
+
+
+<!--[diy=diycontentclickbottom]--><div id="diycontentclickbottom" class="area"></div><!--[/diy]-->
+
+</div>
+
+<div class="o cl ptm pbm">
+<a href="http://home.html5cn.org/home.php?mod=spacecp&amp;ac=favorite&amp;type=article&amp;id=9400&amp;handlekey=favoritearticlehk_9400" id="a_favorite" onclick="showWindow(this.id, this.href, &#39;get&#39;, 0);" class="oshr ofav">收藏</a>
+<a href="http://www.html5cn.org/misc.php?mod=invite&amp;action=article&amp;id=9400" id="a_invite" onclick="showWindow(&#39;invite&#39;, this.href, &#39;get&#39;, 0);" class="oshr oivt">邀请</a>
+</div>
+<div class="pren pbm cl">
+<em>上一篇：<a href="http://www.html5cn.org/article-9374-1.html">基于HTML5制作逼真的树叶飘落动画</a></em><em>下一篇：<a href="http://www.html5cn.org/article-9404-1.html">仿Facebook切换表情符号的jQuery插件</a></em></div>
+</div>
+
+<!--[diy=diycontentrelatetop]--><div id="diycontentrelatetop" class="area"></div><!--[/diy]--><div id="related_article" class="bm">
+<div class="bm_h cl">
+<h3>相关阅读</h3>
+</div>
+<div class="bm_c">
+<ul class="xl xl2 cl" id="raid_div"><input type="hidden" value="9350">
+<li>• <a href="http://www.html5cn.org/article-9350-1.html">深入理解CSS六种颜色模式</a></li>
+<input type="hidden" value="9351">
+<li>• <a href="http://www.html5cn.org/article-9351-1.html">HTML5模拟齿轮动画</a></li>
+<input type="hidden" value="9352">
+<li>• <a href="http://www.html5cn.org/article-9352-1.html">2016十家公司前端面试小记</a></li>
+<input type="hidden" value="9353">
+<li>• <a href="http://www.html5cn.org/article-9353-1.html">谈一谈前端多容器（多webview平台）处理方案</a></li>
+<input type="hidden" value="9354">
+<li>• <a href="http://www.html5cn.org/article-9354-1.html">从登录框看前端</a></li>
+<input type="hidden" value="9355">
+<li>• <a href="http://www.html5cn.org/article-9355-1.html">JavaScript中call,apply,bind方法的总结</a></li>
+<input type="hidden" value="9416">
+<li>• <a href="http://www.html5cn.org/article-9416-1.html">自动化项目构建利器，gulp详细入门教程</a></li>
+<input type="hidden" value="9433">
+<li>• <a href="http://www.html5cn.org/article-9433-1.html">imgplay-基于canvas的图片序列播放jQuery插件</a></li>
+<input type="hidden" value="9439">
+<li>• <a href="http://www.html5cn.org/article-9439-1.html">12个超棒的Web开发工作站</a></li>
+<input type="hidden" value="9445">
+<li>• <a href="http://www.html5cn.org/article-9445-1.html">经常被忽略的几个CSS3属性之强大应用</a></li>
+<input type="hidden" value="9450">
+<li>• <a href="http://www.html5cn.org/article-9450-1.html">Rails + ES6 + Angular2 前后端分离开发（一）</a></li>
+</ul>
+</div>
+</div>
+
+<!--[diy=diycontentrelate]--><div id="diycontentrelate" class="area"></div><!--[/diy]-->
+
+<div id="comment" class="bm">
+<div class="bm_h cl">
+<h3>最新评论</h3>
+</div>
+<div id="comment_ul" class="bm_c"><form id="cform" name="cform" action="http://www.html5cn.org/portal.php?mod=portalcp&amp;ac=comment" method="post" autocomplete="off">
+<div class="tedt">
+<div class="area">
+<textarea name="message" rows="3" class="pt" id="message" onkeydown="ctrlEnter(event, &#39;commentsubmit_btn&#39;);"></textarea>
+</div>
+</div>
+
+<div class="mtm"><span id="secqaa_qSJIRi3O"><input name="secqaahash" type="hidden" value="qSJIRi3O">验证问答 <span id="seccodeqSJIRi3O" onclick="showMenu(this.id);"><input name="secanswer" id="secqaaverify_qSJIRi3O" type="text" autocomplete="off" style="width:100px" class="txt px vm" onblur="checksec(&#39;qaa&#39;, &#39;qSJIRi3O&#39;)"> <a href="javascript:;" onclick="updatesecqaa(&#39;qSJIRi3O&#39;);doane(event);" class="xi2">换一个</a><span id="checksecqaaverify_qSJIRi3O"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/none.gif" width="16" height="16" class="vm"></span></span><div id="seccodeqSJIRi3O_menu" class="p_pop p_opt" style="display:none">HTML5中国网址(html5cn.org)</div></span>		
+<script type="text/javascript" reload="1">updatesecqaa('qSJIRi3O', '<sec> <span id="sec<hash>" onclick="showMenu(this.id);"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div>', 'portal::view');</script>
+</div>
+<input type="hidden" name="portal_referer" value="portal.php?mod=view&amp;aid=9400#comment">
+<input type="hidden" name="referer" value="portal.php?mod=view&amp;aid=9400#comment">
+<input type="hidden" name="id" value="0">
+<input type="hidden" name="idtype" value="">
+<input type="hidden" name="aid" value="9400">
+<input type="hidden" name="formhash" value="2afa0eb1">
+<input type="hidden" name="replysubmit" value="true">
+<input type="hidden" name="commentsubmit" value="true">
+<p class="ptn"><button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn"><strong>评论</strong></button></p>
+</form>
+</div>
+</div>
+<!--[diy=diycontentcomment]--><div id="diycontentcomment" class="area"></div><!--[/diy]-->
+
+
+</div>
+<div class="sd pph">
+
+
+<div class="drag">
+<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="bm">
+<div class="bm_h cl">
+<h2>相关分类</h2>
+</div>
+<div class="bm_c">
+<ul class="xl xl2 cl"><li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=19">HTML5游戏</a></li>
+<li><a href="http://www.html5cn.org/portal.php?mod=list&amp;catid=20">HTML5应用</a></li>
+</ul>
+</div>
+</div>
+
+<div class="drag">
+<!--[diy=diy2]--><div id="diy2" class="area"><div id="frameP6KEf5" class=" frame move-span cl frame-1"><div class="title frame-title"><span class="titletext">人气应用</span></div><div id="frameP6KEf5_left" class="column frame-1-c"><div id="frameP6KEf5_left_temp" class="move-span temp"></div><div id="portal_block_121" class="block move-span"><div id="portal_block_121_content" class="dxb_bc"><div class="module cl xl xl1">
+<ul><li><a href="http://www.html5cn.org/article-6369-1.html" title="10款让人惊叹的HTML5/jQuery图片动画特效" target="_blank">10款让人惊叹的HTML5/jQuery图片动画特效</a></li><li><a href="http://www.html5cn.org/article-6290-1.html" title="超炫的页面切换动画效果【附源码下载】" target="_blank">超炫的页面切换动画效果【附源码下载】</a></li><li><a href="http://www.html5cn.org/article-134-1.html" title="文字云产生器" target="_blank">文字云产生器</a></li><li><a href="http://www.html5cn.org/article-1817-1.html" title="turn.js：超酷的杂志翻页效果HTML5实现" target="_blank">turn.js：超酷的杂志翻页效果HTML5实现</a></li><li><a href="http://www.html5cn.org/article-2660-1.html" title="HTML5 Canvas 3D应用实验" target="_blank">HTML5 Canvas 3D应用实验</a></li><li><a href="http://www.html5cn.org/article-4119-1.html" title="HTML5水滴效果" target="_blank">HTML5水滴效果</a></li><li><a href="http://www.html5cn.org/article-993-1.html" title="一个很炫的HTML5示例" target="_blank">一个很炫的HTML5示例</a></li><li><a href="http://www.html5cn.org/article-424-1.html" title="Jolicloud" target="_blank">Jolicloud</a></li><li><a href="http://www.html5cn.org/article-6188-1.html" title="超赞的Safari for Mac扩展插件推荐" target="_blank">超赞的Safari for Mac扩展插件推荐</a></li><li><a href="http://www.html5cn.org/article-5307-1.html" title="一个全功能的HTML5编辑器Mercury Editor" target="_blank">一个全功能的HTML5编辑器Mercury Editor</a></li><li><a href="http://www.html5cn.org/article-2962-1.html" title="用HTML5的Audio API做的弹钢琴网站" target="_blank">用HTML5的Audio API做的弹钢琴网站</a></li><li><a href="http://www.html5cn.org/article-4070-1.html" title="HTML5和jQuery打造的3D相册" target="_blank">HTML5和jQuery打造的3D相册</a></li><li><a href="http://www.html5cn.org/article-3001-1.html" title="发光的HTML5表单" target="_blank">发光的HTML5表单</a></li><li><a href="http://www.html5cn.org/article-1664-1.html" title="鼠标滑过图片变换的JS效果" target="_blank">鼠标滑过图片变换的JS效果</a></li><li><a href="http://www.html5cn.org/article-1507-1.html" title="Cloth Simulation" target="_blank">Cloth Simulation</a></li><li><a href="http://www.html5cn.org/article-4594-1.html" title="HTML5 年会抽奖程序" target="_blank">HTML5 年会抽奖程序</a></li><li><a href="http://www.html5cn.org/article-1894-1.html" title="命运大转盘" target="_blank">命运大转盘</a></li><li><a href="http://www.html5cn.org/article-6360-1.html" title="Bootstrap File Input —— 文件上传和预览控件" target="_blank">Bootstrap File Input —— 文件上传和预览</a></li><li><a href="http://www.html5cn.org/article-207-1.html" title="IMGMI" target="_blank">IMGMI</a></li><li><a href="http://www.html5cn.org/article-160-1.html" title="3D视频播放器" target="_blank">3D视频播放器</a></li></ul>
+</div></div></div></div></div></div><!--[/diy]-->
+</div>
+
+
+</div>
+</div>
+
+<script type="text/javascript">
+var relatedlink = [];relatedlink[0] = {'sname':'网站', 'surl':'http://www.html5cn.org'};
+relatedlink[1] = {'sname':'HTML5中国', 'surl':'http://www.html5cn.org'};
+relatedlink[2] = {'sname':'学习', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=13'};
+relatedlink[3] = {'sname':'演示', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=10'};
+relatedlink[4] = {'sname':'新闻', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=9'};
+relatedlink[5] = {'sname':'资讯', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=9'};
+relatedlink[6] = {'sname':'实例', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=17'};
+relatedlink[7] = {'sname':'论坛', 'surl':'http://www.html5cn.org/forum.php'};
+relatedlink[8] = {'sname':'教程', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=13'};
+relatedlink[9] = {'sname':'应用', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=20'};
+relatedlink[10] = {'sname':'游戏', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=19'};
+relatedlink[11] = {'sname':'CANVAS', 'surl':'http://www.html5cn.org'};
+relatedlink[12] = {'sname':'CSS3', 'surl':'http://www.html5cn.org/portal.php?mod=list&catid=16'};
+relatedlink[13] = {'sname':'HTML5', 'surl':'http://www.html5cn.org'};
+relatedlinks('article_content');
+</script>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<input type="hidden" id="portalview" value="1">	</div>
+<div class="a_cn" style="line-height:180px;height:180px"><p class="close" id="ad_corner_close" onclick="setcookie(&#39;adclose_14&#39;, 1, 86400);this.parentNode.style.display=&#39;none&#39;"><a href="javascript:;"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/ad_close.gif"></a></p><a href="http://www.html5cn.org/html5cn.org" target="_blank"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/094853xlpmamfmfxkzx0cz.jpg" height="180" width="180" alt="HTML5中国微信" border="0"></a></div>
+
+<div id="ft" class="wp cl">
+<div id="flk" class="y">
+<p>
+<a href="http://bbs.html5cn.org/forum.php?mod=misc&amp;action=showdarkroom">小黑屋</a><span class="pipe">|</span><a href="http://www.html5cn.org/portal.php?mod=topic&amp;topicid=1">关于我们</a><span class="pipe">|</span><a href="http://bbs.html5cn.org/forum.php">HTML5论坛</a><span class="pipe">|</span><a href="http://www.html5cn.org/portal.php?mod=topic&amp;topicid=3">友情链接</a><span class="pipe">|</span><a href="http://bbs.html5cn.org/forum.php?mobile=yes">手机版</a><span class="pipe">|</span><strong><a href="http://www.html5cn.org/" target="_blank">HTML5中国</a></strong>
+( <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备11006447号 京公网安备：11010802018489号</a> )&nbsp;<a href="http://discuz.qq.com/service/security" target="_blank" title="防水墙保卫网站远离侵害"><img src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/security.png"></a>&nbsp;&nbsp;<span id="tcss"></span><script type="text/javascript" src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/ping.js.下载" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"7381236","ui":0,"rt":"portal","pn":1,"qq":"000"},"extraParams":""});</script><script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/stat.php" language="JavaScript"></script></p>
+<p class="xs0">
+GMT+8, 2016-12-19 14:45<span id="debuginfo">
+</span>
+</p>
+</div>
+<div id="frt">
+<p>Powered by <strong><a href="http://www.discuz.net/" target="_blank">Discuz!</a></strong> <em>X3.2</em></p>
+<p class="xs0">© 2001-2013 <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
+</div></div>
+<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/home.php" type="text/javascript"></script>
+<div id="scrolltop" style="left: 1431px; visibility: hidden;">
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)" class="scrolltopa"><b>返回顶部</b></a></span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '7381236|X3.2|0.6||0||0|7|1482129930|74b3f5377752a405f3d6fe5a99af1473|2';
+			</script>
+			<script src="./理解JavaScript中的作用域和上下文_HTML5中国_最大的HTML5中文门户 - Powered by Discuz!_files/discuz_tips.js.下载" type="text/javascript" charset="UTF-8"></script>
+
+</body></html>

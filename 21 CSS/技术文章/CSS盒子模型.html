@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.cnblogs.com/mingjiatang/p/6017587.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="http://pj.iaoso.com/lib/query?src=t6413&amp;t=CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%20-%20msay%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD&amp;r=http%3A%2F%2Fcn.bing.com%2Fsearch%3Fq%3D%25E6%2589%2580%25E6%259C%2589%25E5%2585%2583%25E7%25B4%25A0%2B%25E7%259B%2592%25E5%25AD%2590%26qs%3Dn%26form%3DQBRE%26scope%3Dweb%26pq%3D%25E6%2589%2580%25E6%259C%2589%25E5%2585%2583%25E7%25B4%25A0%2B%25E7%259B%2592%25E5%25AD%2590%26sc%3D0-7%26sp%3D-1%26sk%3D%26cvid%3D26892D2A26E24F95AA30C278E50983D6"></script><script src="./CSS盒子模型_files/jquery.writeCapture-min.js.下载"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS盒子模型 - msay - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./CSS盒子模型_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./CSS盒子模型_files/bundle-SimpleMemory.css">
+<link type="text/css" rel="stylesheet" href="./CSS盒子模型_files/152397.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./CSS盒子模型_files/bundle-SimpleMemory-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/mingjiatang/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/mingjiatang/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/mingjiatang/wlwmanifest.xml">
+<script src="./CSS盒子模型_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'mingjiatang', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./CSS盒子模型_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/mingjiatang/"><img id="blogLogo" src="./CSS盒子模型_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/mingjiatang/">msay</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/mingjiatang/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/msay">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 46&nbsp; </span>
+<span id="stats_article_count">文章 - 1&nbsp; </span>
+<span id="stats-comment_count">评论 - 90</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/mingjiatang/p/6017587.html">CSS盒子模型</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="cnblogs-markdown"><p>刚开始接触web的时候是在大学的时候，写的第一个网页就是登陆页面，当时采用表格的布局方式，中规中矩的。接触到css之后，都是采用div+css的方式进行布局，实现了表现与结构的分离，非常的灵活。虽然早已经接触了css的布局方式，但是不经常使用，导致很多东西都已经忘记了。而最近又在捣鼓css的布局，就想在这里进行记录一下，就当做自己的学习笔记了。</p>
+<p>css盒子模型是css中一个比较核心的概念。在网页中我们可以把所有的网页元素都看成是一个盒子，一个盒子包括外边距、边框、内边距，和内容四个部分组成的，如下图。</p>
+<p><img src="./CSS盒子模型_files/531939-20161031213033815-505802640.png" alt="2016_10_7f6dbddf-8d77-4d28-a3d5-b6881aff6119" style="width: 621px;"></p>
+<p>下面由外到内依次来解释这四个部分的作用。</p>
+<ul>
+<li>margin（外边距）：代表这个元素与其他元素的边距，需要说明的是，<strong>如果两个相邻的元素都设置了margin的值，那么以最大的那个值为准。</strong>如两个上下相邻的div，上面的div设置margin:30px，下面的div设置margin:50px，那么最后这两个元素的间隔不会是30+20=50px，而会是30px。</li>
+<li>border（边框）：代表这个网页元素的边框，边框可是设置大小、背景（颜色or图片）、样式（实现or虚线等）。</li>
+<li>padding（内边距）：代表元素内容和边框之间的距离。可以把它称作元素的留白。</li>
+<li>content（内容）：代表元素的内容区，如文本的大小。</li>
+</ul>
+<p>其中，外边距、边框、内边距，都是可以应用元素的上下左右四个边，也可以应用于每个单独的边。尤其是外边距还可以设置为负值，在一些特殊的场合是需要用到外边距为负值的。</p>
+<p>一般我们设置一个元素宽和高，一般是padding+content这块区域的宽和高，而不包括margin和border。</p>
+<p>当我设置了元素的背景颜色，该背景只会应用到元素的边框以内的区域也就是padding+content，而margin和border区域的背景色是不会被改变的。</p>
+<p>下面将演示一个实例。代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html hljs xml"> <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span>
+     <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span>
+     <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span></span></span><span class="ot"><span class="hljs-tag"> <span class="hljs-attr">charset</span>=</span></span><span class="st"><span class="hljs-tag"><span class="hljs-string">"utf-8"</span></span></span><span class="kw"><span class="hljs-tag">&gt;</span></span>
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">style</span></span></span><span class="ot"><span class="hljs-tag"> <span class="hljs-attr">type</span>=</span></span><span class="st"><span class="hljs-tag"><span class="hljs-string">"text/css"</span></span></span><span class="kw"><span class="hljs-tag">&gt;</span></span><span class="css">
+            <span class="hljs-selector-tag">body</span></span><span class="kw"><span class="css">{</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">background</span>:</span></span><span class="dt"><span class="css">gray</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+            </span><span class="kw"><span class="css">}</span></span><span class="css">
+            <span class="hljs-selector-tag">div</span></span><span class="kw"><span class="css">{</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">height</span>:</span></span><span class="css"> </span><span class="dt"><span class="css"><span class="hljs-number">240px</span></span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">width</span>:</span></span><span class="css"> </span><span class="dt"><span class="css"><span class="hljs-number">360px</span></span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">border</span>:</span></span><span class="css"> </span><span class="dt"><span class="css"><span class="hljs-number">5px</span></span></span><span class="css"> </span><span class="dt"><span class="css">solid</span></span><span class="css"> </span><span class="dt"><span class="css">yellow</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">background</span>:</span></span><span class="css"> </span><span class="dt"><span class="css">blue</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">margin</span>:</span></span><span class="css"> </span><span class="dt"><span class="css"><span class="hljs-number">50px</span></span></span><span class="css"> </span><span class="dt"><span class="css">auto</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+             </span><span class="kw"><span class="css">}</span></span><span class="css">
+             <span class="hljs-selector-tag">span</span></span><span class="kw"><span class="css">{</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">display</span>:</span></span><span class="dt"><span class="css">block</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">margin</span>:</span></span><span class="dt"><span class="css"><span class="hljs-number">60px</span></span></span><span class="css"> </span><span class="dt"><span class="css">auto</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">border</span>:</span></span><span class="dt"><span class="css"><span class="hljs-number">5px</span></span></span><span class="css"> </span><span class="dt"><span class="css">solid</span></span><span class="css"> </span><span class="dt"><span class="css">yellow</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">width</span>:</span></span><span class="dt"><span class="css"><span class="hljs-number">180px</span></span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">height</span>:</span></span><span class="dt"><span class="css"><span class="hljs-number">100px</span></span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">text-align</span>:</span></span><span class="dt"><span class="css">center</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">line-height</span>:</span></span><span class="dt"><span class="css"><span class="hljs-number">80px</span></span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">vertical-align</span>:</span></span><span class="css"> </span><span class="dt"><span class="css">middle</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+                </span><span class="kw"><span class="css"><span class="hljs-attribute">background-color</span>:</span></span><span class="dt"><span class="css">red</span></span><span class="kw"><span class="css">;</span></span><span class="css">
+             </span><span class="kw"><span class="css">}</span></span><span class="css">
+        </span><span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span>
+    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
+    <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span>
+        <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span>
+            <span class="kw"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span>
+                我是盒子的内容
+            <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+        <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+ <span class="kw"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre></div>
+<p>效果如下：</p>
+<p><img src="./CSS盒子模型_files/531939-20161031221002049-1394318748.png" alt="2016_10_e202dc98-b19b-491c-8f5b-3602e7d2d0ea"></p>
+</div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/mingjiatang/category/577612.html" target="_blank">CSS</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6017587,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;4d9a7e90-acc3-e211-8d02-90b11c0b17d6&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./CSS盒子模型_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./CSS盒子模型_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/mingjiatang/" target="_blank"><img src="./CSS盒子模型_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/mingjiatang/">msay</a><br>
+            <a href="http://home.cnblogs.com/u/mingjiatang/followees">关注 - 3</a><br>
+            <a href="http://home.cnblogs.com/u/mingjiatang/followers">粉丝 - 24</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;4d9a7e90-acc3-e211-8d02-90b11c0b17d6&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6017587,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6017587,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/mingjiatang/p/6007559.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/mingjiatang/p/6007559.html" title="发布于2016-10-28 13:49">Android调用Web服务</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-10-31 22:18</span> <a href="http://www.cnblogs.com/mingjiatang/">msay</a> 阅读(<span id="post_view_count">4</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6017587" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/mingjiatang/p/6017587.html#" onclick="AddToWz(6017587);return false;">收藏</a></div>
+	</div>
+	<script src="./CSS盒子模型_files/highlight.min.js.下载"></script><script>markdown_highlight();</script><script type="text/javascript">var allowComments=true,cb_blogId=152397,cb_entryId=6017587,cb_blogApp=currentBlogApp,cb_blogUserGuid='4d9a7e90-acc3-e211-8d02-90b11c0b17d6',cb_entryCreatedDate='2016/10/31 22:18:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/mingjiatang/p/6017587.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/mingjiatang/p/6017587.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://group.cnblogs.com/topic/75389.html" target="_blank">【活动】优达学城正式发布“无人驾驶车工程师”课程</a><br><a href="http://rongcloud.cn/reports/journal2" target="_blank">【推荐】融云发布 App 社交化白皮书 IM 提升活跃超 8 倍</a><br><a href="http://www.gcpowertools.com.cn/products/componentone_studio_enterprise.htm?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=C1&amp;utm_campaign=community" target="_blank">【推荐】别再闷头写代码！找对工具，事半功倍，全能开发工具包用起来</a><br><a href="http://netease.im/?hmsr=bky10&amp;from=bky10" target="_blank">【推荐】网易这个云产品做了15年才面世，1年吸引10万+开发者</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="http://activity.hwclouds.com/cloudProduct/index.html?utm_source=%E5%8D%9A%E5%AE%A2%E5%9B%AD&amp;utm_medium=MediaB&amp;utm_campaign=2016%E5%B9%B410%E6%9C%88%E5%B8%B8%E8%A7%84%E5%B9%BF%E5%91%8A%E6%8A%95%E6%94%BE%E3%80%90%E7%AC%AC%E5%85%AD%E6%AC%A1%E3%80%91&amp;utm_content=%E5%8D%9A%E5%AE%A2%E5%9B%AD%E9%A6%96%E9%A1%B5%E6%96%87%E5%AD%97%E9%93%BE-BH%E6%96%87%E5%AD%97%E9%93%BE" target="_blank"><img width="300" height="250" src="./CSS盒子模型_files/24442-20161027213553687-432849317.gif" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/556189/" target="_blank">除了《人类简史》，微信张小龙还读过哪些书？</a><br> ·  <a href="http://news.cnblogs.com/n/556188/" target="_blank">华尔街疯狂追求程序员</a><br> ·  <a href="http://news.cnblogs.com/n/556187/" target="_blank">这回轮到翻译们失业了，联合国推出了翻译专利的AI</a><br> ·  <a href="http://news.cnblogs.com/n/556185/" target="_blank">360手机总裁发内部信：永远不会像有的品牌那样低配高价</a><br> ·  <a href="http://news.cnblogs.com/n/556184/" target="_blank">李国庆反思当当：打了16年价格战，新电商的机会在哪里？</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="https://www.jiguang.cn/devservice/?from=cnblogs01" target="_blank"><img width="468" height="60" src="./CSS盒子模型_files/24442-20161011141820868-1378717477.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/555750/" target="_blank">循序渐进地代码重构</a><br> ·  <a href="http://kb.cnblogs.com/page/554496/" target="_blank">技术的正宗与野路子</a><br> ·  <a href="http://kb.cnblogs.com/page/553682/" target="_blank">陈皓：什么是工程师文化？</a><br> ·  <a href="http://kb.cnblogs.com/page/551422/" target="_blank">没那么难，谈CSS的设计模式</a><br> ·  <a href="http://kb.cnblogs.com/page/550625/" target="_blank">程序猿媳妇儿注意事项</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/mingjiatang/">msay</a><br>园龄：<a href="http://home.cnblogs.com/u/mingjiatang/" title="入园时间：2013-05-23">3年5个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/mingjiatang/followers/">24</a><br>关注：<a href="http://home.cnblogs.com/u/mingjiatang/followees/">3</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;4d9a7e90-acc3-e211-8d02-90b11c0b17d6&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2016/09/01&#39;);return false;">&lt;</a></td><td align="center">2016年10月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2016/11/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/09.html"><u>9</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/10.html"><u>10</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/11.html"><u>11</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/12.html"><u>12</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/13.html"><u>13</u></a></td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/16.html"><u>16</u></a></td><td align="center">17</td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/18.html"><u>18</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/19.html"><u>19</u></a></td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/20.html"><u>20</u></a></td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/28.html"><u>28</u></a></td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td class="CalTodayDay" align="center"><a href="http://www.cnblogs.com/mingjiatang/archive/2016/10/31.html"><u>31</u></a></td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/mingjiatang/p/6017587.html">1. CSS盒子模型</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/6007559.html">2. Android调用Web服务</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5982836.html">3. 无法将匿名方法转换为System.Delegate</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5978538.html">4. Android程序入口以及项目文件夹的含义和使用总结—入门</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5974451.html">5. 最短路径之迪杰斯特拉（Dijkstra）算法</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5967681.html">6. 迷宫问题求解之“A*搜索”（二）</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5958219.html">7. 迷宫问题求解之“穷举+回溯”（一）</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5954352.html">8. CnBlogs自定义博客样式</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5950783.html">9. .NET中Main函数使用小技巧</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5947335.html">10. .NET中的枚举（Enum）</a></li>
+</ul>
+</div>
+</div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/mingjiatang/category/571029.html">.NET(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/mingjiatang/category/897251.html">Android(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/mingjiatang/category/586910.html">ArcgisEngine(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/mingjiatang/category/571170.html">ASP.NET(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/mingjiatang/category/577612.html">CSS(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/mingjiatang/category/611603.html">C语言(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/mingjiatang/category/748880.html">Demo(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/mingjiatang/category/726065.html">JavaScript(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/mingjiatang/category/579830.html">Linq(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/mingjiatang/category/767776.html">MSSQL(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/mingjiatang/category/745262.html">Python(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/mingjiatang/category/826757.html">WCF(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/mingjiatang/category/571125.html">WebService(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/mingjiatang/category/578671.html">WinForm(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/mingjiatang/category/893905.html">其他(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/mingjiatang/category/894468.html">算法(3)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/mingjiatang/archive/2016/10.html">2016年10月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/mingjiatang/archive/2016/07.html">2016年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/mingjiatang/archive/2016/05.html">2016年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/mingjiatang/archive/2016/04.html">2016年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/mingjiatang/archive/2016/03.html">2016年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/mingjiatang/archive/2016/01.html">2016年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/mingjiatang/archive/2015/12.html">2015年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/mingjiatang/archive/2015/11.html">2015年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/mingjiatang/archive/2015/10.html">2015年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/mingjiatang/archive/2015/08.html">2015年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/mingjiatang/archive/2014/09.html">2014年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/mingjiatang/archive/2014/07.html">2014年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/mingjiatang/archive/2014/06.html">2014年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/mingjiatang/archive/2014/05.html">2014年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/mingjiatang/archive/2014/04.html">2014年4月 (3)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/mingjiatang/p/5267391.html">1. .NET中的异步编程(1991)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/4746845.html">2. JavaScript中如何将html字符串转化为Jquery对象或者Dom对象(1593)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5079632.html">3. Winform实现多线程异步更新UI（进度及状态信息）(1398)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5441263.html">4. 使用HttpGet协议与正则表达实现桌面版的糗事百科(1244)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/4890420.html">5. 通过读写文本文件小结“关于python处理中文编码的问题”(1081)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/mingjiatang/p/5947335.html">1. .NET中的枚举（Enum）(10)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5441263.html">2. 使用HttpGet协议与正则表达实现桌面版的糗事百科(7)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5476485.html">3. WCF服务使用（IIS+Http）和（Winform宿主+Tcp）两种方式进行发布(6)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5950783.html">4. .NET中Main函数使用小技巧(5)</a></li><li><a href="http://www.cnblogs.com/mingjiatang/p/5974451.html">5. 最短路径之迪杰斯特拉（Dijkstra）算法(5)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2016 msay
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://www.cnblogs.com/wangshichuan/p/5884336.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>创建对象 --- 构造函数模式 - 山水如画 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/bundle-Banlieue13.css">
+<link type="text/css" rel="stylesheet" href="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/193819.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/bundle-Banlieue13-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wangshichuan/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wangshichuan/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wangshichuan/wlwmanifest.xml">
+<script type="text/javascript" src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/encoder.js.下载"></script><script src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wangshichuan', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/wangshichuan/"><img id="blogLogo" src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wangshichuan/">山水如画</a></h1>
+<h2>山如颠，
+水如渊，
+
+山水连九天。
+
+山如笔，
+水如墨，
+
+画遍万水千山。</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wangshichuan/">首页</a></li>
+	<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%B1%B1%E6%B0%B4%E5%A6%82%E7%94%BB">联系</a></li>
+	<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+	<li>
+	</li>
+</ul>
+
+
+			<div class="blogStats">
+				
+				<div id="blog_stats">
+<!--done-->
+随笔- 52&nbsp;
+文章- 0&nbsp;
+评论- 4&nbsp;
+</div>
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wangshichuan/p/5884336.html">创建对象 --- 构造函数模式</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>ECMAScript中的构造函数可以用来创造特定类型的对象，Object和Array 是原生构造函数，在 运行时会自动出现在执行环境。也可以自定义构造函数，示例如下：</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000;">function Person(name,age,job){      
+            </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name;
+            </span><span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> age;
+            </span><span style="color: #0000ff;">this</span>.job =<span style="color: #000000;"> job;
+            </span><span style="color: #0000ff;">this</span>.sayName =<span style="color: #000000;"> function(){
+                  alert(</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.name);
+            };   
+}
+</span><span style="color: #0000ff;">var</span> person1 = <span style="color: #0000ff;">new</span> Person(<span style="color: #800000;">"</span><span style="color: #800000;">wsc</span><span style="color: #800000;">"</span>,<span style="color: #800080;">25</span>,<span style="color: #800000;">"</span><span style="color: #800000;">software Engineer</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #0000ff;">var</span> person2 = <span style="color: #0000ff;">new</span> Person(<span style="color: #800000;">"</span><span style="color: #800000;">yl</span><span style="color: #800000;">"</span>,<span style="color: #800080;">26</span>,<span style="color: #800000;">"</span><span style="color: #800000;">Doctor</span><span style="color: #800000;">"</span>);</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>注意：按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头，目的是区别ECMAScript中的其他函数，因为构造函数也是函数，只是配用来创建对象；</p>
+<p>(1).创建Person新实例，必须使用new操纵符。这种方式调用构造函数实际上经历一下4个步骤：<br>　　1.创建一个新对象；</p>
+<p>　　2.将构造函数的作用域赋给新对象；</p>
+<p>　　3.执行构造函数中的代码；</p>
+<p>　　4.返回新对象；</p>
+<p>(2).构造函数都有一个构造函数属性constructor,该属性指向该对象所属的实例，以前面的例子为准：</p>
+<p>　　alert(person1.constructor == Person);//true</p>
+<p>　　1.对象的constructor属性主要目的是用来标识对象类型；</p>
+<p>　　2.检测对象类型主要是用instanceof,示例如下：<br>　　　　alert(person1 instanceof Object);//true &nbsp; 注意：所有的对象均继承Object<br>　　　　alert(person1 instanceof Person);//true</p>
+<p>　　3.创建自定义构造函数意味着将来可以将它的实力标识为一种特定的类型，这是构造模式胜过工厂模式的地方，</p>
+<p>　　注意：以这种方式的构造函数是定义在Global对象中的；</p>
+<p>(3).构造函数与其他函数的唯一区别是调用方式的不同：任何函数只要通过new操作符来调用，那么它就作为构造函数；任何函数如果不通过new操作符来调用，那么它就作为普通函数；</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008000;">//</span><span style="color: #008000;"> 当作构造函数</span>
+<span style="color: #0000ff;">var</span> person = <span style="color: #0000ff;">new</span> Person(<span style="color: #800000;">"</span><span style="color: #800000;">wsc</span><span style="color: #800000;">"</span>,<span style="color: #800080;">26</span>,<span style="color: #800000;">"</span><span style="color: #800000;">Software Engineer</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+person.sayName();</span><span style="color: #008000;">//</span><span style="color: #008000;">"wsc";
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">普通函数</span>
+Person(<span style="color: #800000;">"</span><span style="color: #800000;">wsc</span><span style="color: #800000;">"</span>,<span style="color: #800080;">26</span>,<span style="color: #800000;">"</span><span style="color: #800000;">Software Engineer</span><span style="color: #800000;">"</span>);<span style="color: #008000;">//</span><span style="color: #008000;">添加到window</span>
+window.sayName()<span style="color: #008000;">//</span><span style="color: #008000;">"wsc"
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">在另一个对象的作用域中调用</span>
+<span style="color: #0000ff;">var</span> o = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Object();
+Person.call(o,</span><span style="color: #800000;">"</span><span style="color: #800000;">wsc</span><span style="color: #800000;">"</span>,<span style="color: #800080;">26</span>,<span style="color: #800000;">"</span><span style="color: #800000;">Software Engineer</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+o.sayName();</span><span style="color: #008000;">//</span><span style="color: #008000;">"wsc"</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;(4).构造函数的问题</p>
+<p>　　构造函数的主要问题是：每个方法都要在每个实例上重新创建一遍。</p>
+<p>　　以上面的例子为例：从逻辑上，此时的构造函数还可以如下定义。</p>
+<p>　　</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,age,job){
+      </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name;
+      </span><span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> age;
+      </span><span style="color: #0000ff;">this</span>.job =<span style="color: #000000;"> job;
+      </span><span style="color: #0000ff;">this</span>.sayName = <span style="color: #0000ff;">new</span> Function("alert(this.name)");<span style="color: #008000;">//</span><span style="color: #008000;">与声明函数在逻辑上是等价的        </span>
+<span style="color: #000000;">}
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">在这里ECMAscript中的函数也是对象；</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>此种方式创建函数，会导致不同的作用域链和标识符解析，但在创建Function新实例的机制仍然是相同的。因此不同实例上同名的函数是不等的。</p>
+<p>&nbsp;</p>
+<p>解决此问题的方式如下：</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> Person(name,age,job){
+      </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> name;
+      </span><span style="color: #0000ff;">this</span>.age =<span style="color: #000000;"> age;
+      </span><span style="color: #0000ff;">this</span>.job =<span style="color: #000000;"> job;
+      </span><span style="color: #0000ff;">this</span>.sayName =<span style="color: #000000;"> sayName;
+}
+
+</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> sayName(){
+    alert(</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.name);
+}
+
+</span><span style="color: #0000ff;">var</span> person1 = <span style="color: #0000ff;">new</span> Person("wsc",29,"software engineer"<span style="color: #000000;">);
+</span><span style="color: #0000ff;">var</span> person2 = <span style="color: #0000ff;">new</span> Person("wife",26,"techer"<span style="color: #000000;">);
+alert(person1.sayName </span>=== person2.sayName);<span style="color: #008000;">//</span><span style="color: #008000;">?</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>但此种方式，又会产生新的问题：全局函数只能被某个对象调用，如果对象需要定义很多方法，这就需要定义多个全局函数。如何解决呢？看原型</p></div><div id="MySignature" style="display: block;">我只是一条小鱼，跟随大鱼们，！！！大神在哪啊！！</div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(5884336,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;d5d5ddf3-f11a-e411-8d02-90b11c0b17d6&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wangshichuan/" target="_blank"><img src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/20140821190603.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wangshichuan/">山水如画</a><br>
+            <a href="http://home.cnblogs.com/u/wangshichuan/followees">关注 - 14</a><br>
+            <a href="http://home.cnblogs.com/u/wangshichuan/followers">粉丝 - 0</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;d5d5ddf3-f11a-e411-8d02-90b11c0b17d6&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(5884336,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(5884336,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/wangshichuan/p/5884137.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/wangshichuan/p/5884137.html" title="发布于2016-09-19 10:20">创建对象  --- 工厂模式</a><br><a href="http://www.cnblogs.com/wangshichuan/p/5891086.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/wangshichuan/p/5891086.html" title="发布于2016-09-20 23:49">创建对象----原型模式</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-09-19 10:55</span> <a href="http://www.cnblogs.com/wangshichuan/">山水如画</a> 阅读(<span id="post_view_count">54</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=5884336" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/wangshichuan/p/5884336.html#" onclick="AddToWz(5884336);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=193819,cb_entryId=5884336,cb_blogApp=currentBlogApp,cb_blogUserGuid='d5d5ddf3-f11a-e411-8d02-90b11c0b17d6',cb_entryCreatedDate='2016/9/19 10:55:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/wangshichuan/p/5884336.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/wangshichuan/p/5884336.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://rongcloud.cn/reports/journal2" target="_blank">【推荐】融云发布 App 社交化白皮书 IM 提升活跃超 8 倍</a><br><a href="http://arcapp.anruichina.com/arctrac/trac?tid=smb_azure_1212_CNBlog" target="_blank">【福利】Microsoft Azure给博客园的你专属三重大礼</a><br><a href="http://bbs.h3bpm.com/read.php?tid=861&amp;fid=11?utm_source=cnblogs&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank">【推荐】BPM免费下载</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="http://www.gcpowertools.com.cn/products/spreadjs/?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS&amp;utm_campaign=community" target="_blank"><img width="300" height="250" src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/24442-20161031104652361-1905759806.gif" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/559181/" target="_blank">业内劳模：雷军47岁生日快乐！</a><br> ·  <a href="http://news.cnblogs.com/n/559180/" target="_blank">微信上线AED“救命神器” 上海、深圳尝鲜</a><br> ·  <a href="http://news.cnblogs.com/n/559179/" target="_blank">偷师支付宝？小米运动上线米动圈</a><br> ·  <a href="http://news.cnblogs.com/n/559178/" target="_blank">中国科学家成功将3D打印血管植入动物体内</a><br> ·  <a href="http://news.cnblogs.com/n/559177/" target="_blank">人人公司第三季度净亏损2280万美元 同比收窄</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="http://bbs.h3bpm.com/read.php?tid=861&amp;fid=11?utm_source=cnblogs&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank"><img width="468" height="60" src="./创建对象 --- 构造函数模式 - 山水如画 - 博客园_files/35695-20161213142353073-1602158633.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/558087/" target="_blank">高质量的工程代码为什么难写</a><br> ·  <a href="http://kb.cnblogs.com/page/555750/" target="_blank">循序渐进地代码重构</a><br> ·  <a href="http://kb.cnblogs.com/page/554496/" target="_blank">技术的正宗与野路子</a><br> ·  <a href="http://kb.cnblogs.com/page/553682/" target="_blank">陈皓：什么是工程师文化？</a><br> ·  <a href="http://kb.cnblogs.com/page/551422/" target="_blank">没那么难，谈CSS的设计模式</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/wangshichuan/">山水如画</a><br>园龄：<a href="http://home.cnblogs.com/u/wangshichuan/" title="入园时间：2014-08-03">2年4个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/wangshichuan/followers/">0</a><br>关注：<a href="http://home.cnblogs.com/u/wangshichuan/followees/">14</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;d5d5ddf3-f11a-e411-8d02-90b11c0b17d6&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2016/11/01&#39;);return false;">&lt;</a></td><td align="center">2016年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td class="CalTodayDay" align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalWeekendDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalWeekendDay" align="center">31</td></tr><tr><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wangshichuan/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/wangshichuan/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/wangshichuan/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/wangshichuan/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/wangshichuan/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="http://www.cnblogs.com/wangshichuan/p/5884336.html#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wangshichuan/p/5891086.html">1. 创建对象----原型模式</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/5884336.html">2. 创建对象 --- 构造函数模式</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/5884137.html">3. 创建对象  --- 工厂模式</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/5881882.html">4. javascript 理解对象--- 定义多个属性和读取属性的特性</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/5880696.html">5. javascript 理解对象--- 属性类型</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/5784418.html">6. memcache 基础原理</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4207612.html">7. JavaScript 操作JSON总结</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4207032.html">8. 前端性能优化的14个规则</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4205713.html">9. 理解js的DOM操作</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4205700.html">10. 理解浮动元素——怎么使用它们、它们有什么问题以及怎么解决这些问题。</a></li>
+</ul>
+</div>
+</div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(52)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/wangshichuan/archive/2016/09.html">2016年9月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/wangshichuan/archive/2016/08.html">2016年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/wangshichuan/archive/2015/01.html">2015年1月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/wangshichuan/archive/2014/12.html">2014年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/wangshichuan/archive/2014/11.html">2014年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/wangshichuan/archive/2014/10.html">2014年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/wangshichuan/archive/2014/09.html">2014年9月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/wangshichuan/archive/2014/08.html">2014年8月 (18)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">http://kb.cnblogs.com/page/501270/</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://zyxn.blog.163.com/blog/static/195178373201352044426141/" rel="nofollow">CSS3  transform中的应用</a> </li>
+<li class="c_b_p_link_desc">transform中的应用</li>
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.w3cfuns.com/blog-5452328-5401451.html" rel="nofollow">css篇</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://blog.csdn.net/zyz511919766/article/details/7276089" rel="nofollow">js的全局变量和局部变量的理解</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://blog.csdn.net/yueguanghaidao/article/details/9568071" rel="nofollow">js的作用域与作用域链的理解</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/xiaochao12345/p/4086943.html" rel="nofollow">js小技巧</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://jingyan.baidu.com/article/25648fc1c3eaee9190fd0059.html" rel="nofollow">PS切片工具如何使用</a> </li>
+<li class="c_b_p_link_desc">这里有关于切片工具的详细使用和示范，可以点卡看一下！</li>
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.ruanyifeng.com/blog/2012/06/sass.html" rel="nofollow">SASS的用法</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://kingzs70.sinaapp.com/2011/09/09/front-end-web-develop-study" rel="nofollow">web前端开发学习经验总结</a> </li>
+<li class="c_b_p_link_desc">学习思路总结，对于刚接触前端的学习者来说，具有借鉴意义</li>
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.w3cfuns.com/home.php?mod=space&amp;uid=5443287&amp;do=blog&amp;id=5398010" rel="nofollow">Yslow 前端性能优化</a> </li>
+<li class="c_b_p_link_desc">值得以观察</li>
+<li><a id="CatList_LinkList_1_Link_9" href="http://blog.sina.com.cn/s/blog_7fcde0e20101d73l.html" rel="nofollow">常见css兼容性问题、技巧</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.w3cfuns.com/" rel="nofollow">前端网</a> </li>
+<li class="c_b_p_link_desc">这是web前端开发的专业的网站，可以去看看</li>
+<li><a id="CatList_LinkList_1_Link_11" href="http://i.cnblogs.com/EditLinks.aspx" rel="nofollow">软件程序在线学习网站  3Gschool</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.shejidaren.com/css3-social-sharing-style.html" rel="nofollow">设计达人</a> </li>
+<li class="c_b_p_link_desc">some times ,we need him!</li>
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	2639
+	</li><li class="liRank">
+		排名 -	47124
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wangshichuan/p/3931222.html#3015290">1. Re:C语言学习感想</a></li>
+        <li class="recent_comment_body">谢谢!</li>
+        <li class="recent_comment_author">--山水如画</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wangshichuan/p/3931222.html#3015288">2. Re:C语言学习感想</a></li>
+        <li class="recent_comment_body">多练就是王道。不过搞web基本不会用c。建议集中精力于一点</li>
+        <li class="recent_comment_author">--等风</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wangshichuan/p/3931222.html#3015287">3. Re:C语言学习感想</a></li>
+        <li class="recent_comment_body">明显代码写少了，不要强调什么基础理论了，基础不就是指针地址循环控制么，没啥优势可言。</li>
+        <li class="recent_comment_author">--等风</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wangshichuan/p/3919504.html#3015260">4. Re:思维导图</a></li>
+        <li class="recent_comment_body">这是第四章到第八章的思维导图！</li>
+        <li class="recent_comment_author">--山水如画</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/wangshichuan/p/4064011.html">1. b和strong,i与em的区别(391)</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4205697.html">2. 理解盒模型——外边距、内边距和边框之间的关系，IE 8以下版本的浏览器中的盒模型有什么不同。(239)</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4204895.html">3. 理解display中的box-flex属性(202)</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/4205700.html">4. 理解浮动元素——怎么使用它们、它们有什么问题以及怎么解决这些问题。(189)</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/3996008.html">5. 常用名词(158)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/wangshichuan/p/3931222.html">1. C语言学习感想(3)</a></li><li><a href="http://www.cnblogs.com/wangshichuan/p/3919504.html">2. 思维导图(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap" style="display: none;">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2016 山水如画
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

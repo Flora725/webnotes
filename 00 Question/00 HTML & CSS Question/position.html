@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Position</title>
+	<style>
+		.out{
+			width: 300px;
+			height: 300px;
+			background-color: lightblue;
+			position: relative;
+			padding-left: 50px;
+			margin: 0 auto;
+		}
+		.fixbar{
+			width: 100%;
+			/*定位之前，宽度是300px，以.out的宽度为基准*/
+			height: 25px;
+			background-color: rgba(201,21,35,0.6);
+			position: fixed;
+			/*定位之后，宽度是1360px，以html的宽度为基准*/
+			/*此时如果不加left / top，默认的位置就是初始位置*/
+			left: 0;
+			top: 0;
+			/*加了left/top之后，位置就按这来*/
+		}
+		.in{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			position: absolute;
+			/*定位之后，如果不加left/top，默认的位置是样式框最左侧*/
+			left: 0px;
+			/*加上该属性后，以border为基准对齐*/
+			top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<div class="fixbar"></div>
+		<div class="in"></div>
+	</div>
+</body>
+</html>

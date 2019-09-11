@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #test, #another {
+            width: 400px;
+            margin: 50px;
+        }
+
+        #demo {
+            padding: 2px 10px;
+            border: 1px solid #ff5c00;
+            border-radius: 8px;
+            width: 270px;
+            position: absolute;
+            height: 30px;
+            top: 0;
+            left: 0;
+            display: none;
+            background-color: #fff;
+            padding-top: 10px;
+        }
+
+        #demo em {
+            position: absolute;
+            top: -5px;
+            left: 40px;
+            width: 10px;
+            height: 5px;
+            background: url(arrow.gif) no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <em></em>
+    <div class="bshare-custom icon-medium bshare">
+        <a title="分享到QQ空間" class="bshare-qzone"></a>
+        <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+        <a title="分享到人人網" class="bshare-renren"></a>
+        <a title="分享到騰訊微博" class="bshare-qqmb"></a>
+        <a title="分享到網易微博" class="bshare-neteasemb"></a>
+        <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+        <span class="BSHARE_COUNT bshare-share-count">0</span>
+    </div>
+    <script type="text/javascript" charset="utf-8"
+            src="http://static.bshare.com/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh_TW"></script>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.com/b/bshareC0.js"></script>
+</div>
+<div id="test">可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字可以分享的文字</div>
+<div id="another">不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字不需要分享的文字</div>
+<script>
+    var demo = document.getElementById("demo");
+    var test = document.getElementById("test");
+    var another = document.getElementById("another");
+    test.onmouseup= function (event) {
+        var event = event || window.event;
+        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+        var txt = window.getSelection ? window.getSelection().toString() : document.selection.createRange().text;
+        if(txt){
+            demo.style.display = "block";
+            demo.style.left= pageX -40 +"px";
+            demo.style.top = pageY + 10 + "px";
+        }
+    };
+    document.onmousedown = function (event) {
+        var event = event || window.event;
+        var target = event.target || event.srcElement;
+        if(target !==demo && target.parentNode.parentNode !== demo){
+            demo.style.display = "none";
+        }
+
+//        var links = document.getElementsByTagName("a");
+//        for (var i = 0; i < links.length; i++) {
+//            links[i].onmousedown = function (e) {
+//                e.stopPropagation();
+//            }
+//        }
+//        if(target !==demo) {
+//            demo.style.display = "none";
+//        }
+
+    };
+
+
+
+
+
+</script>
+</body>
+</html>

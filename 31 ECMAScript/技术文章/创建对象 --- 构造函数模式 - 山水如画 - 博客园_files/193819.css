@@ -1,0 +1,20 @@
+body {
+  margin:0;
+  padding:0;
+
+}
+
+div{
+    border:0;
+}
+#sub{
+    height:2em;
+    background-size:cover;
+}
+
+#footer {
+   background:gray;
+   height:6em;
+   font-size:1.5em;
+   opacity:0.8;
+}

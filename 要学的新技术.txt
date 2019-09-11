@@ -1,0 +1,4 @@
+Lodash：是一个一致性、模块化、高性能的 JavaScript 实用工具库。
+Babel：是一个 JavaScript 编译器，可以把ES6的语法编译成ES5的语法。
+PostCSS：是一个用 JavaScript 工具和插件转换 CSS 代码的工具。
+pxcook，最高效易用的自动标注工具，设计研发协作利器。https://www.fancynode.com.cn/pxcook

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.up{
+			height: 40px;
+			background-color: pink;
+		}
+		.one{
+			width: 100px;
+			/*height: 40px;*/
+			/*如果不设置高度，内容会把盒子撑开，此时父盒子小于子盒子，清除浮动失效，子盒子就会影响其后浮动的元素的布局。*/
+			float: left;
+			background-color: lightblue;
+			/*position: absolute;*/
+			/*要想消除此盒子对下面盒子的影响，可以设置绝对定位，使其脱离文档流。*/
+		}
+		.two{
+			width: 50px;
+			height: 150px;
+			background-color: lemonchiffon;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="up">
+		<div class="one">
+			<ul>
+				<li>label</li>
+				<li>label</li>
+				<li>label</li>
+				<li>label</li>
+			</ul>			
+		</div>
+	</div>
+	<div class="down">
+		<div class="two">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Html5</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        @media screen and (min-width:768px) {
+            .son {
+                width: 32%;
+                min-width: 320px;
+                margin: 0 5px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .son {
+                width: 94vw;
+            }
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+        }
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">语义化标签</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>&lt;nav&gt;</div>
+                                <div>定义导航链接的部分</div>
+                            </li>
+                            <li>
+                                <div>&lt;heade&gt;</div>
+                                <div>作为文档或文章的页眉</div>
+                            </li>
+                            <li>
+                                <div>&lt;footer&gt;</div>
+                                <div>文档中的页脚部分</div>
+                            </li>
+                            <li>
+                                <div>&lt;main&gt;</div>
+                                <div>规定文档的主要内容,在文档中独一无二</div>
+                            </li>
+                            <li>
+                                <div>&lt;article&gt;</div>
+                                <div>定义外部的内容。比如来自一个外部的新闻提供者的一篇新的文章，或者来自 blog 的文本，或者是来自论坛的文本。亦或是来自其他外部源内容。</div>
+                            </li>
+                            <li>
+                                <div>&lt;aside&gt;</div>
+                                <div>在&lt;article&gt;中定义 article 以外的内容。aside 的内容应该与 article 的内容相关。</div>
+                            </li>
+                            <li>
+                                <div>&lt;section&gt;</div>
+                                <div>定义文档中的节（section、区段）。</div>
+                            </li>
+                            <li>
+                                <div>&lt;audio&gt;</div>
+                                <div>定义声音，比如音乐或其他音频流。 </div>
+                            </li>
+                            <li>
+                                <div>&lt;canvas&gt;</div>
+                                <div>定义图形，比如图表和其他图像 </div>
+                            </li>
+                            <li>
+                                <div>&lt;embed&gt;</div>
+                                <div>定义嵌入的内容，比如插件。 </div>
+                            </li>
+                            <li>
+                                <div>&lt;datalist&gt;</div>
+                                <div>定义可选数据的列表。与 input 元素配合使用 </div>
+                            </li>
+                            <li>
+                                <div>&lt;details&gt;</div>
+                                <div>定义元素的细节，用户可进行查看，或通过点击进行隐藏 </div>
+                            </li>
+                            <li>
+                                <div>&lt;progress&gt;</div>
+                                <div>定义运行中的进度（进程） </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">表单元素</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>&lt;datalist&gt;</div>
+                                <div>定义选项列表。</div>
+                            </li>
+                            <li>
+                                <div>&lt;keygen&gt;</div>
+                                <div>规定用于表单的密钥对生成器字段。</div>
+                            </li>
+                            <li>
+                                <div>&lt;output&gt;</div>
+                                <div>定义不同类型的输出，比如脚本的输出。</div>
+                            </li>
+                            <li>
+                                <div>&lt;meter&gt;</div>
+                                <div>定义已知范围或分数值内的标量测量。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">表单属性</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>placeholder</div>
+                                <div>提示内容</div>
+                            </li>
+                            <li>
+                                <div>form</div>
+                                <div>规定输入域所属的一个或多个表单。注：form 属性必须引用所属表单的 id</div>
+                            </li>
+                            <li>
+                                <div>novalidate</div>
+                                <div>规定在提交表单时不应该验证 form 或 input 域。</div>
+                            </li>
+                            <li>
+                                <div>autofocus</div>
+                                <div>规定在页面加载时，域自动地获得焦点。</div>
+                            </li>
+                            <li>
+                                <div>required </div>
+                                <div>输入域不能为空</div>
+                            </li>
+                            <li>
+                                <div>pattern </div>
+                                <div>正则验证</div>
+                            </li>
+                            <li>
+                                <div>autocomplete </div>
+                                <div>规定 form 或 input 域应该拥有自动完成功能。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                        <div class="title">input的type属性</div>
+                        <div>
+                            <ul class="detail">
+                                <li>
+                                    <div>color</div>
+                                    <div>拾色器</div>
+                                </li>
+                                <li>
+                                    <div>date</div>
+                                    <div>date 控件</div>
+                                </li>
+                                <li>
+                                    <div>email</div>
+                                    <div>用于 e-mail 地址的字段</div>
+                                </li>
+                                <li>
+                                    <div>tel</div>
+                                    <div>用于输入电话号码的字段</div>
+                                </li>
+                                <li>
+                                    <div>time</div>
+                                    <div>用于输入时间的控件（不带时区）</div>
+                                </li>
+                                <li>
+                                    <div>range</div>
+                                    <div>滑动条</div>
+                                </li>
+                                <li>
+                                    <div>month</div>
+                                    <div>month 和 year 控件（不带时区）</div>
+                                </li>
+                                <li>
+                                    <div>url</div>
+                                    <div>输入 URL 的字段</div>
+                                </li>
+                                <li>
+                                    <div>search</div>
+                                    <div>输入搜索字符串的文本字段</div>
+                                </li>
+                                <li>
+                                    <div>datetime-local</div>
+                                    <div>date 和 time 控件（包括年、月、日、时、分、秒、几分之一秒，不带时区）</div>
+                                </li>
+                                <li>
+                                    <div>file</div>
+                                    <div>选择文件</div>
+                                </li>
+                                <li>
+                                    <div>week</div>
+                                    <div> week 和 year 控件（不带时区）</div>
+                                </li>
+                                <li>
+                                    <div>calendar</div>
+                                    <div>日历</div>
+                                </li>
+                                <li>
+                                    <div>number</div>
+                                    <div>输入数字的字段</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <!-- 第三列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">视频和音频</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>&lt;audio&gt;</div>
+                                <div>src controls loop</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

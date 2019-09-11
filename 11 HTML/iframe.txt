@@ -1,0 +1,6 @@
+frame中文翻译是“框架”，其实它的原义是：The frame of a picture or mirror is the wood, metal, or plastic that is fitted around it, especially when it is displayed or hung on a wall. 比如：相框、镜框、眼镜框，所以译成“边框”最为准确。
+<iframe>是个行内元素。通过iframe实现跨域和异步上传。
+HTML5中仅支持src属性。
+优点是：不需要重载整个页面。
+缺点是：多框架会增加服务器的http请求，浏览器的后退按钮无效等。
+现在的主要用途在于广告。比如网易将一个iframe对外招商，金主给出一个<body>里面只有一个<a>的网页。<a>里面包含一个<img>，点击图片，<a>就会跳转到金主的网站。

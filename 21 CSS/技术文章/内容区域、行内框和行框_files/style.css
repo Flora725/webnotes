@@ -1,0 +1,270 @@
+/* CSS Document */
+body { text-align: center; font-family:Arial,"宋体";font-size:14px;margin: 0px; padding: 0px;color:#000000;background:url('http://www.aspxhome.com/images/body_bg.jpg') repeat-x #deebf3;}
+div,form,img,ul,li {margin: 0px; padding: 0px; border: 0px;}
+h1,h2,h3,h4,h5,h6 { margin:0px; padding:0px;}
+table,td,tr,th{font-size:12px;}
+/* 链接颜色 */
+a.more:link,a.more:visited {color: #003399; text-decoration:underline;}
+a.more:hover {color: #ff0000; text-decoration:none;}
+a.a_class:link,a.a_class:visited {color:#666666;text-decoration:none;}
+a.a_class:hover {color:#003399; text-decoration:underline;}
+a.s_link:link,a.s_link:hover {color: #261CDC; text-decoration:underline;font-size:12pt;}
+a.s_link:visited {color: #800080;text-decoration:underline;font-size:12pt;}
+a.img:link,a.img:visited {border:1px solid #000000;DISPLAY:block;}
+a.img:hover {border:1px solid #FF7922;background:#FFffaa;}
+a.imgflash:link,a.imgflash:visited {border:1px solid #D2D2D2;DISPLAY:block;}
+a.imgflash:hover {border:1px solid #FF0000;background:#FFffaa;}
+.top a:link,.top a:visited {color: #313131; text-decoration:none;}
+.top a:hover {color: #ff0000; text-decoration:underline;}
+a.b_title:link,a.b_title:visited {color: #003399; text-decoration:none;font-size:14px;}
+a.b_title:hover {color: #ff0000; text-decoration:underline;font-size:14px;}
+a.w_title:link,a.w_title:visited {margin:5px 3px;float:left;color:#ff0000;text-align:center;width:110px;text-decoration:none;font-size:14px;padding:3px 2px;border:1px solid #FF7922;display:block;background-color:#FFffaa;}
+a.w_title:hover {color: #ffffff; text-decoration:underline;font-size:14px;border:1px solid #FF7922;background-color:#FF7922;}
+/*加粗*/
+a.b_class:link,a.b_class:visited {color: #003399; text-decoration:none;font-weight:bold;}
+a.b_class:hover {color: #ff0000; text-decoration:underline;font-weight:bold;}
+/*倾斜*/
+a.i_class:link,a.i_class:visited {color: #003399; text-decoration:none;font-style:italic;}
+a.i_class:hover {color: #ff0000; text-decoration:underline;font-style:italic;}
+/*下划线*/
+a.u_class:link,a.u_class:visited {color: #003399; text-decoration:underline;}
+a.u_class:hover {color: #ff0000; text-decoration:underline;}
+/*加粗倾斜*/
+a.bi_class:link,a.bi_class:visited {color: #003399; text-decoration:none;font-style:italic;font-weight:bold;}
+a.bi_class:hover {color: #ff0000; text-decoration:underline;font-style:italic;font-weight:bold;}
+/*加粗下划线*/
+a.bu_class:link,a.bu_class:visited {color: #003399; text-decoration:underline;font-weight:bold;}
+a.bu_class:hover {color: #ff0000; text-decoration:underline;font-weight:bold;}
+/*倾斜下划线*/
+a.iu_class:link,a.iu_class:visited {color: #003399; text-decoration:underline;font-style:italic;}
+a.iu_class:hover {color: #ff0000; text-decoration:underline;font-style:italic;}
+.flink_word a{margin-right:.90em;}
+/* 字体属性*/
+.fb {font-weight: bold;}
+.fi {font-style: italic;}
+.fredb {color:#ff0000;font-weight: bold;}
+/* 字体大小*/
+.f12px{ font-size:12px;}
+.f14px{ font-size:14px;}
+/* 字体颜色*/
+.fred {color:#ff0000;}
+.fblue {color:blue;}
+.fgreen {color:green;}
+.fgold {color:#FF9900;}
+.fyellow {color:yellow;}
+.fblack {color:black;}
+.fsnow {color:#0066FF;}
+/* TOP */
+.top{margin:0px auto;background:#ffffff;width:967px;padding:4px 3px 5px 10px;border-bottom:1px solid #B8D9F4;font-size:12px;text-align:left}
+/* Logo */
+.LogoMenu{margin:0px auto; width:980px; height:auto; background:#ffffff;overflow:hidden;font-size:12px;}
+.LogoMenu .logo{float:left; width:150px; padding:8px;}
+.LogoMenu .ad_banner{float:left; width:660px;overflow:hidden; padding:5px 5px 0px;} 
+.LogoMenu .tool{margin:0px 10px ;width:80px; padding-top:15px;float:right;}
+.LogoMenu .tool u{}
+.LogoMenu .tool li{list-style-type:none;background:url('http://www.aspxhome.com/images/top_home.gif') no-repeat 5px 0px;padding:1px 0px 0px 19px;}
+.LogoMenu .tool .Favorites{list-style-type:none;background:url('http://www.aspxhome.com/images/top_gift.gif') no-repeat 5px 0px;padding:1px 0px 0px 19px;}
+.LogoMenu .tool .Message{list-style-type:none;  background:url('http://www.aspxhome.com/images/top_tg.gif') no-repeat 5px 0px;padding:1px 0px 0px 19px;}
+.LogoMenu .tool li a,a:hover,a:visited{color:#6380AC;text-decoration:none;}
+.banner{margin:3px auto; width:960px; height:34px;background:url('http://www.aspxhome.com/images/banner_bg_w.gif');color:#ffffff;}
+.banner u{}
+.banner a:link,.banner a:visited{margin:0 10px 0 0;color:#ffffff;font-weight:bold;float:left;}
+.banner li{list-style-type:none;padding:4px 0 5px 0;float:left;background:url('http://www.aspxhome.com/images/dd.gif') no-repeat;background-position:right;margin:0px 0 0 3px;}
+.banner a:hover{background:url('http://www.aspxhome.com/images/banner_hover.gif') left 0;color:#ffffff;font-weight:bold;text-decoration:underline;cursor:pointer; }
+.banner a span{padding:4px 8px 4px 0px;margin:0 0 0 8px;float:left;}
+.banner a:hover span{background:url('http://www.aspxhome.com/images/banner_hover.gif') right 0;padding:4px 8px 4px 0px;margin:0 0 0 8px; }
+/* 广告 */
+.top_ad{width:960px;height:auto;background:#fff;overflow:hidden;clear:both;margin:5px auto;padding:0;}
+.w_ad{margin:0 auto;padding:5px auto;width:960px;height:auto;background:#ffffff;overflow:hidden;}
+.ad_200{width:200px;float:left;padding-left:3px;}
+.ad_580{width:600px;clear:both;margin:10px auto;}
+.ad_728{width:728px;float:left;}
+.ad_250{width:260px;margin:3px 0px 0px 10px;float:left;border:1px solid #B8D9F4;height:280px;display:inline;}
+.ad_300{float:left;margin:3px 0 3px 10px;text-align:justify; width:322px; height:280px; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;}
+/* 左广告 */
+.content .ad_01 {float:left;margin:3px 0px;width:260px; height:180px;background:#ffffff; border:1px solid #B8D9F4;overflow:hidden; }
+#bdfx{margin:10px;auto;width:650px;clear:both;overflow:hidden;}
+.content .b_ad {float:left;margin:0px 3px; width:200px; height:70px; background:#ffffff; border:0px;overflow:hidden; }
+.m-tool {padding-left:3px;}
+.m-tool h4{color: #353535;font-size:13px;font-weight:normal;}
+.m-tool div{margin:3px 3px 8px 3px;}
+.top_wz {margin:3px auto; width:960px;overflow:hidden;font-size:12px;background:#EDF5FF;}
+.top_wz .aspxtime{margin:4px;float:left;width:400px;text-align:left;}
+.top_wz .aspxlocal{margin:4px;float:left;width:50%;text-align:left;overflow:hidden;white-space:nowrap;}
+.top_wz .change{margin:4px;float:right;width:150px;overflow:hidden;text-align:right;}
+.a_local{margin:0px;width:100%;text-align:left;padding:4px;background:#EDF5FF;border-bottom:1px solid #B8D9F4;font-size:12px;overflow:hidden;white-space:nowrap;}
+/* 内容 */
+.content,.content_class{margin:0px auto;width:980px; height:auto; background:#ffffff;overflow:hidden;}
+.content_b{margin:5px auto;text-align:left;width:958px; height:auto;background:#ffffff;overflow:hidden;border:1px solid #B8D9F4;}
+.bottomcontent{padding:20px;line-height:30px;TEXT-INDENT:2em;font-size:13px;width:650px;}
+.contactme .wtext{border:1px solid #ffffff;}
+.content .right{float:right;margin:5px 0 5px 10px;width:270px; background:#ffffff;overflow:hidden;display:inline;}
+.blank{margin:0px;background:#ffffff; border-left:1px solid #B8D9F4;padding:5px 0px 5px 0px;}
+.content .left{float:left;margin:5px 0px; width:698px;height:auto; background:#ffffff; overflow:hidden;display:inline;}
+.content .left_content{margin:0 10px 5px 10px;border:1px solid #B8D9F4;width:685px;background:#ffffff;overflow:hidden;}
+.codebutton {margin:0px 0px 2px 5px;}
+.content .thislink{font-size:12px;TEXT-INDENT:1em;float:left;padding:10px 0px 10px 0px;}
+.code {font-family:"arial" , "宋体";font-size:12px;TEXT-INDENT:0em;line-height:18px;color:#000000;background-color: #DDEDFB;margin:5px;padding:5px;width:600px;border: 1px solid #0099CC;display:block;word-wrap:break-word;}
+.abstract {TEXT-INDENT:2em;color:#003399;background-color:#ffffff;margin:10px 5px 5px 5px;padding:5px;width:98%;border: 1px solid #C0C0C0;word-wrap:break-word;display:block;}
+.npage{margin:0px auto;text-align:center;width:100%;background:#EDF5FF;border-top:1px solid #B8D9F4;padding:5px;text-overflow:ellipsis;white-space:nowrap;font-size:13px;overflow:hidden;}
+
+/* 相关文章 */
+.article_list{margin:10px 10px 5px 10px;border:1px solid #B8D9F4;width:685px;background:#ffffff;overflow:hidden;}
+#ad486{border-top:1px solid #B8D9F4;background:#ffffff;width:100%;padding:5px 0px 5px 0px;color:#156293;font-size:10pt;font-weight: bold;}
+#ad486 div{padding:3px;}
+#aspxhome_01{font-size:14px;text-align:left;color:#156293;height:20px;width:100%;border-bottom:1px solid #B8D9F4;background:#EDF5FF ;padding:3px 8px 0px 10px;}
+#aspxhome_02{font-size:14px;text-align:left;color:#156293;height:20px;width:100%;background:#EDF5FF ;padding:3px 8px 0px 10px;}
+.content_li2{float:left;margin-bottom:5px;font-size:12px;width:100%;overflow:hidden;padding:10px;line-height:19px;text-align:justify;font-size:14px;}
+.content_li2 li{float:left;list-style-type:none;background:url('http://www.aspxhome.com/images/i1.gif') no-repeat 2px 7px;padding-left:9px;margin-top:5px;width:45%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+/* 大类 */
+
+.content_bigclass .mlist{margin:5px auto;width:958px;height:auto;font-size:13px;border:1px solid #B8D9F4;overflow:hidden;}
+.content_bigclass .newimg{float:left;margin:8px 8px 8px 7px; width:175px;border:0px;padding:3px 0 5px 0;overflow:hidden;font-size:12px;}
+.content_bigclass .newimg img{ margin:3px;width:160px;height:106px;}
+.content_bigclass .imglist{margin:5px auto;padding-bottom:5px;text-align:center;width:958px;border:1px solid #B8D9F4;overflow:hidden;font-size:12px;background:#ffffff;}
+.leftlist{float:left;margin:5px auto;width:700px;height:auto;font-size:13px; background:#ffffff;overflow:hidden;}
+.rightlist{float:left;margin:5px 0 0 10px;width:270px;height:100%; background:#ffffff;overflow:hidden;display:inline;}
+.blist{float:left;margin:0px 0px 10px 10px;width:686px;height:auto;border:1px solid #B8D9F4;overflow:hidden;}
+
+.bigclass_title {float:left;margin:4px 0px;width:500px;height:auto;color:#003399;font-weight:bold;font-size:14px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left;}
+.bigclass_time {float:right;margin:4px 0px;width:60px;color:#666666;}
+.bigclass_pic {float:left;margin:3px;width:130px;color: #6E86A9;border:1px solid #B8D9F4;}
+.bigclass_info {float:left;margin:3px;width:480px;padding-left:10px;color:#6E86A9;text-align:left;word-wrap:break-word;font-size:12px;line-height:23px;}
+.bigclass_img { float:left; margin:5px;width:660px;padding-bottom:5px;height:120px;border:1px solid #ffffff;overflow:hidden;border-bottom-color: #BED1E7;}
+
+/* 小类开始 */
+.content_class .mlist{float:left;margin:5px 0px 5px 10px; width:686px; height:auto; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;display:inline;}
+.content_class .newimg{float:left;margin:8px 8px 8px 5px; width:203px; background:#ffffff; border:0px;padding-top:3px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.content_class .newimg img{ margin:3px;width:195px;height:130px;}
+.smallright{float:left;margin:5px 0 0 10px;width:270px;height:100%; background:#ffffff; overflow:hidden;display:inline;}
+.content_class .imglist{margin:5px 0;padding-bottom:5px; width:100%;border-bottom:5px solid #EDF5FF;overflow:hidden;font-size:12px;}
+.content_class .maincontent{TEXT-INDENT:2em;float:left;width:660px;color:#6E86A9;word-wrap:break-word;margin:10px 0px 0px 0px;}
+.Ainfo{float:left;width:660px;color:green;border-bottom:1px solid #B8D9F4;margin:10px 0px 20px 0px; }
+/*焦点*/
+.flist{margin:3px auto; width:960px; height:auto; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;}
+.flist .newimg{float:left;margin:8px 9px 8px 7px;background:#ffffff; border:0px;line-height:33px;}
+.flist .newimg img{ margin:5px 5px 15px 5px;}
+.flist .gad{float:left; margin:8px 9px 8px 7px;background:#ffffff;width:255px;height:250px;border:1px solid #000000;}
+.Aline{float:left;width:760px;color:#156293;border-bottom:1px solid #B8D9F4;height:1px;margin:0px 5px;}
+/* 栏目导航 */
+.Navigation{float:left;margin:0px 0px 5px 0px; width:260px; height:auto; background:#ffffff;border:1px solid #B8D9F4;overflow:hidden; }
+.Navigation_title{margin:5px;padding-bottom:10px;float:left;text-align:left;line-height:20px;font-size:14px;}
+
+/*错误提示*/
+.error_info{border:1px solid #FF6600;padding:6px 5px 3px 24px;margin:0px 0px 0px 5px;background:url('http://www.aspxhome.com/images/msg_error.gif') no-repeat 5px 4px;background-color:#FFF2E9;}
+/* 小类结束 */
+.top10_left,.top10_right {float:left;margin:0 0 10px 0px; width:260px; height:auto; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;}
+/* 焦点文章 */
+.content .focus {float:left;margin:3px 0px 0px 10px; width:260px; height:280px; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;display:inline;}
+.menu {font-size:14px;text-align:left;color:#156293;height:19px;padding:3px 8px 0px 10px;background:#EDF5FF;border-bottom:1px solid #B8D9F4;}
+.menu_img {float:left;}
+.menu_more {float:right;font-size:12px;color:#156293;padding-top:2px;}
+.content_focus {background:#ffffff;padding:4px 4px 4px 5px;margin:0px auto;}
+/* 最新文章 */
+.content .news {float:left;margin:3px 0 3px 10px;text-align:justify; width:337px; height:280px; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden; }
+.content_li {float:left;font-size:13px;width:100%;text-align:justify;overflow:hidden;padding:5px;line-height:23px;}
+.content_li3 {float:left;font-size:14px;width:100%;text-align:justify;overflow:hidden;padding:5px;line-height:25px;}
+.content_li li{list-style-type:none;width:96%;padding-left:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.content_li3 li{float:left;width:100%;list-style-type:none;background:url('http://www.aspxhome.com/images/i1.gif') no-repeat 2px 7px;padding-left:8px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.content_hot{float:left;font-size:13px;width:100%;overflow:hidden;padding:5px;text-align:justify;line-height:23px;}
+.content_hot li{width:96%;list-style-type:none;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+/* 搜索 */
+.search {float:left;margin:5px 0 3px 10px; width:686px;height:92px;border:1px solid #B8D9F4;overflow:hidden; }
+.search_form {margin:10px auto;color:#156293; width:95%;overflow:hidden;text-align:left;}
+.search_article {margin:10px auto;text-align:right;width:948px; height:auto; background:#EDF5FF;border:0px dotted #B8D9F4;padding:1px 5px;overflow:hidden;}
+.search_form iframe{padding-left:50px;}
+.top_wz .search_form {float:right;margin:2px;color:#156293; width:45%; border:0px;text-align:right}
+.search_zn {padding-left:50px;}
+.search_zn li{float:left;list-style-type:none; padding:5px 10px 5px 15px;}
+.s1 {height:17px;width:200px;border:1px solid #3F96DD;padding:2px 0px 0px;font-size:12px;}
+.s2 {height:20px; width:48px; background:url('http://www.aspxhome.com/images/input_bg_blue.gif'); border:0px; padding:2px 0px 0px 16px; font-size:12px;}
+.s3 {height:15px;width:120px;border:1px solid #3F96DD;padding:2px 0px 0px 3px;font-size:12px;}
+.t1 {height:17px;width:220px;border:1px solid #3F96DD;padding:3px 0px 0px 3px;font-size:12px;}
+.t2 {height:17px;width:110px;border:1px solid #3F96DD;padding:3px 0px 0px 3px;font-size:12px;}
+.toolinput {height:25px;width:300px;border:1px solid #3F96DD;padding:5px 0px 0px 3px;font-size:13pt;}
+.toolbutton {height:32px;width:100px;padding:2px auto;font-size:13pt;}
+.hot_s{margin:5px 3px 5px 7px;text-align:center;font-size:13px;float:left;}
+
+.content .ad_02{float:right;margin:3px 0px; width:529px;height:80px;background:#ffffff;border:0px;overflow:hidden; }
+/* left */
+.hot_01{float:left;margin:5px 0px 5px 10px; width:260px;height:380px;background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;display:inline; }
+/* right */
+/* .hot_02{float:right;margin:0px 0px 4px 0px;width:190px;height:auto;background:#ffffff; border:1px solid #B8D9F4;overflow:hidden; } */
+.menu_hot {color:#156293;height:20px;padding:0px;}
+.menu_s {color:#156293;height:20px;padding:0px;width:100%;}
+.tabads {WIDTH:270px;HEIGHT:18px;margin:0px 0px}
+.tabsearch {WIDTH:680px;HEIGHT:18px;margin:0px 0px;FONT-WEIGHT:bold;}
+.tabsearch li {list-style-type:none;PADDING: 5px 0px 0px 0px; font-size:14px;BACKGROUND:#EDF5FF;FLOAT: left;WIDTH: 225px;HEIGHT:17px; CURSOR:pointer;border-bottom:1px solid #B8D9F4;border-right:1px solid #B8D9F4;}
+.tabads li {list-style-type:none;PADDING: 5px 0px 0px 0px; font-size:14px;BACKGROUND:#EDF5FF;FLOAT: left;WIDTH: 86px;HEIGHT:17px; CURSOR:pointer;border-bottom:1px solid #B8D9F4;border-right:1px solid #B8D9F4;}
+.tabads .tasadson {FONT-WEIGHT:bold;font-size:14px;BACKGROUND: #ffffff ;CURSOR: pointer;TEXT-ALIGN: center;border-top:1px solid #ffffff;border-left:0px;border-right:1px solid #B8D9F4;border-bottom:1px solid #ffffff;}
+.tabsearch .tabsearchson {FONT-WEIGHT:bold;font-size:14px;BACKGROUND: #ffffff ;CURSOR: pointer;TEXT-ALIGN: center;border-top:1px solid #ffffff;border-left:0px;border-right:1px solid #B8D9F4;border-bottom:1px solid #ffffff;}
+/* 最新分类文章 */
+.content .a_list{float:left;margin:5px 0px 5px 10px;width:337px;height:380px;background:#ffffff; border:1px solid #B8D9F4;overflow:hidden; }
+.content_img { float:left; margin:2px 2px;width:100%;height:90px;background:#ffffff;border:1px solid #ffffff;overflow:hidden;border-bottom-color: #BED1E7;}
+.c_title {float:left;width:250px;overflow:hidden;text-overflow:ellipsis;}
+.blist .c_title{width:500px;}
+.c_date { float:right;color: #666666;overflow:hidden;width:70px;}
+.blist .c_date {width:140px;font-size:12px;}
+.content_title {float:left;margin:4px 0px;width:260px;height:auto;color:#003399;font-weight:bold;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left;}
+.content_time {float:right;margin:4px 0px;width:60px;color:#666666;}
+.content_pic {float:left;margin:0px;width:76px;color: #6E86A9;border:1px solid #B8D9F4;}
+.content_info {float:left;margin:3px;width:220px;color:#6E86A9;text-align:left;word-wrap:break-word;font-size:12px;}
+.tag{margin:5px auto;text-align:left;width:948px; height:auto; background:#ffffff;border:1px dotted #B8D9F4;padding:5px;word-wrap:break-word;font-size:12px;line-height:18px;}
+.tags{margin:0px auto;text-align:left;width:100%;background:#ffffff;border-top:1px solid #B8D9F4;padding:5px 5px 5px 20px;word-wrap:break-word;font-size:13px;}
+.tags a{font-weight: bold;font-size:13px;}
+/*友情链接*/
+.flink{margin:6px auto; width:958px; height:auto; background:#ffffff;border:1px solid #B8D9F4;overflow:hidden;}
+.flink_content{margin:3px;width:96%;overflow:hidden;text-align:left;}
+.flink_logo{margin:3px 0px 5px 0px;}
+/* 文章评论 */
+#content2{margin:10px 10px 5px 10px;width:685px; height:100%; background:#ffffff; border:1px solid #B8D9F4;overflow:hidden;text-align:left;}
+#aspxhome_03{font-size:14px;color:#156293;height:20px;width:100%;border-bottom:1px solid #B8D9F4;border-top:1px solid #B8D9F4;background:#EDF5FF ;padding:3px 8px 0px 10px;text-align:left;}
+.Comments{margin:3px 10px 5px 10px; width:100%; background:#ffffff; color:#000000;word-wrap:break-word;font-size:12px;padding-top:10px;text-align:left;}
+.Comments .c_left {margin:3px 3px 10px 3px;width:80%;float:left;font-size:14px;}
+.Comments .c_right {margin:3px 3px 10px 3px;width:10%;float:right;}
+.c_left .cdate{font-size:12px;color:#999999;}
+.c_content {margin-bottom:5px;width:95%;color:#000000;border-bottom:1px dashed #cccccc;padding:5px;line-height:20px;clear:both;font-size:13.5px;}
+.Cquote {margin:5px auto;width:95%;border:1px solid #C0C0C0;color:#666666;padding:5px;line-height:18px;background:#f9feb0;overflow:hidden;}
+.cnum{font-family:"Georgia", "宋体";font-weight:bold;font-size:14px;color:#ff0000;}
+.textarea2,.Comments .ups2{margin-left:35px;}
+.face {margin-left:30px;}
+.face img {cursor:pointer;}
+.ups2 {background:url(http://www.aspxhome.com/images/input_bg3.gif);border:0px;padding:2px 4px 2px 4px; font-size:12px;width:48px;}
+#RequestInfo{margin:10px;font-size:13px;padding-left:10px;text-align:left;background:#f9feb0;}
+#NoComments{margin:10px;font-size:14px;text-align:left;color:green;}
+#hfmsg{text-align:left;color:#6380AC;width:95%;float:left;}
+#SendInfo{margin:10px;font-size:13px;padding-left:10px;text-align:left;background:#f9feb0;display:none;}
+.zyao{padding:10px;text-align:left;font-size:13px;line-height:20px;TEXT-INDENT:2em;border-bottom:1px solid #B8D9F4;}
+.fimg{float:left;margin:2px 8px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:110px;}
+.fimg img{padding:2px;}
+/*站长工具*/
+.ztool-left{float:left;margin:5px 10px 5px 10px;width:468px;border:1px solid #B8D9F4;overflow:hidden;display:inline;}
+.ztool-right{float:left;margin:5px 10px 5px 10px;width:468px;border:1px solid #B8D9F4;overflow:hidden;display:inline;}
+.ztitle{width:100%;height:18px;padding:5px;background:#EDF5FF;border-bottom:1px dotted #cccccc;color:#156293;text-align:left;}
+.toolcontent{margin:3px auto; width:960px; height:auto; background:#ffffff; border:1px solid #B8D9F4;font-size:13px;padding-bottom:5px;}
+/* 页面底部 */
+.aboutaspxhome{margin:5px auto;width:958px;height:25px;background:#EDF5FF; border:1px solid #B8D9F4;}
+.aboutaspxhome li{padding:5px 0px 0px; list-style-type:none; color:#6380AC;font-size:12px;}
+/* 页脚 */
+.bottom{ margin:0px auto; width:980px;height:50px;line-height:180%;color:#003399;font-size:12px;}
+.bottom h1{ font-size:12px; font-weight:normal;}
+a:link,a:visited {color:#003399;text-decoration:none;}
+a:hover {color:#ff0000;text-decoration:underline;}
+.toolist {margin:0 auto;padding:10px 0;width:980px;height:auto; background:#ffffff;overflow:hidden;text-align:left;}
+.tooltitle{font-size:14px;color:#156293;height:20px;margin:0 auto;width:940px;padding:3px 8px 0px 10px;background:#EDF5FF;border:1px solid #B8D9F4;}
+.toolist li{ line-height:28px;float:left; padding:3px 5px; list-style:none;width:95%;border-bottom:1px solid #e5eff8;}
+.toolistcontent{margin:5px 10px;background:#F7FBFF;width:960px;}
+.catchinfo{margin:3px auto; width:960px; height:auto;text-align:left; background:#ffffff; border-top:1px solid #B8D9F4;font-size:13px;clear:both;}
+.catchlist{padding:10px;}
+/*menu*/
+.toolmenu{margin:auto; background:url("http://www.aspxhome.com/images/menu-bg.gif") repeat-x left; text-align:center; height:45px; line-height:42px; padding-left:40px; margin-bottom:1px;}
+.toolmenu a{color:#fff; padding:0 13px; display:block; float:left;}
+.toolmenu a:hover{color:#f39800;}
+.toolmenu .select{background:url("http://www.aspxhome.com/images/s-menu-bg.gif") repeat-x right top; padding-right:15px;}
+/*sub_menu*/
+div.menu-list{position:absolute; width:120px; padding:0 0 5px; display:none; background:#fff; border:1px solid #d6d6d6;}
+div.menu-list ul li{padding:0; margin:0; margin:5px 2px 0; list-style-type:none;}
+div.menu-list ul li a{display:block; width:100%; height:25px; line-height:25px; text-align:center; color:#000; text-decoration:none; cursor:pointer;}
+div.menu-list ul li a span{display:block; width:100%; height:100%;}
+div.menu-list ul li a:hover{color:#fff; background:#5d98d4 url('http://www.aspxhome.com/images/bg-left.jpg') no-repeat 0 0;}
+div.menu-list ul li a:hover span{background:transparent url('http://www.aspxhome.com/images/bg-right.jpg') no-repeat right top;}

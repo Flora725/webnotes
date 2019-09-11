@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wraper {
+			width: 1080px;
+			margin: 0 auto;
+		}
+		.three {
+			display: flex;
+			justify-content: space-around;
+			padding: 12px;
+		}
+		.son {
+			width: 31.5%;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			color: #46473b;
+			font-size: 14px;
+		}
+		.son .title {
+			color: white;
+			font: 900 14px/38px "Microsoft Yahei";
+			padding-left: 10px;
+			border-radius: 3px 3px 0 0;
+		}
+		.son ul.detail li {
+			display: flex;
+		}
+		.son1 .grand .title {
+			background-color: #8866cc;
+		}
+		.son2 .grand .title {
+			background-color: #00cc00;
+		}
+		.son1 .grand ul.detail li:nth-child(2n-1) {
+			background-color: #eae4f6;
+		}
+		
+		.son3 .grand ul.detail li:nth-child(2n-1) {
+			background-color: #edd3dc;
+		}
+		.son4 .grand ul.detail li:nth-child(2n-1) {
+			background-color: #b7c8f7;
+		}
+		.son .grand ul.detail li div {
+			padding: 6px;
+		}
+		.son1 .grand ul.detail li div:first-child,  .son3 .grand ul.detail li div:first-child,  .son4 .grand ul.detail li div:first-child{
+			width: 22%;
+		}
+		
+		.son1 .grand ul.detail li div:last-child {
+			width: 78%;
+		}
+		.son .grand ul.detail {
+			border-radius: 0 0 3px 3px;
+			margin-bottom: 16px;
+		}
+		.son1 .grand ul.detail {
+			border-bottom: 3px solid #8866cc;
+		}
+		
+		.son3 .grand ul.detail {
+			border-bottom: 3px solid #990033;
+		}
+		.son4 .grand ul.detail {
+			border-bottom: 3px solid #0221ac;
+		}
+	 
+
+		
+		.son3 .grand ul.detail li div:last-child,  .son4 .grand ul.detail li div:last-child{
+			width: 78%;
+		}
+		.son3 .grand .title {
+			background-color: #990033;
+		}
+		.son4 .grand .title {
+			background-color: #0221ac;
+		}
+	</style>
+</head>
+<body>
+	<div class = "wraper">
+		<div class = "three">
+			<div class="son son1">
+				<div class = "grand">
+					<div class="title">结构标签</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>html</div>
+								<div>代表当前书写的是一个html文档</div>
+							</li>
+							<li>
+								<div>head</div>
+								<div>存储本页面的一些重要信息，不会显示</div>
+							</li>
+							<li>
+								<div>title</div>
+								<div>定义页面标题</div>
+							</li>
+							<li>
+								<div>script</div>
+								<div>Javascript代码</div>
+							</li>
+							<li>
+								<div>meta</div>
+								<div>元数据（Metadata）是数据的数据信息。通常用于指定网页的描述、关键词、作者、版权等。</div>
+							</li>
+							<li>
+								<div>style</div>
+								<div>css样式</div>
+							</li>
+							<li>
+								<div>link</div>
+								<div>写在<head>标签中，用来导入css</div>
+							</li>
+							<li>
+								<div>body</div>
+								<div>主体内容</div>
+							</li>
+							<li>
+								<div>div</div>
+								<div>定义一个区域，与css一起用来布局网页</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="grand">
+					<div class="title">列表标签</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>ul-li</div>
+								<div>无序列表</div>
+							</li>
+							<li>
+								<div>ol/li</div>
+								<div>有序列表;PS:li标签要和ul或ol配套使用，但&lt;li&gt;里面可以嵌套其他标签。</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="son son3">
+				<div class = "grand">
+					<div class="title">文本标签</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>h1...h6</div>
+								<div>h1常用于详情页，标记文章的主标题。h1标签在整个页面中是唯一的;h3使用得很频繁，常用于一堆列表的分类标题</div>
+							</li>
+							<li>
+								<div>p</div>
+								<div>段落</div>
+							</li>
+							<li>
+								<div>span</div>
+								<div>为了突出显示某一小部分内容</div>
+							</li>
+							<li>
+								<div>bytecode</div>
+								<div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+							</li>
+							<li>
+								<div>chartAt(0)</div>
+								<div>chartAt(0)</div>
+							</li>
+							<li>
+								<div>equals()</div>
+								<div>equals()</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class = "grand">
+					<div class="title">表格标签</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>form</div>
+								<div>创建表单，并向服务器传输数据;属性有：action(提交路径)，method(get/post)，name(表单名称)</div>
+							</li>
+							<li>
+								<div>input</div>
+								<div>规定了用户可以在其中输入数据的控件;属性：type(text、radio、reset、submit、number、password、checkbox、button、image、file)</div>
+							</li>
+							<li>
+								<div>option</div>
+								<div>下拉菜单选项</div>
+							</li>
+							<li>
+								<div>textarea</div>
+								<div>文本域</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="son son4">
+				<div class = "grand">
+					<div class="title">表单标签</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>form</div>
+								<div>创建表单，并向服务器传输数据;属性有：action(提交路径)，method(get/post)，name(表单名称)</div>
+							</li>
+							<li>
+								<div>input</div>
+								<div>见下部详细</div>
+							</li>
+							<li>
+								<div>option</div>
+								<div>下拉菜单选项</div>
+							</li>
+							<li>
+								<div>textarea</div>
+								<div>文本域</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class = "grand">
+					<div class="title">input的type属性</div>
+					<div>
+						<ul class = "detail">
+							<li>
+								<div>text</div>
+								<div>文本框</div>
+							</li>
+							<li>
+								<div>radio</div>
+								<div>单选框</div>
+							</li>
+							<li>
+								<div>reset</div>
+								<div>重置</div>
+							</li>
+							<li>
+								<div>submit</div>
+								<div>提交</div>
+							</li>
+							<li>
+								<div>password</div>
+								<div>密码框</div>
+							</li>
+							<li>
+								<div>checkbox</div>
+								<div>复选框</div>
+							</li>
+							<li>
+								<div>button</div>
+								<div>按钮</div>
+							</li>
+							<li>
+								<div>image</div>
+								<div>图片</div>
+							</li>
+							<li>
+								<div>file</div>
+								<div>输入字段和 "浏览"按钮，供文件上传。</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

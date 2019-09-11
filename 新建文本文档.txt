@@ -1,0 +1,16 @@
+jquery extend 将两个对象合并
+ng-if和ng-show哪个性能好？
+ng-repeat的实现原理是什么？
+
+屏幕适配问题：媒体查询 / meta标签
+cookie 主要用于pc端，localstorage用于移动端
+行内块级元素都有哪些？
+除了display，怎样让行内转块级，让块级转行内？
+与后台交互遇到什么问题？
+还问的从前端域名请求的整个过程
+
+用组件构建的页面和按ui图写的哪个性能好？
+原生js实现ajax的过程，跨域的原理，如果没有xmlhttprequest怎么办？
+
+
+前端工程化

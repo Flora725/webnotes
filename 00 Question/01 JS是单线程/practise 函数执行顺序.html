@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <style>
+        blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body, button, input, select, textarea {
+            font: 12px/1.5 "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+            color: #666;
+        }
+
+        ol, ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        fieldset, img {
+            border: 0;
+            vertical-align: top;
+        }
+
+        a, input, button, select, textarea {
+            outline: none;
+        }
+
+        a, button {
+            cursor: pointer;
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: 100px auto;
+        }
+
+        .slide {
+            height: 500px;
+            position: relative;
+        }
+
+        .slide li {
+            position: absolute;
+            left: 200px;
+            top: 0;
+        }
+
+        .slide li img {
+            width: 100%;
+        }
+
+        .arrow {
+            opacity: 0;
+        }
+
+        .prev, .next {
+            width: 76px;
+            height: 112px;
+            position: absolute;
+            top: 50%;
+            margin-top: -56px;
+            background: url(../images/prev.png) no-repeat;
+            z-index: 99;
+        }
+
+        .next {
+            right: 0;
+            background-image: url(../images/next.png);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="slide" id="slide">
+            <ul>
+                <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
+            </ul>
+            <div class="arrow" id="arrow">
+                <a href="javascript:;" class="prev" id="arrLeft"></a>
+                <a href="javascript:;" class="next" id="arrRight"></a>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var config = [
+        {
+            "width": 400,
+            "top": 20,
+            "left": 50,
+            "opacity": 0.2,
+            "zIndex": 2
+        },//0
+        {
+            "width": 600,
+            "top": 70,
+            "left": 0,
+            "opacity": 0.8,
+            "zIndex": 3
+        },//1
+        {
+            "width": 800,
+            "top": 100,
+            "left": 200,
+            "opacity": 1,
+            "zIndex": 4
+        },//2
+        {
+            width: 600,
+            top: 70,
+            left: 600,
+            opacity: 0.8,
+            zIndex: 3
+        },//3
+        {
+            "width": 400,
+            "top": 20,
+            "left": 750,
+            "opacity": 0.2,
+            "zIndex": 2
+        }//4
+    ];
+    var wrap = document.getElementById("wrap");
+    var slide = document.getElementById("slide");
+    var ul = slide.children[0];
+    var lis = ul.children;
+    var arrow = document.getElementById("arrow");
+    var right = document.getElementById("arrRight");
+    var left = document.getElementById("arrLeft");
+    wrap.onmouseover = function () {
+        animate(arrow, {"opacity": 1});
+    };
+    wrap.onmouseout = function () {
+        animate(arrow, {"opacity": 0});
+    };
+    assign();
+    right.onclick = function () {
+        if (flag) {
+            flag = false;
+            config.push(config.shift());
+            assign();
+        }
+    };
+    left.onclick = function () {
+        config.unshift(config.pop());
+        assign();
+    };
+
+    function assign() {
+        for (var i = 0; i < lis.length; i++) {
+            animate(lis[i], config[i], function () {
+                flag = true;
+            });
+//            flag = true; 这句话只能写在上面，因为animate只要开始执行，不管定时器的任务有没有完成，都会开始执行这句代码，所以这个节流阀根本不起作用。
+
+
+        }
+    }
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj, null)[attr];
+        } else {
+            return obj.currentStyle[attr];
+        }
+    }
+    function animate(obj, json, fn) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            for (var k in json) {
+                if (k === "opacity") {
+                    var leader = getStyle(obj, k) * 100;
+                    var target = json[k] * 100;
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader / 100;
+                } else if (k === "zIndex") {
+                    obj.style.zIndex = json[k];//层级不需要渐变
+                } else {
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    var target = json[k];
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + "px";
+                }
+                if (leader != target) {
+                    flag = false;
+            }
+            }
+            if (flag) {
+                clearInterval(obj.timer);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 15);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

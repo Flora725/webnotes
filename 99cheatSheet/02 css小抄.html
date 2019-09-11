@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS小抄</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .son {
+            width: 30%;
+            min-width: 300px;
+            margin-right: 10px;
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+        }
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">CSS与HTML结合方式</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>内联样式 行内样式</div>
+                                <div>将css代码通过style属性来引用</div>
+                            </li>
+                            <li>
+                                <div>内部样式表</div>
+                                <div>所有CSS设置都放在style标签中，style放在title下面</div>
+                            </li>
+                            <li>
+                                <div>外部样式表</div>
+                                <div>通过link引用 .css文件</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第一列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">基本选择器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>标签选择器</div>
+                                <div>p { } ;直接写标签名</div>
+                            </li>
+                            <li>
+                                <div>类选择器</div>
+                                <div>.class { } ;类可多次使用</div>
+                            </li>
+                            <li>
+                                <div>id选择器</div>
+                                <div>#id { } ;有唯一性</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第一列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">复合选择器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>后代选择器</div>
+                                <div>.list li { } ;选定所有后代</div>
+                            </li>
+                            <li>
+                                <div>子代选择器</div>
+                                <div>.list>li { } ;只选子代</div>
+                            </li>
+                            <li>
+                                <div>并集选择器</div>
+                                <div>h3,p { } ;所有的都放一起，以逗号相隔</div>
+                            </li>
+                            <li>
+                                <div>交集选择器</div>
+                                <div>p.class ;先写标签名，再写类名</div>
+                            </li>
+                            <li>
+                                <div>通配符*选择器</div>
+                                <div>选中所有的标签 ;功能强大，效率低下</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">CSS基本属性·尺寸</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>width</div>
+                                <div>宽度 ;px</div>
+                            </li>
+                            <li>
+                                <div>height</div>
+                                <div>高度 ;px</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第二列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">字体</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>font-style</div>
+                                <div>倾斜 ;normal/italic</div>
+                            </li>
+                            <li>
+                                <div>font-weight</div>
+                                <div>加粗 ;100-900 整百/bold/bolder</div>
+                            </li>
+                            <li>
+                                <div>font-size</div>
+                                <div>字号 ;em/px</div>
+                            </li>
+                            <li>
+                                <div>font-family</div>
+                                <div>字体 ;SimSun SimHei/Microsoft Yeihei</div>
+                            </li>
+                            <li>
+                                <div>font</div>
+                                <div>简写连写 ;行高写在字号后面，前面加/</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">文本</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>color</div>
+                                <div>颜色 ;取值可以是具体的英文单词;十六进制表示;rgb()表示法</div>
+                            </li>
+                            <li>
+                                <div>text-align</div>
+                                <div>规定块级元素中的行内元素（文本、图片）的水平对齐方式</div>
+                            </li>
+                            <li>
+                                <div>text-indent</div>
+                                <div>em/px 定义块级元素中第一个内容行的缩进</div>
+                            </li>
+                            <li>
+                                <div>text-decoration</div>
+                                <div>underline/line-through</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">盒模型属性</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>内边距</div>
+                                <div>padding ;四种取值</div>
+                            </li>
+                            <li>
+                                <div>外边距</div>
+                                <div>margin ;水平居中</div>
+                            </li>
+                            <li>
+                                <div>边框</div>
+                                <div>border-width ;宽度</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border-color</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border ;按顺序</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border-left</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border-right-width</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border-top-style</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>border-bottom-color</div>
+                            </li>
+                            <li>
+                                <div>背景</div>
+                                <div>background-color</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>background-image ;url(“ ”)</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>background-repeat ;repeat-x / repeat-y / no-repeat</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>background-position ;px / center / top / left / right / bottom</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>background-size</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>background</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

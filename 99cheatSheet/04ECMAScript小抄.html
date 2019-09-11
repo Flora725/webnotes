@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECMAScript</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .son {
+            width: 30%;
+            min-width: 300px;
+            margin-right: 10px;
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+        }
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul li div:first-child {
+            flex: 1.3;
+        }
+
+        .son2 ul li div:last-child {
+            flex: 2.7;
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+        
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul li div:first-child {
+            flex: 1.3;
+        }
+
+        .son3 ul li div:last-child {
+            flex: 2.7;
+        }
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">变量和数据类型·简单数据类型</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>string</div>
+                                <div>字符串</div>
+                            </li>
+                            <li>
+                                <div>number</div>
+                                <div>数字(NaN，数据异常)</div>
+                            </li>
+                            <li>
+                                <div>boolean</div>
+                                <div>布尔值</div>
+                            </li>
+                            <li>
+                                <div>undefined</div>
+                                <div>定义但未赋值</div>
+                            </li>
+                            <li>
+                                <div>null</div>
+                                <div>空对象</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第一列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">复杂数据类型</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Array</div>
+                                <div>数组</div>
+                            </li>
+                            <li>
+                                <div>Function</div>
+                                <div>函数</div>
+                            </li>
+                            <li>
+                                <div>Date</div>
+                                <div>日期</div>
+                            </li>
+                            <li>
+                                <div>Math</div>
+                                <div>数学函数</div>
+                            </li>
+                            <li>
+                                <div>RegExp</div>
+                                <div>正则表达式</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第一列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">数据类型的转换·显式转换</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Number()</div>
+                                <div>转换为数值</div>
+                            </li>
+                            <li>
+                                <div>parseInt()</div>
+                                <div>提取字符串中的整数</div>
+                            </li>
+                            <li>
+                                <div>parseFloat()</div>
+                                <div>提取字符串中的浮点数</div>
+                            </li>
+                            <li>
+                                <div>String()</div>
+                                <div>转为字符串</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- 第一列的第四个卡片 -->
+                 <div class="card">
+                    <div class="title">隐式转换</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>字符串转数字</div>
+                                <div>用数学运算符;b = +“abc”;</div>
+                            </li>
+                            <li>
+                                <div>转布尔值</div>
+                                <div>加两个！！; b = ！！a;</div>
+                            </li>
+                            <li>
+                                <div>数字转字符串</div>
+                                <div>加空字符串;b = a + “”;</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第一列的第五个卡片 -->
+                <div class="card">
+                    <div class="title">运算符</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>数学运算符</div>
+                                <div>+(拼接字符串);-  *  /  %  ++  --</div>
+                            </li>
+                            <li>
+                                <div>比较运算符</div>
+                                <div>>  <  >=  <=;== 只要值相等就可以了(不是数字的要先转成数字，再进行比较)
+                                    ===不但值要相等，数据类型也要相同</div>
+                            </li>
+                            <li>
+                                <div>赋值运算符</div>
+                                <div>=</div>
+                            </li>
+                            <li>
+                                <div>逻辑运算符</div>
+                                <div>&&;||;!</div>
+                            </li>
+                            <li>
+                                <div>三元运算符</div>
+                                <div>值?表达式1:表达式2</div>
+                            </li>
+                            <li>
+                                <div>运算符优先级</div>
+                                <div>()  >  ++/--  >  !  >  */+-  >  ><=  >  &&  >  ||</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- 第一列的第六个卡片 -->
+                <div class="card">
+                    <div class="title">流程控制</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>条件判断</div>
+                                <div>
+                                    if ( ) { } 
+                                    else if ( ) { } 
+                                    else { }
+                                </div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>
+                                    switch ( ) {
+                                        case 常量1: ... break;
+                                        case 常量2: ... break;
+                                        default: ... 	
+                                    }
+                                </div>
+                            </li>
+                            <li>
+                                <div>循环</div>
+                                <div>while ( ) { }</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>do { ... } while ( );</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>for( ) { }</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">JavaScript常用对象常用方法·String对象</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>concat</div>
+                                <div>连接两个或多个字符串，类似 +；str1.concat(str2)</div>
+                            </li>
+                            <li>
+                                <div>indexOf</div>
+                                <div>某个指定的字符串值在字符串中首次出现的位置；str.indexOf(“b”)</div>
+                            </li>
+                            <li>
+                                <div>lastIndexOf()</div>
+                                <div>一个指定的字符串值最后出现的位置；str.lastIndexOf(“a”)</div>
+                            </li>
+                            <li>
+                                <div>charAt(index)</div>
+                                <div>返回指定索引处的字符</div>
+                            </li>
+                            <li>
+                                <div>split</div>
+                                <div>把一个字符串分割成字符串数组，并截取前面若干项；str.split(“”, 3) str.split(“-”, 4) </div>
+                            </li>
+                            <li>
+                                <div>slice(start,end)</div>
+                                <div>一个新的字符串。从start开始（包括）到end结束（不包括）为止的所有字符；a.slice(1,3)</div>
+                            </li>
+                            <li>
+                                <div>replace(old,new)</div>
+                                <div>每次只替换一个，全部替换完要循环</div>
+                            </li>
+                            <li>
+                                <div>trim</div>
+                                <div>从一个字符串的两端删除空白字符</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">Math对象</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>abs()</div>
+                                <div>绝对值</div>
+                            </li>
+                            <li>
+                                <div>ceil()</div>
+                                <div>向上取整</div>
+                            </li>
+                            <li>
+                                <div>floor()</div>
+                                <div>向下取证</div>
+                            </li>
+                            <li>
+                                <div>random()</div>
+                                <div>随机产生[0,1)的数</div>
+                            </li>
+                            <li>
+                                <div>max( , )</div>
+                                <div>多个数取最大值，可有多个参数</div>
+                            </li>
+                            <li>
+                                <div>min( , )</div>
+                                <div>多个数取最小值</div>
+                            </li>
+                            <li>
+                                <div>round()</div>
+                                <div>四舍五入</div>
+                            </li>
+                            <li>
+                                <div>sqrt()</div>
+                                <div>平方根</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">Date对象</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>getFullYear()</div>
+                                <div>从 Date 对象以四位数字返回年份</div>
+                            </li>
+                            <li>
+                                <div>getMonth()</div>
+                                <div>从 Date 对象返回月份(注：0-11，所以使用时需要+1)</div>
+                            </li>
+                            <li>
+                                <div>getDate()</div>
+                                <div>从 Date 对象返回一个月中的某一天(1-31)</div>
+                            </li>
+                            <li>
+                                <div>getHours()</div>
+                                <div>返回 Date 对象的小时 (0 ~ 23)</div>
+                            </li>
+                            <li>
+                                <div>getMinutes()</div>
+                                <div>返回 Date 对象的分钟 (0 ~ 59)</div>
+                            </li>
+                            <li>
+                                <div>getSeconds()</div>
+                                <div>返回 Date 对象的秒数 (0 ~ 59)。</div>
+                            </li>
+                            <li>
+                                <div>setFullYear()</div>
+                                <div>设置 Date 对象中的年份（四位数字）</div>
+                            </li>
+                            <li>
+                                <div>setMonth()</div>
+                                <div>设置 Date 对象中月份 (0 ~ 11)。</div>
+                            </li>
+                            <li>
+                                <div>setDate()</div>
+                                <div>设置 Date 对象中月的某一天 (1 ~ 31)。</div>
+                            </li>
+                            <li>
+                                <div>setHours()</div>
+                                <div>设置 Date 对象中的小时 (0 ~ 23)。</div>
+                            </li>
+                            <li>
+                                <div>setMinutes()</div>
+                                <div>设置 Date 对象中的分钟 (0 ~ 59)。</div>
+                            </li>
+                            <li>
+                                <div>setSeconds()</div>
+                                <div>设置 Date 对象中的秒钟 (0 ~ 59)。</div>
+                            </li>
+                            <li>
+                                <div>getTime()</div>
+                                <div>以毫秒设置 Date 对象。</div>
+                            </li>
+                            <li>
+                                <div>toLocaleString()</div>
+                                <div>根据本地时间格式，把 Date 对象转换为字符串。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二列的第四个卡片 -->
+                <div class="card">
+                    <div class="title">Array对象</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>join</div>
+                                <div>把数组的所有元素放入一个字符串，并通过指定的分隔符进行分隔；arr.join("-")</div>
+                            </li>
+                            <li>
+                                <div>concat</div>
+                                <div>连接两个或更多的数组。不改变原有数组。返回被连接数组的副本。arr1.concat(arr2);arr.concat(1);</div>
+                            </li>
+                            <li>
+                                <div>sort(fn)</div>
+                                <div>对数组的元素进行排序；return b-a;</div>
+                            </li>
+                            <li>
+                                <div>push</div>
+                                <div>向数组末尾添加元素；返回新的长度</div>
+                            </li>
+                            <li>
+                                <div>pop</div>
+                                <div>删除最后一个元素；返回最后一个元素</div>
+                            </li>
+                            <li>
+                                <div>unshift</div>
+                                <div>从前面加入元素；返回数组的长度</div>
+                            </li>
+                            <li>
+                                <div>shift</div>
+                                <div>从前面删除元素；返回被删除的元素</div>
+                            </li>
+                            <li>
+                                <div>slice</div>
+                                <div>从已有的数组中返回选定的元素，原数组保持不变；返回切出来的新数组；arr.slice(start, ene)</div>
+                            </li>
+                            <li>
+                                <div>splice</div>
+                                <div>从数组中添加/删除/替换项目；被删除的项目；arr.splice(index, howmany, item...)</div>
+                            </li>
+                            <li>
+                                <div>reverse</div>
+                                <div>颠倒数组中元素的顺序</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">RegExp对象</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>基本元字符"."</div>
+                                <div>表示任一个非换行的字符</div>
+                            </li>
+                            <li>
+                                <div>()</div>
+                                <div>表示分组和提高优先级</div>
+                            </li>
+                            <li>
+                                <div>[]</div>
+                                <div>表示一个字符，如 [abc] 匹配a/b/c</div>
+                            </li>
+                            <li>
+                                <div>|</div>
+                                <div>或（优先级最低）用法：正则表达式 | 正则表达式</div>
+                            </li>
+                            <li>
+                                <div>次数限定元字符"*"</div>
+                                <div>紧挨前面的一个字符或一组字符出现 0 次到多次</div>
+                            </li>
+                            <li>
+                                <div>+</div>
+                                <div>紧挨它前面的字符出现 1 次到多次</div>
+                            </li>
+                            <li>
+                                <div>？</div>
+                                <div>紧挨它前面的字符出现 0 次或1次</div>
+                            </li>
+                            <li>
+                                <div>{n}</div>
+                                <div>紧挨它前面的字符出现n次</div>
+                            </li>
+                            <li>
+                                <div>{n, m}</div>
+                                <div>紧挨它前面的字符出现n~m次</div>
+                            </li>
+                            <li>
+                                <div>首尾元字符"ˆ"</div>
+                                <div>以某字符开头</div>
+                            </li>
+                            <li>
+                                <div>$</div>
+                                <div>以某字符结尾</div>
+                            </li>
+                            <li>
+                                <div>\d</div>
+                                <div>digit;代表[0-9]；一个数字</div>
+                            </li>
+                            <li>
+                                <div>\D</div>
+                                <div>[^0-9]；非数字字符</div>
+                            </li>
+                            <li>
+                                <div>\w</div>
+                                <div>word;代表[a-zA-Z0-9_]；一个单词字符(所有的数字、字母、下划线) </div>
+                            </li>
+                            <li>
+                                <div>\W</div>
+                                <div>digit;代表[^a-zA-Z0-9_]；非单词字符</div>
+                            </li>
+                            <li>
+                                <div>\s</div>
+                                <div>space;代表[\f\r\n\t\v]；不可见字符：空格 / tab / enter</div>
+                            </li>
+                            <li>
+                                <div>\S</div>
+                                <div>代表[^\f\r\n\t\v]；可见字符</div>
+                            </li>
+                            <li>
+                                <div>创建正则对象的方法</div>
+                                <div>
+                                    var reg=/正则表达式/<br>
+                                    或者var reg=new RegExp(“正则表达式”);
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第三列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">函数</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>函数声明式</div>
+                                <div>
+                                    function name(args) {<br>
+                                        statements<br>
+                                    }<br>
+                                    默认返回undefined; return返回指定值
+                                </div>
+                            </li>
+                            <li>
+                                <div>函数表达式</div>
+                                <div>
+                                    let fn_expression = function [name](args) {<br>
+                                        statements<br>
+                                    };<br>
+                                    name 可以省略，从而创建匿名函数
+                                </div>
+                            </li>
+                            <li>
+                                <div>构造函数</div>
+                                <div>let fn = new Function(“args”，“函数体”);</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第三列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">函数调用模式</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>函数模式</div>
+                                <div>
+                                    单独独立调用的就是函数。this关键字指向的是函数的调用者，即调用该方法的对象。在全局上下文中，this表示全局对象。<br>
+                                    function fn(){<br>
+                                        console.log(this);<br>
+                                    }<br>
+                                        fn();<br> 
+                                    打印结果：window
+                                </div>
+                            </li>
+                            <li>
+                                <div>方法模式</div>
+                                <div>
+                                    方法本身就是函数，但是方法不是单独独立的调用，而是通过一个对象引导调用。this表示引导方法的宿主对象。<br>
+                                    obj.fn = function(){<br>
+                                        console.log(this)<br>
+                                    };<br>
+                                        obj.fn();<br> 
+                                    打印结果：Object {}    
+                                </div>
+                            </li>
+                            <li>
+                                <div>构造器模式</div>
+                                <div>
+                                    用new引导。new是一个运算符，专门用来申请创建对象，创建出来的对象传递给构造函数的this(this指的就是new出来的实例对象)，利用构造函数对其进行初始化。<br>
+                                    ( new Person () ).sayHello()
+                                </div>
+                            </li>
+                            <li>
+                                <div>上下文模式</div>
+                                <div>
+                                    ①　call形式：fn.call( obj1, arg1, arg2, arg3,...)<br>
+                                    ②　apply形式：fn.apply( obj1, [arguments] )<br>
+                                    这种调用中的this指向很明确，就是obj1，如果第一个参数是null / underfined，则this指向window。
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

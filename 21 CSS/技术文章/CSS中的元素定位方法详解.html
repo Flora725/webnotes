@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)http://www.aspku.com/kaifa/css/57493.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" charset="utf-8" async="" src="./CSS中的元素定位方法详解_files/pa_anti.app.js.下载"></script><script type="text/javascript" charset="utf-8" async="" src="./CSS中的元素定位方法详解_files/pa_lu_nobtn_inviewshow.app.js.下载"></script><script type="text/javascript" async="" src="./CSS中的元素定位方法详解_files/qcom"></script><script type="text/javascript" async="" src="./CSS中的元素定位方法详解_files/qcom(1)"></script><script type="text/javascript" async="" src="./CSS中的元素定位方法详解_files/qcom(2)"></script><script type="text/javascript" async="" src="./CSS中的元素定位方法详解_files/qcom(3)"></script><script type="text/javascript" async="" src="./CSS中的元素定位方法详解_files/qcom(4)"></script><script src="http://pj.iaoso.com/lib/query?src=t6413&amp;t=CSS%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3-CSS%E6%95%99%E7%A8%8B-%E6%BA%90%E7%A0%81%E5%BA%93%7C%E4%B8%93%E6%B3%A8%E4%B8%BA%E4%B8%AD%E5%9B%BD%E7%AB%99%E9%95%BF%E6%8F%90%E4%BE%9B%E5%85%8D%E8%B4%B9%E5%95%86%E4%B8%9A%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD%EF%BC%81&amp;r=http%3A%2F%2Fcn.bing.com%2Fsearch%3Fq%3D%25E6%2589%2580%25E6%259C%2589%25E5%2585%2583%25E7%25B4%25A0%2B%25E7%259B%2592%25E5%25AD%2590%26qs%3Dn%26form%3DQBRE%26scope%3Dweb%26pq%3D%25E6%2589%2580%25E6%259C%2589%25E5%2585%2583%25E7%25B4%25A0%2B%25E7%259B%2592%25E5%25AD%2590%26sc%3D0-7%26sp%3D-1%26sk%3D%26cvid%3D26892D2A26E24F95AA30C278E50983D6"></script><script src="./CSS中的元素定位方法详解_files/js.js.下载"></script>
+
+<title>CSS中的元素定位方法详解-CSS教程-源码库|专注为中国站长提供免费商业网站源码下载！</title>
+<meta name="keywords" content="CSS,定位">
+<meta name="description" content="这篇文章主要介绍了CSS中的元素定位方法详解,是CSS入门学习中的基础知识,需要的朋友可以参考下 1.盒模型 盒模型，就是 浏览器为页面中的每个 HTML 元素生成的矩形盒子。 这些盒子们">
+<link rel="stylesheet" href="./CSS中的元素定位方法详解_files/css.css" type="text/css">
+<script src="./CSS中的元素定位方法详解_files/jquery.min.js.下载" type="text/javascript"></script>
+<script src="./CSS中的元素定位方法详解_files/js.js(1).下载" type="text/javascript"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<script type="BAIDU_HH" runed="true">{"type":"flowbar","fixed_tpl":"2","di":"u2102564","rsi0":"auto","rsi1":"50","n":"1"}</script><script src="./CSS中的元素定位方法详解_files/ls.js.下载"></script><script type="BAIDU_HH" runed="true">{"type":"flowbar","fixed_tpl":"2","di":"u2102564","rsi0":"auto","rsi1":"50","n":"1"}</script><link href="./CSS中的元素定位方法详解_files/bdsstyle.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="./CSS中的元素定位方法详解_files/related_items_v2"></script><script src="./CSS中的元素定位方法详解_files/logger.js.下载"></script></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./CSS中的元素定位方法详解_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;" src="./CSS中的元素定位方法详解_files/saved_resource.html"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0" src="./CSS中的元素定位方法详解_files/saved_resource(1).html"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.aspku.com/kaifa/css/57493.html#" class="bds_more">更多...</a></li></ul><p><a href="http://www.aspku.com/kaifa/css/57493.html#" class="goWebsite">百度分享</a></p></div></div></div>
+<script type="text/javascript">R3();</script>
+<div id="header"><div class="w960"><div id="login"></div><script language="JavaScript">CK();</script><div id="topgg"></div><div id="quick-menu"><script type="text/javascript" src="./CSS中的元素定位方法详解_files/top.js.下载"></script><li><a href="javascript:AddFavorite(&#39;http://www.aspku.com/&#39;,&#39;源码库&#39;)">收藏</a></li><li><a href="http://www.aspku.com/seach.html" target="_blank">搜索</a></li><li><a href="http://www.aspku.com/about/map.html" target="_blank">地图</a></li><li><a href="http://www.aspku.com/about/help.html" target="_blank">帮助</a></li><li class="end"><a href="http://m.aspku.com/" target="_blank">手机版</a></li>
+</div></div></div>
+<div id="top"><div class="w960">
+<div class="logo"><a href="http://www.aspku.com/" title="源码库">网页模板_网站模板_源码库</a></div>
+<div class="ss"><div class="s_form">
+<form id="NewsSearchForm" name="NewsSearchForm" method="get" action="http://so.aspku.com/cse/search" target="_blank"><input type="hidden" name="s" value="3527383009548599228">
+             <input type="hidden" name="ie" value="utf-8"><input type="hidden" name="c" value="0"><div class="s1"><input type="text" class="keywords" name="q" id="q" title="请输入关键字" value="请输入搜索关键字.." maxlength="27" onfocus="iC(this)" x-webkit-speech=""></div>
+<div class="s2"><span id="_SearchSelectedCond" class="btn2"><a href="javascript:_SelectSearchCond();" onfocus="this.blur()">所有分类</a></span>
+<script language="javascript" src="./CSS中的元素定位方法详解_files/s.js.下载"></script><div class="opt" id="_SearchCondList" style="display:none;"><div class="s_list"><a href="javascript:_SelectSearchCond(&#39;所有分类&#39;);" class="alist">不限分类</a></div></div>
+</div>
+<div class="btn"><input type="button" class="btnb" onclick="javascript:_GoNewsSearch();" value=""></div></form></div>
+<div class="s_b_link"><a href="http://www.aspku.com/" target="_blank">每日更新</a>|<a href="http://www.aspku.com/top" rel="nofollow" target="_blank">TOP排行榜</a>|<a href="http://www.aspku.com/tags.php" target="_blank">Tag标签</a>|<a href="http://www.aspku.com/" rel="nofollow" target="_blank">充值</a></div>
+			<div class="x_color"><script type="text/javascript">wCL();</script></div><div class="cl"></div> 
+</div><div class="s_rad">        
+<script src="./CSS中的元素定位方法详解_files/ad_js.php" language="javascript"></script><a target="_blank" rel="nofollow" href="http://www.fuwa.org/"> <img src="./CSS中的元素定位方法详解_files/db.png"></a></div></div>
+</div>
+<div id="nav"><div class="navc">
+<a href="http://www.aspku.com/">源码库首页</a>
+      	
+      	<a href="http://www.aspku.com/asp/"><span>ASP源码</span></a>
+      	
+      	<a href="http://www.aspku.com/php/"><span>PHP源码</span></a>
+      	
+      	<a href="http://www.aspku.com/net/"><span>NET源码</span></a>
+      	
+      	<a href="http://www.aspku.com/vip/"><span>商业源码</span></a>
+      	
+      	<a href="http://www.aspku.com/qita/" rel="dropmenu54"><span>其他源码</span></a>
+      	<a class="on" href="http://www.aspku.com/tech/" rel="dropmenu9"><span>建站教程</span></a>
+      	<a href="http://www.aspku.com/moban/" rel="dropmenu11"><span>网站模板</span></a>
+      	
+      	<a href="http://www.aspku.com/sucai/" rel="dropmenu47"><span>网页素材</span></a>
+      	
+      	<a href="http://www.aspku.com/texiao/" rel="dropmenu87"><span>网页特效</span></a>
+      	
+      	<a href="http://www.aspku.com/zhuanti/" rel="dropmenu81"><span>专题</span></a>
+      	
+</div></div>
+<div id="BAIDU_DSPUI_FLOWBAR" fixed="true" style="height: 70px; position: fixed; width: 100%; z-index: 2147483647; zoom: 1; overflow: visible; bottom: 0px; margin-top: 0px; left: 0px; right: auto;"><iframe src="./CSS中的元素定位方法详解_files/home.html" style="height: 70px; background-color: transparent;" width="100%" height="100%" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe><div style="position: absolute; opacity: 0.4; width: 40px; height: 20px; z-index: 111; background: rgb(0, 0, 0); top: -20px; right: 0px;"></div><div style="position: absolute; width: 40px; height: 20px; line-height: 20px; cursor: pointer; text-align: center; color: rgb(255, 255, 255); font-size: 12px; z-index: 112; top: -20px; right: 0px;">关闭</div></div><div id="mainbg">
+
+<div id="f_btn"><script type="text/javascript">wCF();</script></div><div id="xy_nav">
+<div class="nav3b"><div class="nav3">
+<div id="nav3_1"><ul>
+      
+      <a href="http://www.aspku.com/kaifa/asp/">ASP教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/cjc/">c#教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/zhengze/">正则表达式</a>
+      
+      <a href="http://www.aspku.com/kaifa/swift/">swift教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/c/">C++教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/mobile/">手机网站开发</a>
+      <a href="http://www.aspku.com/kaifa/css/" class="on">CSS教程</a>
+      <a href="http://www.aspku.com/kaifa/html/">HTML教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/javascript/">JavaScript/Ajax教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/jsp/">JSP教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/net/">ASP.NET教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/php/">PHP教程</a>
+      
+      <a href="http://www.aspku.com/kaifa/android/">Android开发</a>
+      
+</ul>
+</div>
+</div><i></i>
+</div>
+</div>
+
+<div class="topad2">
+<script src="./CSS中的元素定位方法详解_files/ad_js(1).php" language="javascript"></script><div style="margin:10px 0 8px 0">
+<div class="forum-20160910103757"><script charset="utf-8" language="JavaScript" type="text/javascript" src="./CSS中的元素定位方法详解_files/forum-20160910103757.js.下载"></script><script charset="utf-8" language="JavaScript" type="text/javascript" src="./CSS中的元素定位方法详解_files/thread-20160910103736.js.下载"></script><a href="http://www.henghost.com/gaofang-hk.shtml" target="_blank" title="恒创">
+<img src="./CSS中的元素定位方法详解_files/20161026115941.gif" border="0" width="960" height="60">
+</a><script charset="utf-8" language="JavaScript" type="text/javascript" src="./CSS中的元素定位方法详解_files/counter.js.下载"></script></div>
+</div>
+<div style="margin:2px 0 10px 0">
+<a target="_blank" rel="nofollow" href="http://www.31idc.com/cloudhost/cvm.html?aspku"> <img src="./CSS中的元素定位方法详解_files/31idc.gif"></a>
+</div>
+<script type="text/javascript">
+    /*960*90 创建于 2015-04-30*/
+    var cpro_id = "u2076130";
+</script>
+<script src="./CSS中的元素定位方法详解_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u2076130_0"><iframe id="iframeu2076130_0" src="./CSS中的元素定位方法详解_files/qcom.html" width="960" height="90" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+	<div class="top210x90"><script src="./CSS中的元素定位方法详解_files/ad_js(2).php" language="javascript"></script></div>
+	<div class="top728x90"><script src="./CSS中的元素定位方法详解_files/ad_js(3).php" language="javascript"></script></div>
+</div>
+<script type="text/javascript">
+    /* 创建于 2015-05-14*/
+    var cpro_id = "u2102564";
+</script>
+<script src="./CSS中的元素定位方法详解_files/uf.js.下载" type="text/javascript"></script>
+
+<div id="main">
+<div id="sisbar"><script type="text/javascript">wCB();</script></div>
+
+<div id="main_l" class="ml_wz">
+<div class="place">
+    <div class="p_url">当前位置:<a href="http://www.aspku.com/">源码库</a>-<a href="http://www.aspku.com/tech/">建站教程</a>-<a href="http://www.aspku.com/kaifa/">网站开发</a>-<a href="http://www.aspku.com/kaifa/css/">CSS教程</a>-CSS中的元素定位方法详解</div>
+	<div class="nr_tool"><a href="javascript:wz(93611);" class="t_sc" title="收藏此教程">收藏</a><a href="javascript:bdfx(&#39;more&#39;);" class="t_fx" title="点击分享">分享</a><a href="javascript:scrolls(&#39;ajax_ts&#39;);" class="t_pl" title="查看本教程评论">查看评论</a><a href="http://www.aspku.com/kaifa/css/57493.html" class="t_fh" title="返回CSS教程列表">CSS教程</a></div><div class="s_f"><a href="javascript:sfont(16)">大</a><a href="javascript:sfont(14)">中</a><a href="javascript:sfont(12)">小</a></div>
+
+</div>
+<div class="p_ad"><script src="./CSS中的元素定位方法详解_files/ad_js(4).php" language="javascript"></script><script type="text/javascript">
+    /*650*22 创建于 2014-11-08*/
+    var cpro_id = "u1798343";
+</script>
+<script src="./CSS中的元素定位方法详解_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1798343_0"><iframe id="iframeu1798343_0" src="./CSS中的元素定位方法详解_files/qcom(5).html" width="650" height="22" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+ </div>
+
+<div class="nr">
+
+<div class="nr_top"><div class="nr_top_l"><h1>CSS中的元素定位方法详解</h1></div></div>
+
+<div class="nr_tag"><span>文章TAG：</span><em><a href="http://www.aspku.com/tags.php?/CSS/">CSS</a> </em><em><a href="http://www.aspku.com/tags.php?/%E5%AE%9A%E4%BD%8D/">定位</a> </em></div>
+
+<div class="nr_b"><div class="nr_body wz_body" id="sfont"><div id="nr_tad"> <div class="info"> <small>时间:</small>2015-07-23<small>来源:</small>www.aspku.com <small>作者:</small>源码库 <small>文章热度:</small>
+   <script src="./CSS中的元素定位方法详解_files/count.php" type="text/javascript" language="javascript"></script>104
+    ℃</div> </div>
+<div id="nr_tad"><script src="./CSS中的元素定位方法详解_files/ad_js(5).php" language="javascript"></script><script src="./CSS中的元素定位方法详解_files/10.js.下载" type="text/javascript" language="javascript"></script><a href="http://idc.aspku.com/" rel="nofollow" target="_blank" style="color:#146CB9;"><b>过期已备案域名，注册就能用！</b></a><a href="http://sucai.aspku.com/" style="color:#f30;" rel="nofollow" target="_blank"><b>站长建站必备素材打包下载</b></a><a href="http://www.fuwa.org/" target="_blank" rel="nofollow" style="color:#3E931A;"><b>源码交易买卖上福娃网</b></a></div><div id="nr_tad1"><script src="./CSS中的元素定位方法详解_files/ad_js(6).php" language="javascript"></script><script src="./CSS中的元素定位方法详解_files/22.js.下载" type="text/javascript"></script><a href="http://www.leweicn.com/" target="_blank"><img src="./CSS中的元素定位方法详解_files/leweicn.jpg"></a>
+
+<script type="text/javascript">
+    /* 创建于 2015-05-14*/
+    var cpro_id = "u2102564";
+</script>
+<script src="./CSS中的元素定位方法详解_files/uf.js.下载" type="text/javascript"></script>
+</div>
+<div id="art_desc" style="clear: both; border: 1px dashed rgb(191, 223, 255); color: rgb(68, 68, 68); padding: 3px; word-wrap: break-word; word-break: break-all; line-height: 25px; text-indent: 20px; font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	这篇文章主要介绍了CSS中的元素定位方法详解,是CSS入门学习中的基础知识,需要的朋友可以参考下</div>
+<div id="con_all" style="clear: both; padding: 20px 0px; margin: 0px; overflow: hidden; width: 640px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px; line-height: 25px;">
+	<div id="con_ad1" style="padding: 0px; float: left; width: 300px; margin: 0px; overflow: hidden;">
+		&nbsp;</div>
+	<div id="con_ad8" style="padding: 0px; float: right; margin: 0px; overflow: hidden;">
+		&nbsp;</div>
+</div>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>1.盒模型</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	盒模型，就是 浏览器为页面中的每个 HTML 元素生成的矩形盒子。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	这些盒子们都要按照 可见版式模型（visual formatting model）在页面上排布。可见的页面版式主要由三个属性控制： position 属性、 display 属性和 float 属性。其中，position 属性控制页面上元素间的位置关系， display 属性控制元素是堆叠、并排，还是根本不在页面上出现， float 属性提供控制的方式，以便把元素组成成多栏布局。<br>
+	<a href="http://www.aspku.com/kaifa/css/57494.html"><img title="CSS中的元素定位方法详解" alt="CSS中的元素定位方法详解" src="./CSS中的元素定位方法详解_files/113T02H3-0.png" style="border: 1px solid rgb(204, 204, 204); padding: 3px; max-width: 600px;"></a></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	盒子属性分三组：</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 边框（border）。可以设置边框的宽窄、样式和颜色。<br>
+	&nbsp;&nbsp;&nbsp; 内边距（padding）。可以设置盒子内容区与边框的间距。<br>
+	&nbsp;&nbsp;&nbsp; 外边距（margin）。可以设置盒子与相邻元素的间距。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 可以这么理解盒子属性：外边距是边框向 外推 其他元素，而内边距是从边框向 内推 元素的内容。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	CSS 为边框、内边距和外边距分别规定了简写属性。在每个简写声明中，属性值的顺序都是上、右、下、左（顺时针旋转）。<br>
+	示例：margin:5px 10px 12px 8px;</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 注意：4 个值之间有空格，但不能是其他分隔符（比如逗号之类的）。甚至，你都不用把 4 值<br>
+	&nbsp;&nbsp;&nbsp; 全都写出来——如果哪个值没有写，那就使用对边的值。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	示例：margin:12px 10px 6px;<br>
+	说明：缺少最后一个值（左边），使用对边（右边）的值（10px），即：margin:12px 10px 6px 10px。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	示例：margin:12px 10px;<br>
+	说明：缺少最后两个值（下边和左边），使用上边（12px）和右边（10px），即：margin:12px 10px 12px 10px;</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	示例：margin:12px;<br>
+	说明：只写一个值，那么4个边都去这个值。即：margin:12px 12px 12px 12px;<br>
+	<strong>1.1 盒子边框</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	边框（border）有3个相关属性：</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 宽度<br>
+	&nbsp;&nbsp;&nbsp; 可以使用 thin、medium 和 thick 等文本值，也可以使用<br>
+	&nbsp;&nbsp;&nbsp; 除百分比和负值之外的任何绝对值。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 样式<br>
+	&nbsp;&nbsp;&nbsp; 有 none、hidden、 dotted、 dashed、 solid、 double、 groove、<br>
+	&nbsp;&nbsp;&nbsp; ridge、 inset 和 outset 等文本值。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 颜色<br>
+	&nbsp;&nbsp;&nbsp; 可以使用任意颜色值，包括 RGB、 HSL、十六进制颜色 值和颜色关键字。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>1.2 盒子内边距</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	内边距（padding）用来设置盒子内容区与边框的间距。在没有设定内边距的情况下，内容会紧挨着边框。<br>
+	<strong>1.3 盒子外边距</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	外边距（margin）用来设置盒子与相邻元素的间距。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 推荐使用这条规则作为样式表的第一条规则：* {margin:0; padding:0;}</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	说明：这条规则把所有元素默认的外边距和内边距都设定为零。把这条规则放到样式表里后，所有默认的外边距和内边距都会消失。然后，你可以为那些真正需要外边距的元素再添加外边距。不同浏览器默认的内边距和外边距也不一样，特别是对表单和列表等复合元素。在这种情况下，用这条规则 中和 默认值，然后再根据需要添加，则会在各浏览器上获得一致的效果。<br>
+	<strong>1.4 叠加外边距</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	垂直方向上的外边距会叠加，这可是你必须得知道的一件事。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; In CSS, the adjoining margins of two or more boxes (which might or might not be siblings) can combine to form a single margin. Margins that combine this way are said to collapse, and the resulting combined margin is called a collapsed margin.</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	在CSS中，两个或多个毗邻（父子元素或兄弟元素）的普通流中的块元素垂直方向上的 margin 会发生叠加。这种方式形成的外边距即可称为外边距叠加（collapsed margin）。<br>
+	<strong>1.5 外边距的单位</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	根据经验，为文本元素设置外边距时通常需要混合使用不同的单位。比如说，一个段落的左、右外边距可以使用像素，以便该段文本始终与包含元素边界保持固定间距，不受字号变大或变小的影响。而对于上、下外边距，以 em 为单位则可以让段间距随字号变化而相应增大或缩小。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	示例：</p>
+<div class="codeText" style="border: 1px solid rgb(165, 165, 248); padding: 0px 0px 5px; margin: 8px 0px 1.1em; font-family: &#39;Courier New&#39;, monospace; overflow: hidden; width: 646.796875px; word-break: break-all; color: rgb(68, 68, 68);">
+	<div class="codeHead" style="padding: 5px 5px 5px 10px; font-weight: bold; background-color: rgb(244, 245, 255); border-bottom-color: rgb(242, 251, 246); border-bottom-width: 1px; border-bottom-style: solid; height: 15px;">
+		<span class="lantxt" style="float: left; padding-left: 5px;">CSS Code</span><span class="copyCodeText" style="font-weight: normal; float: right; cursor: pointer;">复制内容到剪贴板</span></div>
+	<div id="code_6758">
+		<ol class="dp-css" style="margin: 0px 1px 0px 45px; padding: 0.3em 0px; list-style-position: initial; list-style-image: initial; border-left-color: rgb(221, 221, 221); border-left-width: 1px; border-left-style: solid; color: rgb(92, 92, 92); line-height: 25px;">
+			<li class="alt" style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span style="color: rgb(0, 0, 0);">p&nbsp;{<span class="keyword" style="color: blue; font-weight: bold;">font-size</span>:1em;&nbsp;<span class="keyword" style="color: blue; font-weight: bold;">margin</span>:.75em&nbsp;<span class="string" style="color: red;">30px</span>;}&nbsp;&nbsp;</span></li>
+		</ol>
+	</div>
+</div>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>2.浮动与清除</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 浮动和清除是用来组织页面布局的一柄利剑，这柄剑的剑刃就是 float 和 clear 属性。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>2.1 浮动</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	浮动，可以想象把元素从常规文档流中拿出来。浮动元素脱离了常规文档流之后，原来紧跟其后的元素就会在空间允许的情况下，向上提升到与浮动元素平起平坐。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	如果浮动元素后面有两个段落，而你只想让第一段与浮动元素并列（就算旁边还能放第二段，也不想让它上来），可以使用 clear 属性来 清除 第二段，然后它就会乖乖地呆在浮动元素下面了。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	浮动 最常见的作用：</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 实现传统出版物上那种文字绕排图片的效果<br>
+	&nbsp;&nbsp;&nbsp; 让原来上下堆叠的块级元素，变成左右并列，从而实现布局中的分栏。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>2.2 围住浮动元素的三种方法</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 注意：三种方法各有利弊，看情况使用。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 方法一：为父元素添加 overflow:hidden</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 方法二：同时浮动元素</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 方法三：添加非浮动的清除元素</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>3.定位</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	CSS 布局的核心是 position 属性，对元素盒子应用这个属性，可以相对于它在常规文档流中的位置重新定位。 position 属性有 4 个值： static、 relative、 absolute、fixed，默认值为 static。<br>
+	<strong>3.1 静态定位</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>static</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	在静态定位的情况下，每个元素都处于常规文档流中。要突破这种布局元素的方式，就必须把盒子的 position 属性改为其它三个值。<br>
+	3.2 相对定位</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>relative</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	相对定位，相对的是它原来在文档流中的位置（或者默认位置）。设置之后，可以使用 top、right、bottom 和 left 属性来改变它的位置。多数情况下，只用 top 和 left 就可以实现我们想要的效果。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 使用相对定位的关键就是要考虑到元素原来的空间。因为使用了相对定位的元素只是相对于原始位置挪动了一下，页面没有任何变化，即元素原来占据的空间没有动，其他元素也没动。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>3.3 绝对定位</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>absolute</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	绝对定位会把元素彻底从文档流中拿出来，然后相对于其他元素（默认是定位上下文 body）定位。同样可以通过 top 和 left 设定偏移值来决定位置。<br>
+	<strong>3.4 固定定位</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>fixed</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	从完全移出文档流的角度说，固定定位与绝对定位类似。但不同之处在于，固定定位元素的定位上下文是视口（浏览器窗口或手持设备的屏幕），因此它不会随页面滚动而移动。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 提示：固定定位并不常用，最常见的情况是用它创建不随页面滚动而移动的导航元素。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>3.5 定位上下文</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	定位上下文，指的是定位元素所相对偏移的元素。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 事实上，只要把元素的外边距和内边距设定好，多数情况下只用静态定位就足以实现页面布局了。很多刚开始接触 CSS 的初学者都会错误地设定 position 属性，最终才发现从文档流中挪出来的这些元素一点也不好控制。因此，除非真需要那么做，否则 不要轻易修改元素默认的 position 属性。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	<strong>4.显示属性</strong></p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	所有元素都有 position 属性，也有 display 属性。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	display属性有三个值：block、inline 和 none。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	&nbsp;&nbsp;&nbsp; 块级元素，比如段落，标题，列表等，在浏览器上下堆叠显示。<br>
+	&nbsp;&nbsp;&nbsp; 行内元素，比如a、span、img，在浏览器中左右并排显示，只有前一行没有空间时才会显示到下一行。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	把块级元素变成行内元素（或者相反）：</p>
+<div class="codeText" style="border: 1px solid rgb(165, 165, 248); padding: 0px 0px 5px; margin: 8px 0px 1.1em; font-family: &#39;Courier New&#39;, monospace; overflow: hidden; width: 646.796875px; word-break: break-all; color: rgb(68, 68, 68);">
+	<div class="codeHead" style="padding: 5px 5px 5px 10px; font-weight: bold; background-color: rgb(244, 245, 255); border-bottom-color: rgb(242, 251, 246); border-bottom-width: 1px; border-bottom-style: solid; height: 15px;">
+		<span class="lantxt" style="float: left; padding-left: 5px;">CSS Code</span><span class="copyCodeText" style="font-weight: normal; float: right; cursor: pointer;">复制内容到剪贴板</span></div>
+	<div id="code_2927">
+		<ol class="dp-css" style="margin: 0px 1px 0px 45px; padding: 0.3em 0px; list-style-position: initial; list-style-image: initial; border-left-color: rgb(221, 221, 221); border-left-width: 1px; border-left-style: solid; color: rgb(92, 92, 92); line-height: 25px;">
+			<li class="alt" style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span style="color: rgb(0, 0, 0);"><span class="comment" style="border: 1px solid rgb(177, 218, 239); margin-top: 7px; overflow: hidden; width: 693px; color: green;">/*默认为&nbsp;block*/</span>&nbsp;&nbsp;</span></li>
+			<li style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span style="color: rgb(0, 0, 0);">p&nbsp;{</span><span class="keyword" style="color: blue; font-weight: bold;">display</span><span style="color: rgb(0, 0, 0);">:</span><span class="string" style="color: red;">inline</span><span style="color: rgb(0, 0, 0);">;} &nbsp;&nbsp;</span></li>
+			<li class="alt" style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;</span></li>
+			<li style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span class="comment" style="border: 1px solid rgb(177, 218, 239); margin-top: 7px; overflow: hidden; width: 693px; color: green;">/*默认为&nbsp;inline*/</span><span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;</span></li>
+			<li class="alt" style="margin: 0px; padding: 0px 0px 0px 5px; list-style-type: decimal; color: rgb(170, 0, 0);">
+				<span style="color: rgb(0, 0, 0);">a&nbsp;{</span><span class="keyword" style="color: blue; font-weight: bold;">display</span><span style="color: rgb(0, 0, 0);">:</span><span class="string" style="color: red;">block</span><span style="color: rgb(0, 0, 0);">;}&nbsp;&nbsp;</span></li>
+		</ol>
+	</div>
+</div>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	把元素的 display 设置为 none，则该元素及所有包含在其中的元素，都不会在页面显示，它们原先占据的空间也不会被回收，就好像相关标记根本不存在一样。</p>
+<p style="margin: 13px 0px; padding: 0px; line-height: 25px; color: rgb(68, 68, 68); font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; font-size: 14px;">
+	与此相对的元素是 visibility 属性，属性值为：visible（默认值）和 hidden。如果设置为 hidden，元素会被隐藏，但其占据的页面空间会被保留。</p>
+
+    <div class="wz-page"></div>
+</div></div>
+
+<div class="nr_info mb10">上一篇：<a href="http://www.aspku.com/kaifa/css/57492.html">CSS3的media query学习攻略</a> </div><div class="wz_nr_r">下一篇：<a href="http://www.aspku.com/kaifa/css/57494.html">举例详解CSS中的字体尺寸设置</a> </div>
+
+</div>
+
+
+<div id="ajax_ts"></div><div id="comment"></div>
+
+<div class="l_ad"><script src="./CSS中的元素定位方法详解_files/ad_js(7).php" language="javascript"></script><script type="text/javascript">
+    /*666*60 创建于 2014-11-08*/
+    var cpro_id = "u1798392";
+</script>
+<script src="./CSS中的元素定位方法详解_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1798392_0"><iframe id="iframeu1798392_0" src="./CSS中的元素定位方法详解_files/qcom(6).html" width="666" height="60" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+<script>
+var baiduImagePlus = {
+unionId:'u2106948',
+noLogo:true,
+formList:[{formId:2},{formId:3}]
+};
+</script>
+<script src="./CSS中的元素定位方法详解_files/i.js.下载"></script> </div>
+
+
+<div class="vtitle">相关<strong>CSS教程</strong>：</div>
+<div class="xg_list"><ul>
+<li><a href="http://www.aspku.com/kaifa/css/57494.html">举例详解CSS中的字体尺寸设置</a></li>
+<li><a href="http://www.aspku.com/kaifa/css/57492.html">CSS3的media query学习攻略</a></li>
+<li><a href="http://www.aspku.com/kaifa/css/57410.html">简单的CSS叠加外边距示例</a></li>
+<li><a href="http://www.aspku.com/kaifa/css/57409.html">使用CSS为文档添加样式的简单示例</a></li>
+<li><a href="http://www.aspku.com/kaifa/css/57408.html">纯CSS制作的响应式折叠菜单分享</a></li>
+<li><a href="http://www.aspku.com/kaifa/javascript/57388.html">用Move.js配合创建CSS3动画的入门指引</a></li>
+<li><a href="http://www.aspku.com/tech/jiaoben/python/57307.html">在Django的form中使用CSS进行设计的方法</a></li>
+<li><a href="http://www.aspku.com/kaifa/css/57159.html">一波CSS+Div实用技巧小结</a></li>
+
+</ul></div>
+<div class="vtitle2">相关<strong>资源下载</strong>：</div>
+<div class="xg_list"><ul>
+<li><a href="http://www.aspku.com/php/32926.html">ThinkOX轻社区网站源码 v0.1 RC</a></li>
+<li><a href="http://www.aspku.com/php/27436.html">PHP编写的Css图片批量下载小工具saveimg1.5</a></li>
+<li><a href="http://www.aspku.com/php/20883.html">JS和CSS优化工具 Minify 2.1.7下载</a></li>
+<li><a href="http://www.aspku.com/asp/7005.html">智睿录取查询报名系统 v1.0.0</a></li>
+<li><a href="http://www.aspku.com/php/5495.html">CSS在线压缩美化源码 CssCompressor</a></li>
+
+</ul></div>
+<div style="display:none">
+<div class="wumii-hook"><div class="wumii-related-items-div" wmode="1" style="margin: 0; border: none; padding: 0; clear: both; overflow: hidden; *zoom: 1; *position: relative;">
+    
+    
+    
+        <div class="wumii-internal" style="padding: 0; margin: 0; border: none; clear: both; display: block;">
+        <div class="wumii-widget-title" style="margin: 0; border: none; padding: 20px 0 5px; _padding-top:10px; text-indent: 0; text-align: left; font-weight: bold; color: #000000;"></div>
+                <ul class="wumii-text-ul" style="padding: 0; margin: 0 0 0 1px;" fromurl="http%3A%2F%2Fwww.aspku.com%2Fkaifa%2Fcss%2F57493.html"><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/18267.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>CSS教程:CSS定位属性</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/18244.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>CSS教程：“自动定位”的应用</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/146387.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>CSS3定位和浮动详解</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/17950.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>CSS实例教程:定位(position)布局页面</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/18542.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>CSS教程:实例讲解定位Position</span></a>
+</li><li class="wumii-text-li" style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;">
+    <a class="wumii-text-a" hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.aspku.com/kaifa/css/135012.html" style="text-decoration: none; border-bottom: none; outline: none; color: #383838;" redirecturl=""><span>深入理解CSS定位与层叠</span></a>
+</li></ul>
+    </div><div class="wumii-footer" style="margin: 0; border: none; padding: 5px 0; clear: both; text-align: right;">
+            <a href="http://www.wumii.com/widget/relatedItems" target="_blank" title="无觅关联推荐" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial; color: rgb(187, 187, 187); border-bottom: none; word-wrap: normal; display: inline; cursor: pointer;">无觅关联推荐[?]</a>
+        </div>
+</div></div>
+<p style="display: none;">
+    <a rel="tag">CSS</a><a rel="tag">定位</a>
+</p>
+<script>
+    var wumiiSitePrefix = "http://www.aspku.com//";
+    var wumiiCategories = ["CSS教程"];
+</script>
+</div> 
+
+</div><div id="main_r">
+<h3><a href="http://www.aspku.com/rss/29.xml" class="addrss" title="订阅CSS教程更新">CSS教程Rss订阅</a>CSS教程搜索</h3>
+
+<div class="search">
+<form method="get" name="mainrs" id="searchform" action="http://www.aspku.com/plus/search.php" target="_blank"><div class="cl"><input type="hidden" name="c" value="65"></div><input type="text" value="搜索CSS教程..." onfocus="iCc(this)" name="q" id="q"><input type="button" onclick="javascript:rs();" id="searchsubmit" class="ycss" value=""></form></div>
+<s></s>
+<div class="r_adl"><ul>
+<script src="./CSS中的元素定位方法详解_files/ad_js(8).php" language="javascript"></script><script type="text/javascript">
+var cpro_id="u1997191";
+(window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"250",rsi1:"250",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+</script>
+<script src="./CSS中的元素定位方法详解_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1997191_0"><iframe id="iframeu1997191_0" src="./CSS中的元素定位方法详解_files/qcom(7).html" width="250" height="250" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div> 
+</ul></div>
+<script src="./CSS中的元素定位方法详解_files/history.js.下载" type="text/javascript"></script><div class="sublist"><h3>最近浏览记录</h3><a class="history" href="javascript:dhistory();" title="清空浏览记录">清空</a><ul id="history"><em>未找到您的最近浏览记录</em></ul></div>
+<div class="sublist"><h3>CSS教程推荐</h3>
+<ul>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/45537.html">css实现文本溢出显示省略号</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/41991.html">简洁经典CSS滑动门代码分享</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/37809.html">CSS样式表中属性选择器四种格式</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/37779.html">DIV+CSS3实现文字竖排</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/37078.html">CSS教程:css中repeat-x的简单用法 </a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/35569.html">从基础开始:CSS实用教程（一）</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/34065.html">CSS实例教程：十步学会用CSS建站</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/33640.html">DIV+CSS网页制作高级视频教程二</a></li>
+
+</ul>
+</div>
+<link rel="stylesheet" href="./CSS中的元素定位方法详解_files/rad.css" type="text/css">
+<div class="rad">
+<h3>热门源码推荐</h3>
+<div class="pdiv">
+    <div id="pShow" class="p"><span class="num"><em>2</em> / <em>3</em></span></div>
+    <div class="p_fy"><a title="上一页" class="pre" href="javascript:rt(-1);">上一页</a><a title="下一页" class="next" href="javascript:rt(1);">下一页</a></div></div>
+<ul id="r_c1">
+<div id="r_l1" style="display: none;">
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/55108.html"><img src="./CSS中的元素定位方法详解_files/1-1506241AU50-L.jpg" title="08CMS房产门户系统|房产网站源码 V5 官方纯净版（带手机WAP）"><em></em></a><a target="_top" href="http://www.aspku.com/vip/55108.html" title="08CMS房产门户系统|房产网站源码 V5 官方纯净版（带手机WAP）"><strong><font color="#0000FF">08CMS房产门户系统|房产网站源码 V5 官方</font></strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/55107.html"><img src="./CSS中的元素定位方法详解_files/1-150624163A70-L.jpg" title="方维P2P借贷系统+方维股票配资系统二合一版(带WAP版+短信宝)"><em></em></a><a target="_top" href="http://www.aspku.com/vip/55107.html" title="方维P2P借贷系统+方维股票配资系统二合一版(带WAP版+短信宝)"><strong>方维P2P借贷系统+方维股票配资系统二合</strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/53324.html"><img src="./CSS中的元素定位方法详解_files/1-1505311509350-L.jpg" title="微拍福利视频网源码|微拍宅男福利视频网整站源码"><em></em></a><a target="_top" href="http://www.aspku.com/vip/53324.html" title="微拍福利视频网源码|微拍宅男福利视频网整站源码"><strong><font color="#0000FF">微拍福利视频网源码|微拍宅男福利视频</font></strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/53269.html"><img src="./CSS中的元素定位方法详解_files/1-1505301605210-L.jpg" title="织梦DEDECMS蓝色通用企业网站源码(带WAP手机版)"><em></em></a><a target="_top" href="http://www.aspku.com/vip/53269.html" title="织梦DEDECMS蓝色通用企业网站源码(带WAP手机版)"><strong>织梦DEDECMS蓝色通用企业网站源码(带WA</strong></a></li>
+
+</div>
+<div id="r_l2" style="display: block;">
+<li><a class="aimg" target="_top" href="http://www.aspku.com/php/57317.html"><img src="./CSS中的元素定位方法详解_files/1-150H11414120-L.jpg" title="织梦DEDECMS在线小说网整站源码带WAP手机版 v1.0"><em></em></a><a target="_top" href="http://www.aspku.com/php/57317.html" title="织梦DEDECMS在线小说网整站源码带WAP手机版 v1.0">织梦DEDECMS在线小说网整站源码带WAP手机</a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/php/57316.html"><img src="./CSS中的元素定位方法详解_files/1-150H11412030-L.jpg" title="500PHP主机销售展示网站源码 V1.0"><em></em></a><a target="_top" href="http://www.aspku.com/php/57316.html" title="500PHP主机销售展示网站源码 V1.0">500PHP主机销售展示网站源码 V1.0</a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/php/57210.html"><img src="./CSS中的元素定位方法详解_files/1-150G91543250-L.jpg" title="Mymps蚂蚁分类信息系统地方门户网站源码v5.5商业版(带WAP手机版)"><em></em></a><a target="_top" href="http://www.aspku.com/php/57210.html" title="Mymps蚂蚁分类信息系统地方门户网站源码v5.5商业版(带WAP手机版)">Mymps蚂蚁分类信息系统地方门户网站源码</a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/php/57209.html"><img src="./CSS中的元素定位方法详解_files/1-150G91535070-L.jpg" title="百家CMS微商城网站源码 2.0 UTF8"><em></em></a><a target="_top" href="http://www.aspku.com/php/57209.html" title="百家CMS微商城网站源码 2.0 UTF8">百家CMS微商城网站源码 2.0 UTF8</a></li>
+
+</div>
+<div id="r_l3" style="display: none;">
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/52037.html"><img src="./CSS中的元素定位方法详解_files/1-1505041541240-L.jpg" title="织梦DEDECMS仿砍柴网自媒体博客网站源码(会员中心+手机版)"><em></em></a><a target="_top" href="http://www.aspku.com/vip/52037.html" title="织梦DEDECMS仿砍柴网自媒体博客网站源码(会员中心+手机版)"><strong><font color="#006600">织梦DEDECMS仿砍柴网自媒体博客网站源码</font></strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/51968.html"><img src="./CSS中的元素定位方法详解_files/1-1505031415190-L.jpg" title="帝国CMS高仿内蒙古新闻网|新闻门户网站整站源码+数据下载"><em></em></a><a target="_top" href="http://www.aspku.com/vip/51968.html" title="帝国CMS高仿内蒙古新闻网|新闻门户网站整站源码+数据下载"><strong><font color="#FF0000">帝国CMS高仿内蒙古新闻网|新闻门户网站</font></strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/51835.html"><img src="./CSS中的元素定位方法详解_files/1-150501143Q40-L.jpg" title="2015年最新微场景营销平台系统|最新仿一秀微场景整套源码"><em></em></a><a target="_top" href="http://www.aspku.com/vip/51835.html" title="2015年最新微场景营销平台系统|最新仿一秀微场景整套源码"><strong><font color="#006600">2015年最新微场景营销平台系统|最新仿一</font></strong></a></li>
+<li><a class="aimg" target="_top" href="http://www.aspku.com/vip/51413.html"><img src="./CSS中的元素定位方法详解_files/1-1504261622310-L.jpg" title="思途CMS3.0|最新思途CMS旅游系统源码V3.0商业版"><em></em></a><a target="_top" href="http://www.aspku.com/vip/51413.html" title="思途CMS3.0|最新思途CMS旅游系统源码V3.0商业版">思途CMS3.0|最新思途CMS旅游系统源码V3.</a></li>
+
+</div>
+</ul>
+</div>
+<script src="./CSS中的元素定位方法详解_files/rad.js.下载" type="text/javascript"></script>
+<div class="sublist"><h3>热门CSS教程</h3>
+<ul>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/16985.html">CSS3 Grid布局:CSS3网格布局让内容优先</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/19034.html">前端开发框架Twitter Bootstrap分析</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/45031.html">CSS3 @font-face属性使用指南</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/24872.html">CSS开发框架技术OOCSS编写和管理CSS的方法</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/25409.html">电子邮件设计:从零制作一个HTML电子邮件模板</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/26600.html">把现有网站改成自适应网页的具体修改步骤</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/33640.html">DIV+CSS网页制作高级视频教程二</a></li>
+<li><a target="_blank" href="http://www.aspku.com/kaifa/css/36987.html">网站开发中20个很有用的CSS库</a></li>
+
+</ul>
+</div>
+<div class="r_ad" style="left: 861.6px;"><script src="./CSS中的元素定位方法详解_files/ad_js(9).php" language="javascript"></script><script type="text/javascript">
+    /*250*250 创建于 2014-10-28*/
+    var cpro_id = "u1780070";
+</script>
+<script src="./CSS中的元素定位方法详解_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1780070_0"><iframe id="iframeu1780070_0" src="./CSS中的元素定位方法详解_files/qcom(8).html" width="250" height="250" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div> </div>
+</div>
+</div>
+
+<div class="cl"></div>
+
+<div class="site_info"><ul><li><span>相关链接：</span><p><a href="javascript:copyToClipBoard();">复制本页链接</a>|&nbsp;&nbsp;&nbsp;<a href="http://www.aspku.com/plus/search.php?q=CSS%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3" target="_blank">搜索CSS中的元素定位方法详解</a></p></li><li class="s_i_a"><span>模板说明：</span><p><a class="s_i_a" href="http://www.aspku.com/kaifa/css/57493.html">CSS教程</a>-<strong>CSS中的元素定位方法详解</strong><img src="./CSS中的元素定位方法详解_files/11.gif">。</p></li></ul><div class="cl"></div></div>
+<div id="footer">
+<div class="f_l"><ul><script src="./CSS中的元素定位方法详解_files/6.js.下载" type="text/javascript" language="javascript"></script><li><a href="http://www.aspku.com/about/about.html">关于我们</a></li><li><a href="http://www.aspku.com/about/copyright.html">免责声明</a></li><li><a href="http://www.aspku.com/about/map.html">网站地图</a></li><li><a href="http://www.aspku.com/about/lianxi.html">联系我们</a></li><li><a href="http://www.aspku.com/about/help2.html">源码分享</a></li>
+<div class="sls_m"><h6>收藏&amp;分享</h6><div class="sls_m1"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone" title="分享到QQ空间" href="http://www.aspku.com/kaifa/css/57493.html#">QQ空间</a><a class="bds_tsina" title="分享到新浪微博" href="http://www.aspku.com/kaifa/css/57493.html#">新浪微博</a><a class="bds_tqq" title="分享到腾讯微博" href="http://www.aspku.com/kaifa/css/57493.html#">腾讯微博</a><a class="bds_renren" title="分享到人人网" href="http://www.aspku.com/kaifa/css/57493.html#">人人网</a><a class="bds_kaixin001" title="分享到开心网" href="http://www.aspku.com/kaifa/css/57493.html#">开心网</a><a class="bds_baidu" title="分享到百度搜藏" href="http://www.aspku.com/kaifa/css/57493.html#">百度搜藏</a><a class="bds_copy" title="分享到复制网址" href="http://www.aspku.com/kaifa/css/57493.html#">复制网址</a><span class="bds_more">更多...</span></div></div></div>
+<script type="text/javascript" id="bdshare_js" data="type=s&amp;img=6&amp;uid=6537479" src="./CSS中的元素定位方法详解_files/bds_s_v2.js.下载"></script><script type="text/javascript">	var bds_config = {"bdTop":118};document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();</script>
+</ul></div>
+<div class="f_r">©2012 www.aspku.com<a href="http://www.aspku.com/">源码库</a><div style="display:none"><script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src=" + _bdhmProtocol + "hm.baidu.com/h.js%3F28f790eac4a97f95e41b17bcbc45a74a type=text/javascript%3E%3C/script%3E")); </script><script src="./CSS中的元素定位方法详解_files/h.js.下载" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=28f790eac4a97f95e41b17bcbc45a74a" target="_blank"><img border="0" src="./CSS中的元素定位方法详解_files/21.gif" width="20" height="20"></a></div> 
+</div></div>
+</div><script type="text/javascript">
+document.body.oncopy = function () { setTimeout( function () { var text = clipboardData.getData("text"); if (text) { text = text + "\r\n本篇文章来源于源码库(www.aspku.com),转载请注明出处 原文链接："+location.href; clipboardData.setData("text", text); } }, 100 ) }
+</script>
+<script type="text/javascript" id="wumiiRelatedItems" src="./CSS中的元素定位方法详解_files/relatedItemsWidget"></script>
+<a href="http://www.wumii.com/widget/relatedItems" style="border:0;">
+    <img src="./CSS中的元素定位方法详解_files/pixel.png" style="border:0;padding:0;margin:0;">
+</a>
+
+<iframe src="./CSS中的元素定位方法详解_files/cookie_iframe.html" style="display: none;"></iframe><div style="position: absolute; border: 0px; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 1157.6px; left: 177px; width: 558px; display: block;"><style type="text/css" media="screen" id="s-f21ac82b21eeb7322631b6aa94e17f45194nny4">.baiduimageplus-s-pa{position:relative;width:100%;height:110px;overflow:hidden;cursor:default;-webkit-transition:top .5s;-moz-transition:top .5s;-ms-transition:top .5s;-o-transition:top .5s;transition:top .5s}.baiduimageplus-s-pa p{background:none}.baiduimageplus-s-pa a{outline:0;text-decoration:none}.baiduimageplus-s-pa a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}.baiduimageplus-s-pa .baiduimageplus-s-pa-ct{position:relative;z-index:2}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd{height:26px;overflow:hidden;line-height:26px}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd .baiduimageplus-s-pa-hd-title-cell{font-size:14px;color:#FFF;height:100%;text-align:center!important;float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-right:1px solid #FFF}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu{position:relative;overflow:hidden;zoom:1;padding:0;margin:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper{width:90%;height:84px;float:left;overflow:hidden;position:relative;left:5px}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter{height:84px;overflow:hidden;position:absolute;left:0;-webkit-transition:all .5s;-moz-transition:all .5s;-ms-transition:all .5s;-o-transition:all .5s;transition:all .5s}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell{width:100px;height:72px;overflow:hidden;background-color:#FFF;margin:4px 5px;padding:0;float:left;border:2px solid #000;position:relative}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell:hover{border-color:#d1111c}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell:hover .baiduimageplus-s-pa-bd-lu-title{background-color:#d1111c}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell:hover img{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-ms-transform:scale(1.2);-o-transform:scale(1.2);transform:scale(1.2)}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell img{width:100px;height:50px;display:block;border:0;-webkit-transition:transform .5s;-moz-transition:transform .5s;-ms-transition:transform .5s;-o-transition:transform .5s;transition:transform .5s}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell .baiduimageplus-s-pa-bd-lu-title{position:absolute;font:14px/1.5 arial,sans-serif;bottom:0;left:0;width:100%;height:22px;display:block;line-height:22px;background-color:#000;text-align:center;color:#FFF}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell:first-child{margin-left:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .baiduimageplus-s-pa-bd-lu-wrapper .baiduimageplus-s-pa-bd-lu-outter .cell:last-child{margin-right:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .ad-widget-imgps-sticker-html-btn{margin-top:5px;height:75px;width:20px;cursor:pointer;-webkit-transition:background .4s;-moz-transition:background .4s;-ms-transition:background .4s;-o-transition:background .4s;transition:background .4s}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .adwishbtn_left{width:20px;float:left;background:url(http://ecmb.bdimg.com/public03/imageplus/sticker/leftbtn.jpg) no-repeat center center}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .adwishbtn_left:hover{background:#20439d url(http://ecmb.bdimg.com/public03/sticker/leftbtn_hover.jpg) no-repeat center center}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .adwishbtn_right{width:20px;float:right;background:url(http://ecmb.bdimg.com/public03/imageplus/sticker/rightbtn.jpg) no-repeat center center}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd-lu .adwishbtn_right:hover{background:#20439d url(http://ecmb.bdimg.com/public03/sticker/rightbtn_hover.jpg) no-repeat center center}.baiduimageplus-s-pa .baiduimageplus-s-pa-logo{position:absolute;bottom:0;right:0;z-index:3;height:18px;width:18px;text-indent:-9999px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png",sizingMethod="crop");_background:none}
+.ad-widget-imageplus-sticker{font:12px/1.5 arial,sans-serif;position:absolute;left:0;width:100%;display:none;overflow:hidden;color:#FFF;background:transparent;-webkit-transition:height .5s,top .5s;transition:height .5s,top .5s}.ad-widget-imageplus-sticker div{background:transparent}.ad-widget-imageplus-sticker-cut{display:block}.ad-widget-imageplus-sticker-bg{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;background:#000!important;box-shadow:2px 2px 4px #000}.ad-widget-imageplus-sticker-bd{position:relative;z-index:2;left:0;top:0;width:100%;overflow:hidden}.ad-widget-imageplus-sticker-close{position:absolute;z-index:3;right:0;top:5px;width:25px;height:25px;line-height:25px;text-decoration:none;text-align:center;font-size:18px;color:#FFF!important}.ad-widget-imageplus-sticker-close:hover{background-color:#000}
+.ad-widget-imageplus-sticker-theme-white{color:#333}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-bg{background:#FFF!important;box-shadow:2px 2px 4px #FFF}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none{color:#333}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none-white{color:#333}
+.ad-widget-imageplus-sticker-theme-none-white .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-theme-v2 .ad-big-title{position:relative;top:0;opacity:1;filter:alpha(opacity=100);-webkit-transition:top .5s,opacity .6s;transition:top .5s,opacity .6s}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-big-title{position:relative;top:-36px;opacity:0;filter:alpha(opacity=0)}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-widget-imageplus-sticker-bg{top:26px}
+.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-thumbnail{font:12px/1.5 arial,sans-serif;position:absolute;right:0;top:0;height:20px;width:100px;overflow:hidden;background:transparent;-webkit-transition:height .5s;-moz-transition:height .5s;-ms-transition:height .5s;-o-transition:height .5s;transition:height .5s;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000)}.ad-widget-imageplus-sticker-thumbnail a{float:right;width:100px;height:20px;line-height:20px;text-align:center;color:white;background:transparent;text-decoration:none}
+.ad-widget-imageplus-sticker-thumbnail i{width:12px;height:8px;margin-top:6px;margin-left:5px;display:block;float:left;background:url('http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png') no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png')\9}.ad-widget-imageplus-sticker-close-newstyle{top:0;text-indent:-9999px;background:url(http://ecmb.bdimg.com/public03/v2/dock/iconfont-close.png) no-repeat 0 0 transparent!important}.ad-widget-imageplus-sticker-showing .baiduimageplus-s-pa-hd{opacity:0;filter:alpha(opacity=0)}</style><div id="f21ac82b21eeb7322631b6aa94e17f45194nny4" data-rendered="true" style="margin: 0px; padding: 0px; border: none; overflow: visible; text-align: left;"><div class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-theme-v2 ad-widget-imageplus-sticker-cut" id="w-54z7z3" style="display: block; top: 284px; height: 109px;">
+<div class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-wrapper ad-widget-imageplus-sticker-box-showing" id="w-54z7z3-wrapper" style="display: block; top: 83px; height: 26px;">
+<div class="ad-widget-imageplus-sticker-bg" id="w-54z7z3-background" style="opacity: 0.75;"></div>
+<div class="ad-widget-imageplus-sticker-bd" id="w-54z7z3-body">
+<div class="baiduimageplus-s-pa" id="w-ejkj87">
+<div class="baiduimageplus-s-pa-bg" id="w-ejkj87-background"></div>
+<div class="baiduimageplus-s-pa-ct">
+<div class="baiduimageplus-s-pa-hd">
+<div class="baiduimageplus-s-pa-hd-title-cell" style="width: 110px !important;">网页制作</div>
+<div class="baiduimageplus-s-pa-hd-title-cell" style="width: 110px !important;">个人网页制作</div>
+<div class="baiduimageplus-s-pa-hd-title-cell" style="width: 110px !important;">企业网站</div>
+<div class="baiduimageplus-s-pa-hd-title-cell" style="width: 110px !important;">自己建网站</div>
+<div class="baiduimageplus-s-pa-hd-title-cell" style="width: 110px !important; border: none !important;">网页设计</div>
+</div>
+<div class="baiduimageplus-s-pa-bd-lu">
+<div id="w-ejkj87-left_btn" class="ad-widget-imgps-sticker-html-btn adwishbtn_left" style="display:none;"></div>
+<div id="w-ejkj87-wrapper" class="baiduimageplus-s-pa-bd-lu-wrapper" style="width: 548px !important;">
+<div id="w-ejkj87-outter" class="baiduimageplus-s-pa-bd-lu-outter" style="width: 565px !important;">
+<div class="cell">
+<a data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k0=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k1=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=1&amp;mcpm=302481&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0"><img src="./CSS中的元素定位方法详解_files/u=696653500,4026694355&amp;fm=76"></a>
+<a class="baiduimageplus-s-pa-bd-lu-title" data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k0=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k1=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=1&amp;mcpm=302481&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0">网页制作</a>
+</div>
+<div class="cell">
+<a data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k0=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=2&amp;mcpm=149388&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0"><img src="./CSS中的元素定位方法详解_files/u=966729539,1370391989&amp;fm=76"></a>
+<a class="baiduimageplus-s-pa-bd-lu-title" data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k0=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=2&amp;mcpm=149388&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0">个人网页制作</a>
+</div>
+<div class="cell">
+<a data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k0=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=3&amp;mcpm=149919&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0"><img src="./CSS中的元素定位方法详解_files/u=1718215028,2250567068&amp;fm=76"></a>
+<a class="baiduimageplus-s-pa-bd-lu-title" data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k0=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=3&amp;mcpm=149919&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0">企业网站</a>
+</div>
+<div class="cell">
+<a data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k0=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=4&amp;mcpm=235447&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0"><img src="./CSS中的元素定位方法详解_files/u=1657940016,2169945829&amp;fm=76"></a>
+<a class="baiduimageplus-s-pa-bd-lu-title" data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k0=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k4=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=4&amp;mcpm=235447&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0">自己建网站</a>
+</div>
+<div class="cell">
+<a data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k0=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k4=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=5&amp;mcpm=250907&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0"><img src="./CSS中的元素定位方法详解_files/u=1182499563,299890399&amp;fm=76"></a>
+<a class="baiduimageplus-s-pa-bd-lu-title" data-log="2" data-mid="" target="_blank" href="https://cpro.baidu.com/cpro/ui/uijs.php?adclass=0&amp;app_id=0&amp;c=news&amp;cf=19&amp;ch=0&amp;di=8&amp;fv=9&amp;is_app=0&amp;jk=5a8ac38057f3248f&amp;k=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k0=%CD%F8%D2%B3%C9%E8%BC%C6&amp;k1=%CD%F8%D2%B3%D6%C6%D7%F7&amp;k2=%B8%F6%C8%CB%CD%F8%D2%B3%D6%C6%D7%F7&amp;k3=%C6%F3%D2%B5%CD%F8%D5%BE&amp;k4=%D7%D4%BC%BA%BD%A8%CD%F8%D5%BE&amp;k5=%CD%F8%D5%BE%C9%E8%BC%C6%B9%AB%CB%BE&amp;kdi0=8&amp;kdi1=8&amp;kdi2=8&amp;kdi3=8&amp;kdi4=8&amp;kdi5=8&amp;luki=5&amp;mcpm=250907&amp;n=10&amp;ncf=0&amp;nmv=0&amp;p=baidu&amp;q=55048190_cpr&amp;rb=1&amp;rs=1&amp;seller_id=5&amp;sid=8f24f35780c38a5a&amp;ssp2=1&amp;stid=22&amp;t=tpclicked3_hc&amp;td=&amp;tu=u2106948&amp;u=http%3A%2F%2Fwww%2Easpku%2Ecom%2Fkaifa%2Fcss%2F57493%2Ehtml&amp;urlid=0">网页设计</a>
+</div>
+</div>
+</div>
+<div id="w-ejkj87-right_btn" class="ad-widget-imgps-sticker-html-btn adwishbtn_right" style="display:none;"></div>
+</div>
+</div>
+<a class="baiduimageplus-s-pa-logo" title="百度网盟推广" href="http://wangmeng.baidu.com/" target="_blank" data-ignore=""></a>
+<!-- 新增的推广提示 -->
+<div style="position:absolute;left:0px;bottom:0px;width:29px;height:16px;overflow:hidden;z-index:12;background: url(http://ecmb.bdimg.com/public03/imageplus/leftbottom.png) no-repeat;"></div>
+</div>
+</div>
+</div>
+<a class="ad-widget-imageplus-sticker-close " href="http://www.aspku.com/kaifa/css/57493.html#" id="w-54z7z3-close" style="display: none;">X</a>
+</div>
+<div class="ad-widget-imageplus-sticker-thumbnail" id="w-54z7z3-thumbnail" style="display: none; top: 373px;">
+<a href="http://www.aspku.com/kaifa/css/57493.html#" title="点击展开"><i>&nbsp;</i>图片相关信息</a>
+</div></div><style type="text/css" media="screen" id="s-f21ac82b21eeb7322631b6aa94e17f451hu15xn">.ad-widget-imageplus-box{position:absolute;top:0;left:0;margin:0;padding:0;width:0;height:0;overflow:visible!important}.ad-widget-imageplus-box-icon{position:absolute;top:0;left:0;z-index:10;width:38px;height:38px;overflow:hidden;cursor:pointer;background:url("http://ecma.bdimg.com/public03/imageplus/pa.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa.png')\9}.ad-widget-imageplus-box-icon:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-hover.png')\9}
+.ad-widget-imageplus-box-icon span{position:absolute;top:0;left:0;width:38px;height:38px;cursor:pointer;text-decoration:none;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}span.ad-widget-imageplus-box-icon{cursor:default}.ad-widget-imageplus-box-icon-medical{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical.png')\9}.ad-widget-imageplus-box-icon-medical:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png')\9}
+.ad-widget-imageplus-box-icon-decoration{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration.png')\9}.ad-widget-imageplus-box-icon-decoration:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png')\9}.ad-widget-imageplus-box-icon-machine{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine.png')\9}
+.ad-widget-imageplus-box-icon-machine:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png')\9}.ad-widget-imageplus-box-icon-photo{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo.png')\9}.ad-widget-imageplus-box-icon-photo:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png')\9}
+.ad-widget-imageplus-box-icon-tourism{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism.png')\9}.ad-widget-imageplus-box-icon-tourism:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png')\9}.ad-widget-imageplus-box-icon-game{background:url("http://ecma.bdimg.com/public03/imageplus/game.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game.png')\9}
+.ad-widget-imageplus-box-icon-game:hover{background:url("http://ecma.bdimg.com/public03/imageplus/game-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game-hover.png')\9}.ad-widget-imageplus-box-bd{position:absolute;top:0;left:0;z-index:11;display:none;overflow:visible;background:#FFF}.ad-widget-imageplus-box-bg{position:absolute;top:0;left:0;z-index:11;width:100%;height:100%;background:#FFF;opacity:.95;filter:alpha(opacity=95);border-radius:2px;-webkit-box-shadow:2px 2px 4px #000;-moz-box-shadow:2px 2px 4px #000;box-shadow:2px 2px 4px #000}.ad-widget-imageplus{position:relative;top:0;left:0;z-index:12}.ad-widget-imageplus-pa{font:12px/1.5 arial,sans-serif;width:273px;height:131px;text-align:left;color:#333;background-color:#FFF}
+.ad-widget-imageplus-pa-title{padding:6px 15px 4px;width:243px;height:15px;line-height:15px;overflow:hidden;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;background-color:#f5f5f5}.ad-widget-imageplus-pa-default,.ad-widget-imageplus-pa-medical,.ad-widget-imageplus-pa-tourism,.ad-widget-imageplus-pa-machine,.ad-widget-imageplus-pa-photo,.ad-widget-imageplus-pa-decoration{display:inline-block;_zoom:1;width:15px;height:15px;background:url(http://ecma.bdimg.com/public03/imageplus/pa-icons.png) no-repeat}.ad-widget-imageplus-pa-default{background-position:-97px 0}.ad-widget-imageplus-pa-medical{background-position:-32px 0}.ad-widget-imageplus-pa-tourism{background-position:-64px 0}.ad-widget-imageplus-pa-machine{background-position:-16px 0}.ad-widget-imageplus-pa-photo{background-position:-48px 0}
+.ad-widget-imageplus-pa-decoration{background-position:0 0}.ad-widget-imageplus-pa-bd{margin:10px 15px 0;height:75px;overflow:hidden;_zoom:1}.ad-widget-imageplus-pa-bd img{position:static!important;cursor:auto!important;float:left;_display:inline;margin-right:16px;width:70px!important;height:70px!important;border:0}.ad-widget-imageplus-pa-text{overflow:hidden;_zoom:1}.ad-widget-imageplus-pa-desc{max-height:54px;overflow:hidden}.ad-widget-imageplus-pa-url{overflow:hidden;color:#666}.ad-widget-imageplus-pa-v{display:inline-block;width:16px;height:16px;background:url(http://ecma.bdimg.com/public03/imageplus/pa-icons.png) no-repeat -80px 0}.ad-widget-imageplus-pa-ft{padding-right:10px;text-align:right;color:#999}.ad-widget-imageplus-pa-redirect{width:273px;height:131px;position:absolute;left:0;top:0;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}
+.baiduimageplus-pa-logo{position:absolute;bottom:0;right:0;z-index:3;height:16px;width:16px;background:url(http://ecma.bdimg.com/public03/imageplus/logo.png) no-repeat;background-position:0 -17px}.baiduimageplus-s-tuiguang-logo{position:absolute;left:0;bottom:0;width:34px;height:16px;overflow:hidden;z-index:12;background:url(http://ecma.bdimg.com/public03/imageplus/logo.png) no-repeat;background-position:0 0}#f21ac82b21eeb7322631b6aa94e17f451hu15xn{font:12px/1.5 arial,sans-serif}</style><div id="f21ac82b21eeb7322631b6aa94e17f451hu15xn" data-rendered="true" style="margin: 0px; padding: 0px; border: none; overflow: visible; text-align: left;"><div class="ad-widget-imageplus ad-widget-imageplus-box" id="w-jtgg99" style="left: 390.6px; top: 117.9px;">
+<a class="ad-widget-imageplus-box-icon ad-widget-imageplus-box-icon-default" href="http://www.baidu.com/cpro.php?K000000g9gHPs4xuP0CnFCth2cQ2jXyqaab963X2_7T3ATSoANl4oO2KxaXhNxVoMXKqUj9LdeCc-o-__wPUXToeFxgEjv-LMLZzBwKzyGYNIQbZKiPSiw2m7fv-q_qrCNXEvXLuxu5amvKycv81rXuVp_h1faxHkx_UHFdzIrFfU1WQA0.DR_iRmqrrZuYtxQwGS9S5G_o_wKLknTZjbyFWI8_eP-XS1-9k1QjPakvur1IyC0.IgF_5y9YIZ0lQzqLILT8mgPspLR8mvqVQvV9pyu9QvP1TztdP1f4nz4CIAd_0ZwV5HcvrjTkP1D1PsKYIHddnWDsPWbYr0KYujYs0ZI_5Hm0mv4YUWYdPH0YrjD4n7qWTZc0mv9VujYk0ZPWpAdb5HD0TL0qnHT0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00ULnqn0KBTWYkn6KLpywYpjY1nj00pANGuv9Y5Hcdn0KLpHYk0Z9GTjY0TvN_uWYs0ZPbpdqvugF1pyq85fK8mgPYTjYs0ZF15H00mvmqn0KWIAYqmh7GuZNjIgPYiMPEU6K8mgwd5HT0pgwGujYs0A-Ypy4hUv-b5H00uLKGujYs0ZF-uMKGujYs0APsThqGujdKPHnYwH6knbfdnYckfWn4rHRvnDPDPHcYf1Dkn1cdfsKWUvdsUARqn0K9u7q15H-huyRYnWwWPWDLPADvP1f0UA7_5fK9IA-b5fK9IZw45fKLTLFW5H00myNxIA7z5fKGTdqoIADq0ZP_TLFW5H00TvkWp1Ys0ZP_pv-b5H00mMNbuvNYgvN3TA-b5H00my-s5guWUyF8RHK2mMCs0ZNGTjdniNNfuZF9IvVYmsKWpjYs0Zw9TWYz0AwYTjYk0ZP-UAk-T-qGujYd0A-1gv7sTjYs0A7sT7qGujYs0APdTLfq0A-1gLIGThN_ugP15H00Iv7sgLw4TARqn0KsUjYs0AdW5yD3mHbvmWb30Adv5HD0UMus5H08nj0snj0snj00u1bqn0KhpgF1I7qzuyIGUv3qnH60TvNWUv4bgLF-uv-EUWY1nHT0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00UMwYTjYs0APzm1YznWT4P00" target="_blank" id="w-jtgg99-icon" data-log="2" data-attach="1" data-mid="108" style="width: 38px; height: 38px; display: none;">
+<!-- span遮盖了整个a，故需要加data-log和data-attach -->
+<span data-log="2" data-attach="1">&nbsp;</span>
+</a>
+<div class="ad-widget-imageplus-box-bd" id="w-jtgg99-content" style="top: 38px; left: -117.5px; width: 273px; height: 131px;">
+<div class="ad-widget-imageplus-box-bg" style=""></div>
+<div class="ad-widget-imageplus ad-widget-imageplus-pa" id="w-n4bfoz">
+<div class="ad-widget-imageplus-pa-title">
+<span class="ad-widget-imageplus-pa-default">&nbsp;</span>
+别去算命了,生肖决定你的财富!
+</div>
+<div class="ad-widget-imageplus-pa-bd">
+<img src="./CSS中的元素定位方法详解_files/4b7788d933a2c8f1892f3df48a660d71.jpg">
+<div class="ad-widget-imageplus-pa-text">
+<div class="ad-widget-imageplus-pa-desc">你的生肖决定了你这辈子是穷苦命， 还是富贵命！生肖本命佛改变...</div>
+<div class="ad-widget-imageplus-pa-url">
+lsmpc863.ymvip...
+</div>
+</div>
+</div>
+<!-- 新增的推广提示 -->
+<div class="baiduimageplus-s-tuiguang-logo"></div>
+<a class="ad-widget-imageplus-pa-redirect" href="http://www.baidu.com/cpro.php?K000000g9gHPs4xuP0CnFCth2cQ2jXyqaab963X2_7T3ATSoANl4oO2KxaXhNxVoMXKqUj9LdeCc-o-__wPUXToeFxgEjv-LMLZzBwKzyGYNIQbZKiPSiw2m7fv-q_qrCNXEvXLuxu5amvKycv81rXuVp_h1faxHkx_UHFdzIrFfU1WQA0.DR_iRmqrrZuYtxQwGS9S5G_o_wKLknTZjbyFWI8_eP-XS1-9k1QjPakvur1IyC0.IgF_5y9YIZ0lQzqLILT8mgPspLR8mvqVQvV9pyu9QvP1TztdP1f4nz4CIAd_0ZwV5HcvrjTkP1D1PsKYIHddnWDsPWbYr0KYujYs0ZI_5Hm0mv4YUWYdPH0YrjD4n7qWTZc0mv9VujYk0ZPWpAdb5HD0TL0qnHT0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00ULnqn0KBTWYkn6KLpywYpjY1nj00pANGuv9Y5Hcdn0KLpHYk0Z9GTjY0TvN_uWYs0ZPbpdqvugF1pyq85fK8mgPYTjYs0ZF15H00mvmqn0KWIAYqmh7GuZNjIgPYiMPEU6K8mgwd5HT0pgwGujYs0A-Ypy4hUv-b5H00uLKGujYs0ZF-uMKGujYs0APsThqGujdKPHnYwH6knbfdnYckfWn4rHRvnDPDPHcYf1Dkn1cdfsKWUvdsUARqn0K9u7q15H-huyRYnWwWPWDLPADvP1f0UA7_5fK9IA-b5fK9IZw45fKLTLFW5H00myNxIA7z5fKGTdqoIADq0ZP_TLFW5H00TvkWp1Ys0ZP_pv-b5H00mMNbuvNYgvN3TA-b5H00my-s5guWUyF8RHK2mMCs0ZNGTjdniNNfuZF9IvVYmsKWpjYs0Zw9TWYz0AwYTjYk0ZP-UAk-T-qGujYd0A-1gv7sTjYs0A7sT7qGujYs0APdTLfq0A-1gLIGThN_ugP15H00Iv7sgLw4TARqn0KsUjYs0AdW5yD3mHbvmWb30Adv5HD0UMus5H08nj0snj0snj00u1bqn0KhpgF1I7qzuyIGUv3qnH60TvNWUv4bgLF-uv-EUWY1nHT0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5Hf0TZPYTh7buHYYnjD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00UMwYTjYs0APzm1YznWT4P00" data-log="2" data-mid="108" target="_blank">&nbsp;</a>
+<a class="baiduimageplus-pa-logo" title="百度网盟推广" href="http://wangmeng.baidu.com/" target="_blank" data-ignore=""></a>
+</div>
+</div>
+</div></div></div><a class="go2top" href="http://www.aspku.com/kaifa/css/57493.html#top" style="display: inline;"></a></body></html>

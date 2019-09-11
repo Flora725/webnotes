@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://www.aspxhome.com/design/css/20086/416624_1.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>css行高：line-height属性详解（2）内容区域、行内框和行框 - CSS/HTML - Asp之家</title>
+<meta name="Keywords" content="line-height,行高,文字,css">
+<meta name="Description" content="行高的概念看上去很简单——文字行的高度，其实，行高所涉及到的基础知识，对于今后理解其它属性也很重要。大片密密麻麻的文字往往会让人觉得乏味，因此适当地调整行高（line-height）可以减低阅读的困难与枯燥，并且使页面显得美观。行高指的是文本行的基线间的距离，但是文本之间的空白距离不仅仅是行高决定的，同时也受字号的影响。">
+<script type="text/javascript" async="" src="./内容区域、行内框和行框_files/ga.js.下载"></script><script src="./内容区域、行内框和行框_files/ca-pub-1725378597726109.js.下载"></script><script src="./内容区域、行内框和行框_files/common.js.下载" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="./内容区域、行内框和行框_files/style.css">
+<script type="text/javascript" src="./内容区域、行内框和行框_files/lightbox_aspxhome.js.下载"></script>
+<link rel="stylesheet" type="text/css" href="./内容区域、行内框和行框_files/lightbox.css">
+<style type="text/css">
+.GbGtRPB{margin:0px;border-bottom:1px dashed #6E86A9;padding:10px 5px 10px 5px;color:#6E86A9;font-size:12px;}
+.GbGtRPB h1{ font-size:20px; font-weight:bold; padding:6px 0px 10px 0px; clear:both;color:#000000; }
+.fDcwCqMK{margin:0px; font-size: 14.8px;font-family: "arial","宋体";line-height: 25px;color: #000000;padding:5px 20px 10px 20px;text-align:left;overflow:hidden;}
+.fDcwCqMK A:link {text-decoration: underline;}
+.fDcwCqMK A:visited {text-decoration: underline;}
+.fDcwCqMK p {TEXT-INDENT: 2em;}
+.fDcwCqMK ul {margin-left: 40px;}
+.codeTextarea {font-family: "arial","宋体";margin: 5px;font-size:12px;height:250px;width:520px;word-wrap:break-word;word-break:break-word;float:left;}
+.dSAKdSLFZw{text-align:center;margin:10px auto;font-size:12px;width:600px;font-family:"宋体";padding:5px;line-height:30px;}
+.dSAKdSLFZw a{margin:3px;padding:5px 10px;background-color:#FFFFFF;border:1px solid #B8D9F4;} 
+.dSAKdSLFZw a:visited{color:#000;}
+.dSAKdSLFZw a:hover{color:#000; background-color:#FFE7D7;border:1px solid #FF7922;}
+.dSAKdSLFZw .active {margin:3px;font-weight:bold;padding:5px 10px;color:#ff0000;background-color:#FFFFFF;border:1px solid #B8D9F4;}
+#loadding{float:left;margin:5px 0 20px 10px;}
+#shuqian{font-size:12px;width:100%;text-align:center;color:#6E86A9;text-decoration:none;margin:15px auto;}
+</style>
+<link href="./内容区域、行内框和行框_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./内容区域、行内框和行框_files/logger.js.下载"></script></head>
+<body onload="initLightbox()"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./内容区域、行内框和行框_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;" src="./内容区域、行内框和行框_files/saved_resource.html"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0" src="./内容区域、行内框和行框_files/saved_resource(1).html"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="bds_more">更多...</a></li></ul><p><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" class="goWebsite">百度分享</a></p></div></div></div><div id="BAIDU_SSP__wrapper_u593629_0_left" style="box-sizing: content-box; width: 131px; height: 301px; overflow: hidden; z-index: 2147483647; position: fixed; top: 150px; left: -10px;"><div style="box-sizing: content-box;width:120px;height:270px;padding:4px;border:#acacac 1px solid;overflow:hidden;"><iframe id="iframeu593629_2" src="./内容区域、行内框和行框_files/qcgm.html" width="120" height="270" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><div id="BAIDU_SSP__wrapper_u593629_0_left_closebtn" style="box-sizing: content-box; position: absolute; width: 131px; height: 20px; left: 0px; cursor: pointer; background-color: rgb(153, 153, 153); color: rgb(255, 255, 255); font-size: 12px; font-family: 微软雅黑; text-align: center; line-height: 20px;">关闭</div></div><div id="BAIDU_SSP__wrapper_u593629_0_right" style="box-sizing: content-box; width: 131px; height: 301px; overflow: hidden; z-index: 2147483647; position: fixed; top: 150px; right: -10px;"><div style="box-sizing: content-box;width:120px;height:270px;padding:4px;border:#acacac 1px solid;overflow:hidden;"><iframe id="iframeu593629_1" src="./内容区域、行内框和行框_files/qcgm(1).html" width="120" height="270" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><div id="BAIDU_SSP__wrapper_u593629_0_right_closebtn" style="box-sizing: content-box;position:absolute;width:131px;height:20px;top:NaNpx;left:0;cursor:pointer;background-color:#999999;color:#fff;font-size:12px;font-family: 微软雅黑;text-align:center;line-height:20px;">关闭</div></div>
+<div class="top">
+<script src="./内容区域、行内框和行框_files/topwordad.js.下载"></script> <a href="http://www.cidianwang.com/shufa/" target="_blank" style="color:red">书法字典</a>  | <a href="http://www.cidianwang.com/zuowen/" target="_blank">作文大全</a>  | <a href="http://www.cidianwang.com/yinghan/" target="_blank">英汉词典</a>  | <a href="http://www.cidianwang.com/hanri/" target="_blank">日语词典</a>  | <a href="http://www.cidianwang.com/zhonghan/" target="_blank">韩语词典</a>  | <a href="http://www.aspxhome.com/paipai/" target="_blank">拍大头贴</a> | <a title="常用广告代码下载" class="p_title" target="_blank" href="http://www.aspxhome.com/adcode/">广告代码</a> <b>广告、程序定制联系QQ：215521785</b>
+
+</div>
+<div class="content">
+<div class="LogoMenu">
+<div class="logo">
+  <a href="http://www.aspxhome.com/" name="top"><img src="./内容区域、行内框和行框_files/logo.gif" alt="Asp之家" width="149" height="57" border="0"></a>
+</div>
+<div class="ad_banner">
+<script type="text/javascript" src="./内容区域、行内框和行框_files/banner.js.下载"></script><script type="text/javascript">var cpro_id = 'u179992';</script>
+<script src="./内容区域、行内框和行框_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u179992_0"><iframe id="iframeu179992_0" src="./内容区域、行内框和行框_files/qcgm(2).html" width="640" height="60" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+
+</div>
+<div class="tool">
+  <ul>
+  <li><a onclick="setHomepage(&#39;http://www.aspxhome.com/&#39;)" style="CURSOR: pointer">设为首页</a></li>
+  <li class="Favorites"><a style="CURSOR: pointer" onclick="javascript:AddFavorite(&#39;http://www.aspxhome.com&#39;,&#39;Asp之家&#39;)" title="Asp之家">加入收藏</a></li>
+  <li class="Message"><a href="http://www.aspxhome.com/contact.htm">联系站长</a></li>
+  </ul>
+</div>
+</div>
+<div class="banner">
+<ul>
+<li><a href="http://www.aspxhome.com/" target="_blank"><span>首 页</span></a></li>
+<li><a href="http://www.aspxhome.com/asp/" target="_self"><span>Asp教程</span></a></li>
+<li><a href="http://www.aspxhome.com/javascript/" target="_self"><span>JavaScript教程</span></a></li>
+<li><a href="http://www.aspxhome.com/design/" target="_self"><span>网页设计</span></a></li>
+<li><a href="http://www.aspxhome.com/photo/" target="_self"><span>平面设计</span></a></li>
+<li><a href="http://www.aspxhome.com/database/" target="_self"><span>数据库</span></a></li>
+<li><a href="http://www.aspxhome.com/webmaster/" target="_self"><span>站长必读</span></a></li>
+<li><a href="http://www.aspxhome.com/security/" target="_self"><span>网站安全</span></a></li>
+<li><a href="http://www.aspxhome.com/download/" target="_self"><span>下载中心</span></a></li>
+<li><a href="http://tool.aspxhome.com/" target="_blank"><span>站长工具</span></a></li>
+</ul>
+</div>
+<div class="top_ad" id="top_ad"></div>
+<div class="top_ad"><script type="text/javascript" src="./内容区域、行内框和行框_files/topad.js.下载"></script><script type="text/javascript" src="./内容区域、行内框和行框_files/o.js.下载"></script><div id="BAIDU_SSP__wrapper_737114_0"><iframe id="iframe737114_0" src="./内容区域、行内框和行框_files/qcgm(3).html" width="960" height="90" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div><script charset="utf-8" src="./内容区域、行内框和行框_files/qcgm"></script>
+</div>
+
+<form action="http://www.aspxhome.com/search.asp" method="get" name="search" onsubmit="if(this.keyword.value == &#39;&#39;){alert(&#39;请输入搜索关键字!&#39;);return false;}" target="_blank">
+<div class="search_article"><span class="hot_s"><script type="text/javascript" src="./内容区域、行内框和行框_files/hot_search.js.下载"></script><strong>热门搜索：</strong><a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=css"><span class="fred">css</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%D3%C5%BB%AF"><span class="fblue">优化</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=google">google</a> <a class="fred" target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%CA%FD%BE%DD%BF%E2"><span class="fblack">数据库</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%B0%B2%C8%AB"><span class="fgreen">安全</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=seo"><span class="fred">seo</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=adsense"><span class="fgreen">Adsense</span></a> <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%D1%E9%D6%A4%C2%EB"><span class="fblue">验证码</span></a>  <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=Ajax"><span class="fred">Ajax</span></a>  <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%B7%D6%D2%B3"><span class="fblack">分页</span></a>  <a target="_blank" href="http://www.aspxhome.com/search.asp?keyword=%D5%BE%B3%A4"><span class="fblue">站长</span></a> 
+</span> 搜索：<input class="t1" name="keyword" type="text" maxlength="60"> 
+ <input type="submit" value="搜索一下" class="s5" title="搜索一下">  </div></form>
+</div>
+<div class="content">
+<div class="left" id="left">
+<div class="left_content">
+<div class="a_local"><a href="http://www.aspxhome.com/">首页</a> &gt;&gt; <a href="http://www.aspxhome.com/design/">网页设计</a> &gt;&gt; <a href="http://www.aspxhome.com/design/css/">CSS/HTML</a> &gt;&gt; css行高：line-height属性详解（2）</div>
+      <div class="GbGtRPB">
+        <h1>css行高：line-height属性详解（2）</h1>
+        <div>2008-6-24 作者:<a href="http://www.aspxhome.com/search.asp?author=ddcatlee" target="_blank" title="搜索 ddcatlee 的所有文章">ddcatlee</a> 来源:<a href="http://blog.csdn.net/ddcatlee/archive/2008/06/17/2555766.aspx" target="_blank">猫沙盆</a> 网友评论<a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#pl"><span class="fred" id="pl"></span></a>条 
+			<a href="http://www.aspxhome.com/contact.htm?type=2">投递文章</a>
+			</div>
+<div id="bdfx"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_tsina" title="分享到新浪微博" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_tqq" title="分享到腾讯微博" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_qzone" title="分享到QQ空间" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_renren" title="分享到人人网" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_baidu" title="分享到百度搜藏" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_kaixin001" title="分享到开心网" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_tqf" title="分享到腾讯朋友" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><a class="bds_douban" title="分享到豆瓣网" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#"></a><span class="bds_more">更多分享</span><a class="shareCount" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" title="累计分享0次">0</a></div> </div>
+      </div>
+<div class="ad_580"><script type="text/javascript" src="./内容区域、行内框和行框_files/580x90.js.下载"></script><script type="text/javascript"> var cpro_id = 'u868755';</script>
+<script src="./内容区域、行内框和行框_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u868755_0"><iframe id="iframeu868755_0" src="./内容区域、行内框和行框_files/qcgm(4).html" width="580" height="90" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe></div>
+</div>
+<div class="fDcwCqMK" id="fDcwCqMK">
+<p></p>
+<p align="left"><strong>7.3.2&nbsp;内容区域、行内框和行框</strong> </p>
+<p align="center">理论上讲，一行中的每个元素都有一个内容区域，它是由字体<a href="http://www.aspxhome.com/search.asp?keyword=%b3%df%b4%e7" target="_blank">尺寸</a>决定的，如图7-19所示。 </p>
+<p align="center"><img border="0" src="./内容区域、行内框和行框_files/2008624115439636.gif"></p>
+<p align="left">图7-19&nbsp;内容区域 行内元素会生成一个行内框（inline&nbsp;box），行内框只是一个概念，它无法显示出来，但是它又确实存在。在没有其他因素影响的时候，行内框 等于内容区域，而设定行高则可以增加或者减少行内框的高度，即：将行距的值（行高-字体尺寸）除以2，分别增加到内容区域的上下两边，如图7-20所示。</p>
+<p align="left">&nbsp;&nbsp; </p>
+<p align="center"><img border="0" src="./内容区域、行内框和行框_files/2008624115442690.gif"></p>
+<p align="center">图7-20&nbsp;行内框与行高 </p>
+<p align="left">由于行高可以应用在任何元素上，因此同一行内的若干元素可能有不同的行高和行内框高，例如有如下代码，其显示如图7-21所示。</p>
+<div class="code">&nbsp;&lt;p&nbsp;style="line-height:20px;"&gt;&amp;lt;p&amp;&nbsp;gt;行高20px。&lt;strong&nbsp;style="line-height:50px;"&gt;&amp;lt;strong&amp;gt;&nbsp;行高50px。&lt;/strong&gt;&lt;span&nbsp;style="line-height:30px;"&gt;&amp;lt;&nbsp;span&amp;gt;行高30px。&lt;/span&gt;&lt;/p&gt;&nbsp;&nbsp;</div>
+<p align="center"><img border="0" src="./内容区域、行内框和行框_files/2008624115442571.gif"></p>
+<p align="center">图7-21&nbsp;行内框与行框 </p>
+<p align="left">这里又有一个新的概念——行框（line&nbsp;box）。同行内框类似，行框是指本行的一个虚拟的矩形框，其高度等于本行内所有元素中行高最大的值。因此，当有多行内容时，每行都会有自己的行框，如图7-22所示。</p>
+<p align="left">&nbsp;&nbsp; </p>
+<p align="center"><img border="0" src="./内容区域、行内框和行框_files/2008624115444825.gif"></p>
+<p align="center">图7-22&nbsp;多行内容的行框 </p>
+<p align="left">提示：理解行框和行内框的概念对于学习本章[7.4垂直对齐：vertical-align属性]一节的内容非常重要。 注意：行框的高度只同本行内元素的行高有关，而和父元素的高度（height）无关。</p>
+<p align="left"></p><div class="dSAKdSLFZw"><a href="http://www.aspxhome.com/design/css/20086/416624.htm" target="_self">上一页</a><a href="http://www.aspxhome.com/design/css/20086/416624.htm" target="_self">1</a><span class="active">2</span><a href="http://www.aspxhome.com/design/css/20086/416624_2.htm" target="_self">3</a><a href="http://www.aspxhome.com/design/css/20086/416624_3.htm" target="_self">4</a><a href="http://www.aspxhome.com/design/css/20086/416624_4.htm" target="_self">5</a><a href="http://www.aspxhome.com/design/css/20086/416624_2.htm" target="_self">下一页</a> </div>
+
+<div id="shuqian">
+</div>
+</div>
+<div class="tags">Tags：<a href="http://www.aspxhome.com/search.asp?tag=line%2Dheight" target="_blank">line-height</a>&nbsp; <a href="http://www.aspxhome.com/search.asp?tag=%D0%D0%B8%DF" target="_blank">行高</a>&nbsp; <a href="http://www.aspxhome.com/search.asp?tag=%CE%C4%D7%D6" target="_blank">文字</a>&nbsp; <a href="http://www.aspxhome.com/search.asp?tag=css" target="_blank">css</a>&nbsp; </div>
+<div class="npage">上一篇：<a href="http://www.aspxhome.com/design/css/20086/416524.htm">CSS的优先级与特殊性</a>&nbsp; 下一篇：<a href="http://www.aspxhome.com/design/css/20086/416724.htm">跨平台、多浏览器页面测试</a></div>
+</div>
+<div class="article_list">
+<div id="aspxhome_02">站长工具</div>
+<div id="ad486"><div><form name="googlers" method="get" target="_blank" action="http://tool.aspxhome.com/google/rs.asp">
+Google 相关搜索查询：<input class="t1" value="" name="word" title="多个关键词以逗号隔开">
+<input type="submit" value="查 询">
+</form></div></div>
+</div>
+<div class="article_list">
+<div id="aspxhome_01">相关文章</div>
+<div class="content_li2">
+<ul>
+<li><a href="http://www.aspxhome.com/design/css/20086/416524.htm" title="CSS的优先级与特殊性">CSS的优先级与特殊性</a></li>
+<li><a href="http://www.aspxhome.com/download/css/20086/415523.htm" style="color:#ff0000" title="一目了然：为你的链接添加图标提示">一目了然：为你的链接添加图标提示</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20086/415323.htm" title="使用CSS简单实现垂直居中">使用CSS简单实现垂直居中</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20086/414821.htm" title="dl+ol应用">dl+ol应用</a></li>
+<li><a href="http://www.aspxhome.com/download/css/20086/413619.htm" style="color:#ff0000" title="CSS布局实战系列教程:混沌初开">CSS布局实战系列教程:混沌初开</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20124/1592825.htm" title="用CSS3和HTML5五步打造便签效果">用CSS3和HTML5五步打造便签效果</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20119/1561816.htm" title="IE10增强对HTML5和CSS3的支持">IE10增强对HTML5和CSS3的支持</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20119/155856.htm" title="学用代码片段">学用代码片段</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20118/1554224.htm" title="纯CSS3透明水晶盒">纯CSS3透明水晶盒</a></li>
+<li><a href="http://www.aspxhome.com/design/css/20118/1554124.htm" title="纯CSS3文字渐变内发光投影效果">纯CSS3文字渐变内发光投影效果</a></li>
+</ul>
+</div>
+</div>
+<div id="content2">
+<div class="menu"><a name="#pl">最新评论</a> 【<a href="http://www.aspxhome.com/inc/say.asp?id=4166" target="_blank">查看全部评论</a> <span id="PlNum"></span>】</div>
+<span id="loadding"><img src="./内容区域、行内框和行框_files/load.gif" alt="loading"> 请稍等，评论加载中...<p></p></span>
+<script type="text/javascript" src="./内容区域、行内框和行框_files/say.asp.下载"></script>
+</div>
+  
+</div>
+<div class="right" id="right">
+<div class="top10_right">
+<div class="menu">赞助商链接</div>
+<div class="content_li">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1725378597726109";
+/* 250x250, 创建于 10-5-27 */
+google_ad_slot = "1642160927";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./内容区域、行内框和行框_files/show_ads.js.下载">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><iframe width="250" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./内容区域、行内框和行框_files/saved_resource(2).html"></iframe></ins></ins></div>
+</div>
+<div class="top10_right">
+<div class="menu">排行榜 Top50</div>
+<div class="Navigation_title">
+<a href="http://www.aspxhome.com/focus/hot-hits-top50.htm" class="w_title">热门点击排行</a>
+<a href="http://www.aspxhome.com/focus/hot-day-hits-top50.htm" class="w_title">今日点击排行</a>
+<a href="http://www.aspxhome.com/focus/hot-week-hits-top50.htm" class="w_title">本周点击排行</a>
+<a href="http://www.aspxhome.com/focus/hot-month-hits-top50.htm" class="w_title">本月点击排行</a>
+<a href="http://www.aspxhome.com/focus/hot-browse-hits-top50.htm" class="w_title">最新访问排行</a>
+<a href="http://www.aspxhome.com/focus/hot-comments-top50.htm" class="w_title">热门评论排行</a>
+</div>
+</div>
+<div class="top10_right">
+<div class="menu">大家在看</div>
+<div class="content_li">
+<script type="text/javascript" src="./内容区域、行内框和行框_files/newbrowse_all.js.下载"></script><ul><li><a href="http://www.aspxhome.com/javascript/start/20086/40248.htm" class="title=&#39;让表单" input="" 只能输入数字'="" target="_blank">让表单 input 只能输入数字</a> <span style="color:green;font-size:12px;">7:38:29</span></li><li><a href="http://www.aspxhome.com/asp/component/20102/1250026.htm" class="title=&#39;ASP利用TCPIP.DNS组件实现域名IP查询&#39;" target="_blank">ASP利用TCPIP.DNS组件实现域名IP查询</a> <span style="color:green;font-size:12px;">3:46:33</span></li><li><a href="http://www.aspxhome.com/webmaster/experience/20105/135001.htm" class="title=&#39;GoDaddy：如何查看帐户状态&#39;" target="_blank">GoDaddy：如何查看帐户状态</a> <span style="color:green;font-size:12px;">3:22:39</span></li><li><a href="http://www.aspxhome.com/javascript/skills/20092/726310.htm" class="title=&#39;实现一个获取元素样式的函数getStyle&#39;" target="_blank">实现一个获取元素样式的函数getStyle</a> <span style="color:green;font-size:12px;">3:18:42</span></li><li><a href="http://www.aspxhome.com/database/oracle/20107/1439221.htm" class="title=&#39;Oracle使用PL/SQL操作COM对象&#39;" target="_blank">Oracle使用PL/SQL操作COM对象</a> <span style="color:green;font-size:12px;">3:10:13</span></li><li><a href="http://www.aspxhome.com/webmaster/server/20101/118284.htm" class="title=&#39;在Win2000下实现动态DNS的安全考虑&#39;" target="_blank">在Win2000下实现动态DNS的安全考虑</a> <span style="color:green;font-size:12px;">3:06:11</span></li><li><a href="http://www.aspxhome.com/photo/photoshop/20093/79031.htm" class="title=&#39;Photoshop的魔法：肥女变魔鬼身材[视频]&#39;" target="_blank">Photoshop的魔法：肥女变魔鬼身材[视频]</a> <span style="color:green;font-size:12px;">2:52:43</span></li><li><a href="http://www.aspxhome.com/webmaster/news/200911/110888.htm" class="title=&#39;谷歌反诉Android" data公司="" 称遭陌生人敲诈'="" target="_blank">谷歌反诉Android Data公司 称遭陌生人敲诈</a> <span style="color:green;font-size:12px;">2:17:10</span></li><li><a href="http://www.aspxhome.com/javascript/program/201011/1474030.htm" class="title=&#39;模拟实现" range="" 的="" insertnode()="" 方法'="" target="_blank">模拟实现 Range 的 insertNode() 方法</a> <span style="color:green;font-size:12px;">2:17:09</span></li><li><a href="http://www.aspxhome.com/webmaster/experience/20104/1352026.htm" class="title=&#39;不同类型GoDaddy主机支持的脚本和功能&#39;" target="_blank">不同类型GoDaddy主机支持的脚本和功能</a> <span style="color:green;font-size:12px;">2:07:56</span></li></ul>
+</div>
+</div>
+<div class="top10_right">
+<div class="menu">赞助商链接</div>
+<div class="content_li">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-1725378597726109";
+/* 250x250, 创建于 10-5-27 */
+google_ad_slot = "1642160927";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./内容区域、行内框和行框_files/show_ads.js.下载">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent"><iframe width="250" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./内容区域、行内框和行框_files/saved_resource(3).html"></iframe></ins></ins></div>
+</div>
+<div id="Aspxhome_com"></div>
+</div>
+</div>
+<script type="text/javascript" src="./内容区域、行内框和行框_files/hits.asp.下载"></script>
+<div class="content">
+<div class="aboutaspxhome">
+<ul><li><a href="http://www.aspxhome.com/">首页</a> - <a href="http://www.aspxhome.com/about.htm">关于站点</a> - <a href="http://www.aspxhome.com/contact.htm">联系站长</a> - <a href="http://www.aspxhome.com/exempt.htm">免责声明</a> - <a href="http://www.aspxhome.com/copyright.htm">版权隐私</a> - <a href="http://www.aspxhome.com/sitemap.htm">网站地图</a> - <a href="http://www.aspxhome.com/links.htm">友情链接</a> - <a href="http://www.aspxhome.com/ad.htm">广告服务</a> - <a href="javascript:" onclick="scroll(0,0)">Top</a></li></ul>
+</div>
+<div class="bottom"><h1>学习Asp到Asp之家（Aspxhome.com）</h1><a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备09044667号-4</a>
+</div>
+<script type="text/javascript" src="./内容区域、行内框和行框_files/bottom.js.下载"></script><script data="type=tools&amp;uid=606042" id="bdshare_js" type="text/javascript" src="./内容区域、行内框和行框_files/bds_s_v2.js.下载"></script><script src="./内容区域、行内框和行框_files/f.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u593629_0"></div><script src="./内容区域、行内框和行框_files/stat.php" charset="gb2312" type="text/javascript"></script><script src="./内容区域、行内框和行框_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=16017" target="_blank" title="站长统计">站长统计</a>
+</div>
+
+<div id="overlay" style="visibility: hidden; opacity: 0;"></div><div id="lightbox" style="display: none;"><div id="imageDataContainer" class="clearfix" style="visibility: hidden; opacity: 0;"><div id="imageData"><span id="caption"></span><div id="bottomNav"><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" onclick="window.open(imgPreloader.src);return false;" title="新窗口打开"><img src="./内容区域、行内框和行框_files/newopen.gif"></a><a href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" id="bottomNavClose" onclick="myLightbox.end();return false;" title="关闭"><img src="./内容区域、行内框和行框_files/closelabel.gif"></a></div></div></div><div id="outerImageContainer"><div id="imageContainer"><img id="lightboxImage" style="visibility: hidden; opacity: 0;"><div id="loading"><a id="loadingLink" href="http://www.aspxhome.com/design/css/20086/416624_1.htm#" onclick="myLightbox.end();return false;"><img src="./内容区域、行内框和行框_files/loading.gif"></a></div></div></div></div></body></html>

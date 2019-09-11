@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cheat sheet</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        @media screen and (min-width:768px) {
+            .son {
+                width: 32%;
+                min-width: 320px;
+                margin: 0 5px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .son {
+                width: 94vw;
+            }
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+        }
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">编辑器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Hbuilder</div>
+                                <div>国产。。。</div>
+                            </li>
+                            <li>
+                                <div>Sublime</div>
+                                <div>轻量级轻量级轻量级轻量级轻量级轻量级轻量级</div>
+                            </li>
+                            <li>
+                                <div>javac</div>
+                                <div>java编译­器，源代码 -> 字节码（.c­lass文件）</div>
+                            </li>
+                            <li>
+                                <div>bytecode</div>
+                                <div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+                            </li>
+                            <li>
+                                <div>JVM</div>
+                                <div>java虚拟­机，能­将ja­va字­节码翻­译成机­器码来执行</div>
+                            </li>
+                            <li>
+                                <div>jar</div>
+                                <div>一种压缩文件­，将多­个.c­las­s文件­打包到一起</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第一列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">编辑器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Hbuilder</div>
+                                <div>国产。。。</div>
+                            </li>
+                            <li>
+                                <div>Sublime</div>
+                                <div>轻量级轻量级轻量级轻量级轻量级轻量级轻量级</div>
+                            </li>
+                            <li>
+                                <div>javac</div>
+                                <div>java编译­器，源代码 -> 字节码（.c­lass文件）</div>
+                            </li>
+                            <li>
+                                <div>bytecode</div>
+                                <div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+                            </li>
+                            <li>
+                                <div>JVM</div>
+                                <div>java虚拟­机，能­将ja­va字­节码翻­译成机­器码来执行</div>
+                            </li>
+                            <li>
+                                <div>jar</div>
+                                <div>一种压缩文件­，将多­个.c­las­s文件­打包到一起</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">编辑器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Hbuilder</div>
+                                <div>国产。。。</div>
+                            </li>
+                            <li>
+                                <div>Sublime</div>
+                                <div>轻量级</div>
+                            </li>
+                            <li>
+                                <div>javac</div>
+                                <div>java编译­器，源代码 -> 字节码（.c­lass文件）</div>
+                            </li>
+                            <li>
+                                <div>bytecode</div>
+                                <div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+                            </li>
+                            <li>
+                                <div>JVM</div>
+                                <div>java虚拟­机，能­将ja­va字­节码翻­译成机­器码来执行</div>
+                            </li>
+                            <li>
+                                <div>jar</div>
+                                <div>一种压缩文件­，将多­个.c­las­s文件­打包到一起</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第二列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">编辑器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Hbuilder</div>
+                                <div>国产。。。</div>
+                            </li>
+                            <li>
+                                <div>Sublime</div>
+                                <div>轻量级</div>
+                            </li>
+                            <li>
+                                <div>javac</div>
+                                <div>java编译­器，源代码 -> 字节码（.c­lass文件）</div>
+                            </li>
+                            <li>
+                                <div>bytecode</div>
+                                <div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+                            </li>
+                            <li>
+                                <div>JVM</div>
+                                <div>java虚拟­机，能­将ja­va字­节码翻­译成机­器码来执行</div>
+                            </li>
+                            <li>
+                                <div>jar</div>
+                                <div>一种压缩文件­，将多­个.c­las­s文件­打包到一起</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">编辑器</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>Hbuilder</div>
+                                <div>国产。。。</div>
+                            </li>
+                            <li>
+                                <div>Sublime</div>
+                                <div>轻量级</div>
+                            </li>
+                            <li>
+                                <div>javac</div>
+                                <div>java编译­器，源代码 -> 字节码（.c­lass文件）</div>
+                            </li>
+                            <li>
+                                <div>bytecode</div>
+                                <div>java字节­码，包­含ja­va虚­拟机能­识别的指令集</div>
+                            </li>
+                            <li>
+                                <div>JVM</div>
+                                <div>java虚拟­机，能­将ja­va字­节码翻­译成机­器码来执行</div>
+                            </li>
+                            <li>
+                                <div>jar</div>
+                                <div>一种压缩文件­，将多­个.c­las­s文件­打包到一起</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

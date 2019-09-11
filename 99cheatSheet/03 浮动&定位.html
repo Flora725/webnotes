@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动与定位</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .son {
+            width: 30%;
+            min-width: 300px;
+            margin-right: 10px;
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+        }
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+        .son1 ul li div {
+            flex:none;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">浮动规则</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>1.&nbsp;脱离标准文档流。在标准流中不占位置，覆盖在标准流之上。</div>
+                            </li>
+                            <li>
+                                <div>2.&nbsp;浮动找浮动，不浮动找不浮动。</div>
+                            </li>
+                            <li>
+                                <div>3.&nbsp;浮动的元素只会影响下面的元素，不会影响上面的元素，就好像是上面的非浮动的元素形成了一个挡板。</div>
+                            </li>
+                            <li>
+                                <div>4.&nbsp;浮动的时候，内容（文字|图片）不会被覆盖，它会围绕浮动的元素呈现出来。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第一列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">浮动元素的特点</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;浮动的元素变成了inline-block元素：可以设置宽高(block)，如果不设置的话就由内容撑开(inline)；也可以排在一行(inline)，如果排不下的话就只好往下排。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">清浮动</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>方法一</div>
+                                <div>在父盒子底部添加一个空标签;<br>缺点：会大量引入空标签</div>
+                            </li>
+                            <li>
+                                <div>方法二</div>
+                                <div>给父元素设置 overflow: hidden; <br>触发BFC</div>
+                            </li>
+                            <li>
+                                <div>方法三</div>
+                                <div>给浮动元素下面的元素加上clear: both;</div>
+                            </li>
+                            <li>
+                                <div>方法四</div>
+                                <div>
+                                    给父元素添加伪元素<br>
+                                    .father : after {<br>
+                                    &nbsp;&nbsp;content: “ ”;<br>
+                                    &nbsp;&nbsp;height: 0;<br>
+                                    &nbsp;&nbsp;display: block;<br>
+                                    &nbsp;&nbsp;clear: fix;<br>
+                                    &nbsp;&nbsp;visibility: hidden;<br>
+                                    }
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+               
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">相对定位relative</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>参照物</div>
+                                <div>以原来的位置为参照物发生偏移</div>
+                            </li>
+                            <li>
+                                <div>滚动条</div>
+                                <div>随之滚动</div>
+                            </li>
+                            <li>
+                                <div>是否脱标</div>
+                                <div>不脱标。<br>其他元素仍以原来的位置为基准正常注入。 </div>
+                            </li>
+                            <li>
+                                <div>自身特点</div>
+                                <div>想当年<br>没有脱离标准流。只是相对原来的位置进行了偏移。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第三列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">绝对定位absolute</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>参照物</div>
+                                <div>若无父元素，相对于body定位；有父元素，但父元素无定位，仍相对于body定位；有父元素且父元素有定位，则相对于父元素定位</div>
+                            </li>
+                            <li>
+                                <div>滚动条</div>
+                                <div>随之滚动</div>
+                            </li>
+                            <li>
+                                <div>是否脱标</div>
+                                <div>脱标。<br>一个元素绝对定位时，会把它从页面的正常流中删除，在页面中不占任何位置 </div>
+                            </li>
+                            <li>
+                                <div>自身特点</div>
+                                <div>找干爹<br>会脱离标准流，在页面不占位置。对子盒子进行绝对定位的时候，一定要将父盒子进行相对定位，子绝父相</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第三列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">固定定位fixed</div>
+                    <div>
+                        <ul class="detail">
+                           <li>
+                                <div>参照物</div>
+                                <div>浏览器窗口，window</div>
+                            </li>
+                            <li>
+                                <div>滚动条</div>
+                                <div>不动</div>
+                            </li>
+                            <li>
+                                <div>是否脱标</div>
+                                <div>脱标。</div>
+                            </li>
+                            <li>
+                                <div>自身特点</div>
+                                <div>死心眼<br>固定定位的元素会脱离标准流。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /** {*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: #00cc00;
+            position: relative;
+        }
+        .p {
+            width: 200px;
+            height: 20px;
+            margin: 20px;   /*如果不设置margin或者p标签的默认样式已经清除，文本就会往上跑*/
+            /*反之，文本就会往下跑，因为offsetTop包括父盒子的padding、子盒子的margin以及它们之间的距离*/
+            /*而*.style.top只包括父盒子的padding以及它们之间的距离，不包括子盒子的margin*/
+            /*所以每次给p.style.top赋值的时候都比原来大*/
+            position: absolute;
+            top: 180px;
+        }
+    </style>
+</head>
+<body>
+<div id="father" class="father">
+    <p class="p" id="p">迷雾世界实战演示</p>
+</div>
+<script>
+    window.onload = function () {
+        var father = document.getElementById("father");
+        var son = document.getElementById("son");
+        var timer = null;
+        var p = document.getElementById("p");
+        father.onmouseover = function () {
+            timer = setInterval(function () {
+                var target2 = father.offsetHeight / 2; //100px
+                var leader2 = p.offsetTop;
+                console.log("leader2:" + leader2);
+                var step2 = -5;
+                leader2 = leader2 + step2;
+                p.style.top = leader2 + "px";
+                console.log("top" + p.style.top);
+                if(leader2 === 300){
+                    clearInterval(timer);
+                }
+            }, 15)
+        }
+    }
+</script>
+</body>
+</html>

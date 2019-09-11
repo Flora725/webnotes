@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /*取消图片底部3像素距离*/
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box ul li {
+            float: left;
+        }
+
+        .box ul {
+            width: 1500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="screen">
+    <ul>
+        <li><img src="images/01.jpg" alt=""/></li>
+        <li><img src="images/02.jpg" alt=""/></li>
+        <li><img src="images/03.jpg" alt=""/></li>
+        <li><img src="images/04.jpg" alt=""/></li>
+        <li><img src="images/01.jpg" alt=""/></li>
+    </ul>
+</div>
+<script>
+    var screen = document.getElementById("screen");
+    var ul = document.getElementsByTagName("ul")[0];
+    var imgwidth = screen.offsetWidth;
+    var target = -imgwidth*4;
+    var timer = null;
+    screen.onmouseover = function () {
+        clearInterval(timer);
+    };
+    screen.onmouseout = function () {
+         timer = setInterval(function () {
+            var leader = ul.offsetLeft;
+            var step =-200;
+            if(leader > target){    //当前位置为-1000时，还可以再迈一步。
+//          如果此处是>=的话，到达目的地后就还可以再迈出一步，这样就会出现空白。
+                leader = leader + step;
+                ul.style.left = leader + "px";  //此时正好到达目的地-1200
+            }else{
+                ul.style.left = 0;  //当前位置为-1200，瞬间把ul移到了起始位置0，再过1秒后，才能再迈出一步。
+                // 假的第一张和真的第一张各停留了一秒。
+            }
+        },1000);
+    };
+
+
+
+</script>
+</body>
+</html>

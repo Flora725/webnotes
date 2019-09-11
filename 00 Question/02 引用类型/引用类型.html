@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引用类型</title>
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+</div>
+<script>
+    var container = document.getElementById("container");
+    var boxes = document.getElementsByClassName("box");
+    console.log(boxes.length);
+    var img = document.createElement("img");
+    img.src = "images/P_007.jpg";
+    var div = document.createElement("div");
+    div.className = "box";  //此处如果不加类名，boxes的长度就不会变化
+    div.appendChild(img);
+    container.appendChild(div);
+    console.log(boxes.length);
+
+    // var container = document.getElementById("container");
+    // var boxes = container.children;
+    // console.log(boxes.length);
+    // var img = document.createElement("img");
+    // img.src = "images/P_007.jpg";
+    // var div = document.createElement("div");
+    // div.appendChild(img);
+    // container.appendChild(div);
+    // console.log(boxes.length);
+
+    document.write("总之，不管用哪种方法取的boxes,都会自动时时更新数据");
+</script>
+</body>
+</html>

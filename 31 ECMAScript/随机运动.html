@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            position: relative;
+            overflow: hidden;
+        }
+        div {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: red;
+            position: absolute;
+        }
+       
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var b = document.getElementsByTagName("div")[0];
+        // 获取红点的位置
+        var startX = b.offsetLeft;
+        var startY = b.offsetTop;
+
+        // 获取窗口的大小
+        var wide = window.innerWidth;
+        var high = window.innerHeight;
+        var stepX = 10;
+        var stepY = 8;
+
+        setInterval(function() {
+            if(startX > wide || startY > high) {
+                stepX = -Math.ceil(Math.random()*10);
+                stepY = -Math.ceil(Math.random()*10);
+            }
+            if(startX < 0 || startY <0 ) {
+                stepX = Math.ceil(Math.random()*10);
+                stepY = Math.ceil(Math.random()*10); 
+            }
+            startX += stepX;
+            startY += stepY;
+            b.style.left = startX + "px";
+            b.style.top = startY + "px";
+        }, 10)
+
+
+
+    </script>
+   
+   
+</body>
+</html>

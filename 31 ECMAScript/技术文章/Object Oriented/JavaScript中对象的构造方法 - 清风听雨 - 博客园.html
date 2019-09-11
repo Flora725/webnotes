@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript中对象的构造方法 - 清风听雨 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/bundle-SimpleBlue.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/bundle-SimpleBlue-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/liweiqing/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/liweiqing/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/liweiqing/wlwmanifest.xml">
+<script src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'liweiqing', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/liweiqing/">清风听雨</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/liweiqing/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%B8%85%E9%A3%8E%E5%90%AC%E9%9B%A8">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/liweiqing/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/liweiqing/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-12&nbsp;
+文章-0&nbsp;
+评论-1&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html">JavaScript中对象的构造方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><span style="font-family: Tahoma; font-size: 12px; line-height: 18px; "><strong style="font-weight: bold; ">第一种方式： 工厂方法</strong>&nbsp;<br>
+能创建并返回特定类型的对象的工厂函数（factory function）。&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Javascript代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20createCar(sColor)%7B%0A%20%20var%20oTempCar%20%3D%20new%20Object%3B%0A%20%20oTempCar.color%20%3D%20sColor%3B%0A%20%20oTempCar.showColor%20%3D%20function%20()%7B%0A%20%20%20%20alert(this.color)%3B%0A%20%20%7D%3B%0A%20%20return%20oTempCar%3B%0A%7D%0Avar%20oCar1%20%3D%20createCar()%3B%0Avar%20oCar2%20%3D%20createCar()%3B" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;createCar(sColor){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oTempCar&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Object;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;oTempCar.color&nbsp;=&nbsp;sColor;&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;oTempCar.showColor&nbsp;=&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;};&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">return</span><span style="color: black; ">&nbsp;oTempCar;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar1&nbsp;=&nbsp;createCar();&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar2&nbsp;=&nbsp;createCar();&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<br>
+调用此函数时，将创建新对象，并赋予它所有必要的属性。使用此方法将创建car对象的两个版本（oCar1和oCar2），他们的属性完全一样。&nbsp;<br>
+使用此方法存在的问题：&nbsp;<br>
+1语义上看起来不像使用带有构造函数的new运算符那么正规。&nbsp;<br>
+2使用这种方式必须创建对象的方法。每次调用createCar()，都要创建showColor()，意味着每个对象都有自己的showColor()版本，事实上，每个对象都共享了同一个函数。&nbsp;<br>
+有些开发者在工厂函数外定义对象的方法，然后通过属性指向该方法。从而避免这个问题：&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Js代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20createCar(sColor)%7B%0A%20%20var%20oTempCar%20%3D%20new%20Object%3B%0A%20%20oTempCar.color%20%3D%20sColor%3B%0A%20%20oTempCar.showColor%20%3D%20showColor%3B%0A%20%20return%20oTempCar%3B%0A%7D%0Afunction%20showColor()%7B%0A%20%20%20alert(this.color)%3B%0A%7D" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;createCar(sColor){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oTempCar&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Object;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;oTempCar.color&nbsp;=&nbsp;sColor;&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;oTempCar.showColor&nbsp;=&nbsp;showColor;&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">return</span><span style="color: black; ">&nbsp;oTempCar;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;showColor(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;alert(<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<br>
+在这段重写的代码中，在函数createCar()前定义了函数showColor().在createCar()内部，赋予对象一个已经指向已经存在的showColor()函数的指针。从功能上来讲，这样解决了重复创建对象的问题，但该函数看起来不像对象的方法。&nbsp;<br>
+所有这些问题引发了开发者定义的构造函数的出现。&nbsp;<br>
+<strong style="font-weight: bold; "><br>
+第二种方式：构造函数方式</strong>&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Js代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20Car(sColor)%7B%0A%20%20this.color%20%3D%20sColor%3B%0A%20%20this.showColor%20%3D%20function%20()%7B%0A%20%20%20%20alert(this.color)%3B%0A%20%20%7D%3B%0A%7D%0Avar%20oCar1%20%3D%20new%20Car(%22red%22)%3B%0Avar%20oCar2%20%3D%20new%20Car(%22blue%22)%3B" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;Car(sColor){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color&nbsp;=&nbsp;sColor;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.showColor&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;};&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar1&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car(</span><span class="string" style="color: blue; ">"red"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar2&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car(</span><span class="string" style="color: blue; ">"blue"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<br>
+你可能已经注意到第一个差别了，在构造函数内部无创建对象，而是使用this关键字。使用new运算符调用构造函数时，在执行第一行代码前先创建一个对象，只有用this才能访问该对象。然后可以直接赋予this属性，默认情况下是构造函数的返回值（不必明确使用return运算符）。&nbsp;<br>
+这种方式在管理函数方面与工厂方法一样都存在相同的问题。&nbsp;<br>
+<br>
+<strong style="font-weight: bold; ">第三种方式：原型方式</strong>&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Js代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20Car()%7B%0A%20%0A%7D%0ACar.prototype.color%20%3D%20%22blue%22%3B%0Avar%20oCar1%20%3D%20new%20Car()%3B%0Avar%20oCar2%20%3D%20new%20Car()%3B" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;Car(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">Car.prototype.color&nbsp;=&nbsp;<span class="string" style="color: blue; ">"blue"</span><span style="color: black; ">;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar1&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car();&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar2&nbsp;=&nbsp;</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car();&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<br>
+调用new Car()时，原型的所有属性都被立即赋予要创建的对象，意味着所有的Car实例存放的都是指向showColor()函数的指针。从语义上看起来都属于一个对象，因此解决了前面两种方式存在的两个问题。此外使用该方法，还能用instanceof运算符检查给定变量指向的对象类型。因此，下面的代码将输出true：&nbsp;<br>
+alert(oCar instanceof Car); //outputs "true"&nbsp;<br>
+这个方式看起来很不错，遗憾的是，它并不尽如人意。&nbsp;<br>
+1首先这个构造函数没有参数。使用原型方式时，不能给构造函数传递参数初始化属性的值，因为car1和car2的属性都等于&amp;ldquo;red&amp;rdquo;。&nbsp;<br>
+2真正的问题出现在属性指向的是对象，而不是函数时。函数共享不会造成任何问题，但是对象却很少被多个实例共享的。&nbsp;<br>
+<br>
+<strong style="font-weight: bold; ">第四种方式：混合的构造函数/原型方式（推荐）</strong>&nbsp;<br>
+联合使用构造函数和原型方式，就可像用其他程序设计语言一样创建对象。这种概念非常简单，即用构造函数定义对象的所有非函数属性，用原型方式定义对象的函数属性（方法）。&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Js代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20Car(sColor)%7B%0A%20%20this.color%20%3DsColor%3B%0A%20%20this.drivers%20%3Dnew%20Array(%22Mike%22%2C%22Sue%22)%3B%0A%7D%0ACar.prototype.showColor%20%3D%20function()%7B%0A%20%20alert(this.color)%3B%0A%7D%0Avar%20oCar1%20%3Dnew%20Car(%22red%22)%3B%0Avar%20oCar2%20%3Dnew%20Car(%22blue%22)%3B%0A%0AoCar1.drivers.push(%22Matt%22)%3B%0A%0Aalert(oCar1.drivers)%3B%20%20%20%2F%2Foutputs%20%22Mike%2CSue%2CMatt%22%0Aalert(oCar1.drivers)%3B%20%20%20%2F%2Foutputs%20%22Mike%2CSue%22" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;Car(sColor){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color&nbsp;=sColor;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.drivers&nbsp;=</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Array(</span><span class="string" style="color: blue; ">"Mike"</span><span style="color: black; ">,</span><span class="string" style="color: blue; ">"Sue"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">Car.prototype.showColor&nbsp;=&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;alert(<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar1&nbsp;=</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car(</span><span class="string" style="color: blue; ">"red"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">var</span><span style="color: black; ">&nbsp;oCar2&nbsp;=</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Car(</span><span class="string" style="color: blue; ">"blue"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">oCar1.drivers.push(<span class="string" style="color: blue; ">"Matt"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">alert(oCar1.drivers);&nbsp;&nbsp;&nbsp;<span class="comment" style="color: #008200; ">//outputs&nbsp;"Mike,Sue,Matt"</span><span style="color: black; ">&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">alert(oCar1.drivers);&nbsp;&nbsp;&nbsp;<span class="comment" style="color: #008200; ">//outputs&nbsp;"Mike,Sue"</span><span style="color: black; ">&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<br>
+<br>
+<strong style="font-weight: bold; ">第五种方式：动态原型方式（推荐）</strong>&nbsp;<br>
+对于习惯使用其他语言的开发者来说，使用混合的构造函数/原型方式感觉不那么和谐。批评混合的构造函数/原型方式的人认为，在构造函数内找属性，在外部找方法的做法很不合理。所以他们设计了动态原型方式，以提供更友好的编码风格。&nbsp;<br>
+动态原型方法的基本想法与混合的构造函数/原型方式相同，即在构造函数内定义非函数属性，而函数属性则利用原型属性定义。唯一的区别是赋予对象方法的位置。下面是使用动态原型方法重写的Car类：&nbsp;<br>
+<div class="dp-highlighter" style="font-family: Consolas, &#39;Courier New&#39;, Courier, mono; font-size: 12px; background-color: transparent; width: 97%; overflow-x: auto; overflow-y: auto; margin-left: 9px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; word-break: break-all; word-wrap: break-word; ">
+<div class="bar">
+<div class="tools" style="padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; text-align: left; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: black; font-weight: bold; ">Js代码&nbsp;<embed src="http://www.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=function%20Car(sColor)%7B%0A%20%20this.color%20%3DsColor%3B%0A%20%20this.drivers%20%3Dnew%20Array(%22Mike%22%2C%22Sue%22)%3B%0A%0A%20%20if(typeof%20Car._initialized%20%3D%3D%20%22undefined%22)%7B%0A%20%20%20%20Car.prototype.showColor%20%3D%20function()%7B%0A%20%20%20%20%20%20alert(this.color)%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20Car._initialized%20%3D%20true%3B%0A%7D%0A" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></div>
+</div>
+<ol start="1" class="dp-c" style="font-size: 1em; line-height: 1.4em; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #d1d7dc; border-right-color: #d1d7dc; border-bottom-color: #d1d7dc; border-left-color: #d1d7dc; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; color: #2b91af; ">
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; "><span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">&nbsp;Car(sColor){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color&nbsp;=sColor;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.drivers&nbsp;=</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">new</span><span style="color: black; ">&nbsp;Array(</span><span class="string" style="color: blue; ">"Mike"</span><span style="color: black; ">,</span><span class="string" style="color: blue; ">"Sue"</span><span style="color: black; ">);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">if</span><span style="color: black; ">(</span><span class="keyword" style="color: #7f0055; font-weight: bold; ">typeof</span><span style="color: black; ">&nbsp;Car._initialized&nbsp;==&nbsp;</span><span class="string" style="color: blue; ">"undefined"</span><span style="color: black; ">){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;&nbsp;Car.prototype.showColor&nbsp;=&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">function</span><span style="color: black; ">(){&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="keyword" style="color: #7f0055; font-weight: bold; ">this</span><span style="color: black; ">.color);&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;}&nbsp;&nbsp;</span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">&nbsp;&nbsp;Car._initialized&nbsp;=&nbsp;<span class="keyword" style="color: #7f0055; font-weight: bold; ">true</span><span style="color: black; ">;&nbsp;&nbsp;</span></span></li>
+    <li style="font-size: 1em; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; padding-left: 10px; line-height: 18px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; "><span style="color: black; ">} &nbsp;</span></li>
+</ol>
+</div>
+</span></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/liweiqing/tag/JavaScript%20%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9E%84%E9%80%A0/">JavaScript 对象的构造</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1440042,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;e4eb13ed-58fb-dd11-9e4d-001cf0cd104b&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/liweiqing/" target="_blank"><img src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/u48999.jpg" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/liweiqing/">清风听雨</a><br>
+            <a href="http://home.cnblogs.com/u/liweiqing/followees">关注 - 1</a><br>
+            <a href="http://home.cnblogs.com/u/liweiqing/followers">粉丝 - 1</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;e4eb13ed-58fb-dd11-9e4d-001cf0cd104b&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(1440042,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(1440042,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/18/1438927.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/liweiqing/archive/2009/04/18/1438927.html" title="发布于2009-04-18 23:17">浅谈测试驱动开发</a><br><a href="http://www.cnblogs.com/liweiqing/archive/2009/05/21/1486646.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/liweiqing/archive/2009/05/21/1486646.html" title="发布于2009-05-21 22:19">LINQ</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2009-04-20 23:20</span> <a href="http://www.cnblogs.com/liweiqing/">清风听雨</a> 阅读(<span id="post_view_count">1033</span>) 评论(<span id="post_comment_count">1</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=1440042" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html#" onclick="AddToWz(1440042);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=54749,cb_entryId=1440042,cb_blogApp=currentBlogApp,cb_blogUserGuid='e4eb13ed-58fb-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2009/4/20 23:20:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<!--done-->
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html#1517667" class="layer">#1楼</a><a name="1517667" id="comment_anchor_1517667"></a><span id="comment-maxId" style="display:none;">1517667</span><span id="comment-maxDate" style="display:none;">2009/5/3 2:21:17</span>  <span class="comment_date">2009-05-03 02:21</span> <a id="a_comment_author_1517667" href="http://www.cnblogs.com/ycbfish333/" target="_blank">peaceful_fish</a> <a href="http://msg.cnblogs.com/send/peaceful_fish" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1517667" class="blog_comment_body">第五种方法看不懂额~~~ 
+<br>平时一般都用第2种和第4种方法，第2种和第4种区别很大吗？？？望楼主可以进一步详细解释下~~~鄙人才疏学浅，望指教~~~
+<br></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1517667,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1517667,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_1517667_avatar" style="display:none;">http://pic.cnblogs.com/face/u36192.jpg</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://rongcloud.cn/reports/journal2" target="_blank">【推荐】融云发布 App 社交化白皮书 IM 提升活跃超 8 倍</a><br><a href="http://arcapp.anruichina.com/arctrac/trac?tid=smb_azure_1212_CNBlog" target="_blank">【福利】Microsoft Azure给博客园的你专属三重大礼</a><br><a href="http://bbs.h3bpm.com/read.php?tid=861&amp;fid=11?utm_source=cnblogs&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank">【推荐】BPM免费下载</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="http://www.gcpowertools.com.cn/products/spreadjs/?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS&amp;utm_campaign=community" target="_blank"><img width="300" height="250" src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/24442-20161031104652361-1905759806.gif" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/559181/" target="_blank">业内劳模：雷军47岁生日快乐！</a><br> ·  <a href="http://news.cnblogs.com/n/559180/" target="_blank">微信上线AED“救命神器” 上海、深圳尝鲜</a><br> ·  <a href="http://news.cnblogs.com/n/559179/" target="_blank">偷师支付宝？小米运动上线米动圈</a><br> ·  <a href="http://news.cnblogs.com/n/559178/" target="_blank">中国科学家成功将3D打印血管植入动物体内</a><br> ·  <a href="http://news.cnblogs.com/n/559177/" target="_blank">人人公司第三季度净亏损2280万美元 同比收窄</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="http://bbs.h3bpm.com/read.php?tid=861&amp;fid=11?utm_source=cnblogs&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank"><img width="468" height="60" src="./JavaScript中对象的构造方法 - 清风听雨 - 博客园_files/35695-20161213142353073-1602158633.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/558087/" target="_blank">高质量的工程代码为什么难写</a><br> ·  <a href="http://kb.cnblogs.com/page/555750/" target="_blank">循序渐进地代码重构</a><br> ·  <a href="http://kb.cnblogs.com/page/554496/" target="_blank">技术的正宗与野路子</a><br> ·  <a href="http://kb.cnblogs.com/page/553682/" target="_blank">陈皓：什么是工程师文化？</a><br> ·  <a href="http://kb.cnblogs.com/page/551422/" target="_blank">没那么难，谈CSS的设计模式</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/liweiqing/">清风听雨</a><br>园龄：<a href="http://home.cnblogs.com/u/liweiqing/" title="入园时间：2009-02-15">7年10个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/liweiqing/followers/">1</a><br>关注：<a href="http://home.cnblogs.com/u/liweiqing/followees/">1</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;e4eb13ed-58fb-dd11-9e4d-001cf0cd104b&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2009/03/01&#39;);return false;">&lt;</a></td><td align="center">2009年4月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2009/05/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td class="CalWeekendDay" align="center">4</td></tr><tr><td class="CalWeekendDay" align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td class="CalWeekendDay" align="center">11</td></tr><tr><td class="CalWeekendDay" align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/18.html"><u>18</u></a></td></tr><tr><td class="CalWeekendDay" align="center">19</td><td align="center"><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20.html"><u>20</u></a></td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td class="CalWeekendDay" align="center">25</td></tr><tr><td class="CalWeekendDay" align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/liweiqing/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/liweiqing/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/liweiqing/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/liweiqing/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/liweiqing/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/liweiqing/tag/JavaScript%20%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%9E%84%E9%80%A0/">JavaScript 对象的构造</a>(1)</li><li><a href="http://www.cnblogs.com/liweiqing/tag/%E6%B5%8B%E8%AF%95%20%E9%A9%B1%E5%8A%A8%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/">测试 驱动测试开发</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/liweiqing/archive/2009/09.html">2009年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/liweiqing/archive/2009/08.html">2009年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/liweiqing/archive/2009/07.html">2009年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/liweiqing/archive/2009/06.html">2009年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/liweiqing/archive/2009/05.html">2009年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/liweiqing/archive/2009/04.html">2009年4月 (2)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html#1517667">1. re: JavaScript中对象的构造方法</a></li>
+        <li class="recent_comment_body">第五种方法看不懂额~~~ 
+<br>平时一般都用第2种和第4种方法，第2种和第4种区别很大吗？？？望楼主可以进一步详细解释下~~~鄙人才疏学浅，望指教~~~
+<br></li>
+        <li class="recent_comment_author">--peaceful_fish</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html">1. JavaScript中对象的构造方法(1034)</a></li><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/05/25/1489139.html">2.  .NET 2.0 - WinForm Control - DataGridView 编程36计(112)</a></li><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/09/21/1571311.html">3. 网络打印控件(101)</a></li><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/18/1438927.html">4. 浅谈测试驱动开发(94)</a></li><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/05/23/1487615.html">5. TOPN(53)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/liweiqing/archive/2009/04/20/1440042.html">1. JavaScript中对象的构造方法(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap" style="display: none;">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2016 清风听雨
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

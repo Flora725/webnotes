@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM小抄</title>
+    <style>
+        /* 清除默认样式 */
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            color: #46473b;
+            font-size: 14px;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* 根据屏幕的宽度不同，分成若干列 */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        @media screen and (min-width:768px) {
+            .son {
+                width: 32%;
+                min-width: 320px;
+                margin: 0 5px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .son {
+                width: 96vw;
+            }
+        }
+
+        /* 每一列的共同样式 */
+        .son .card .title {
+            color: white;
+            font: 900 14px/38px "Microsoft Yahei";
+            padding-left: 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .son .card ul.detail {
+            border-radius: 0 0 3px 3px;
+            margin-bottom: 16px;
+        }
+
+        .son ul li {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .son ul li div {
+            padding: 6px;
+        }
+
+        .son ul li div:first-child {
+            flex: 1;
+            word-break:break-all;       /*自动换行*/
+            /* word-wrap:break-word; */
+        }
+        
+
+        .son ul li div:last-child {
+            flex: 3;
+        }
+
+        /* 第一列的样式 */
+        .son1 .card .title {
+            background-color: #8866cc;
+        }
+
+        .son1 .card ul.detail {
+            border-bottom: 3px solid #8866cc;
+
+        }
+
+        .son1 ul.detail li:nth-child(even) {
+            background-color: #eae4f6;
+        }
+        .son1 .getEle li div:first-child, .son1 .related li div:first-child {
+            flex: 2;
+        }
+
+        /* 第二列的样式 */
+        .son2 .card .title {
+            background-color: #ffd457;
+        }
+
+        .son2 .card ul.detail {
+            border-bottom: 3px solid #ffd457;
+
+        }
+
+        .son2 ul.detail li:nth-child(even) {
+            background-color: #fefce5;
+        }
+
+        /* 第三列的样式 */
+        .son3 .card .title {
+            background-color: #903;
+        }
+
+        .son3 .card ul.detail {
+            border-bottom: 3px solid #903;
+
+        }
+
+        .son3 ul.detail li:nth-child(even) {
+            background-color: #edd3dc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="three-cols">
+
+            <!-- This is the first column: -->
+            <div class="son son1">
+
+                <!-- 第一列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">节点类型</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>元素节点</div>
+                                <div>Type: 1; <br>
+                                    Value: null; <br>
+                                    Name: 大写的标签名</div>
+                            </li>
+                            <li>
+                                <div>属性节点</div>
+                                <div>Type: 2; <br>
+                                    Value: 属性值; <br>
+                                    Name: 属性名</div>
+                            </li>
+                            <li>
+                                <div>文本节点</div>
+                                <div>Type: 3; <br>
+                                    Value: 文本; <br>
+                                    Name: #text</div>
+                            </li>
+                            <li>
+                                <div>注释节点</div>
+                                <div>Type: 8; <br>
+                                    Value: 注释的内容; <br>
+                                    Name: #comment</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第一列的第二个卡片 -->
+                <div class="card getEle">
+                    <div class="title">获取元素·直接获取</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>getElementById</div>
+                                <div>通过id获取一个元素</div>
+                            </li>
+                            <li>
+                                <div>getElementsByClassName</div>
+                                <div>通过类名获取一批元素</div>
+                            </li>
+                            <li>
+                                <div>getElementsByTagName</div>
+                                <div>通过标签名获取一批元素</div>
+                            </li>
+                            <li>
+                                <div>children</div>
+                                <div>选择子代获取一批元素</div>
+                            </li>
+                            <li>
+                                <div>querySelector</div>
+                                <div>获取文档中与指定选择器或选择器组匹配的第一个元素</div>
+                            </li>
+                            <li>
+                                <div>querySelectorAll</div>
+                                <div>获取与指定的选择器组匹配的文档中的一批元素</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第一列的第三个卡片 -->
+                <div class="card related">
+                    <div class="title">通过关系获取</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>parentNode</div>
+                                <div>获取父元素</div>
+                            </li>
+                            <li>
+                                <div>childNodes</div>
+                                <div>获取所有的子节点 children</div>
+                            </li>
+                            <li>
+                                <div>firstChild</div>
+                                <div>获取第一个子节点 firstElementChild</div>
+                            </li>
+                            <li>
+                                <div>lastChild</div>
+                                <div>获取最后一个子节点 lastElementChild</div>
+                            </li>
+                            <li>
+                                <div>previousSibling</div>
+                                <div>获取上一个兄弟节点 previousElementSibling</div>
+                            </li>
+                            <li>
+                                <div>nextSibling</div>
+                                <div>获取下一个兄弟节点 nextElementSibling</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第一列的第四个卡片 -->
+                <div class="card">
+                    <div class="title">节点属性操作</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>获取属性</div>
+                                <div>object.getAttribute(属性名)</div>
+                            </li>
+                            <li>
+                                <div>设置属性</div>
+                                <div>Object.setAttribute(属性名，值)</div>
+                            </li>
+                            <li>
+                                <div>移除属性</div>
+                                <div>Object.removeAttribute(属性名)</div>
+                            </li>
+                            <li>
+                                <div>注意</div>
+                                <div>setAttribute 并不能改变文章的源码。这种 “表里不一” 的现象源自 DOM 的工作模式：先加载文档的静态内容，再动态刷新，动态刷新不影响文档的静态内容。</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the second column -->
+            <div class="son son2">
+                <!-- 第二列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">动态创建标记</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>创建标记</div>
+                                <div>document.createElement</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>document.createTextNode</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>ele.cloneNode(true | false)</div>
+                            </li>
+                            <li>
+                                <div>插入节点</div>
+                                <div>fa.appendChild(ele)</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>fa.insertBefore(a,b)</div>
+                            </li>
+                            <li>
+                                <div>删除标记</div>
+                                <div>fa.removeChild(ele)</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第二列的第二个卡片 -->
+                <div class="card">
+                    <div class="title">event 对象常用属性</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>type</div>
+                                <div>事件的类型</div>
+                            </li>
+                            <li>
+                                <div>target</div>
+                                <div>该事件被传送到的对象</div>
+                            </li>
+                            <li>
+                                <div>bubbles</div>
+                                <div>是否冒泡</div>
+                            </li>
+                            <li>
+                                <div>screenX</div>
+                                <div>光标相对于该屏幕的水平位置</div>
+                            </li>
+                            <li>
+                                <div>screenY</div>
+                                <div>光标相对于该屏幕的垂直位置</div>
+                            </li>
+                            <li>
+                                <div>clientX</div>
+                                <div>光标相对于该当前窗口的水平位置</div>
+                            </li>
+                            <li>
+                                <div>clientY</div>
+                                <div>光标相对于该当前窗口的垂直位置</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二列的第三个卡片 -->
+                <div class="card">
+                    <div class="title">事件类型</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>鼠标事件</div>
+                                <div>onmouseover</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onmouseout</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onclick</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>ondbclick (适用于 window, imgae)</div>
+                            </li>
+                            <li>
+                                <div>加载事件</div>
+                                <div>onload</div>
+                            </li>
+                            <li>
+                                <div>键盘事件</div>
+                                <div>onkeydown (输出键盘码)</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onkeyup</div>
+                            </li>
+                            <li>
+                                <div>表单事件</div>
+                                <div>onchange (单选、多选、下拉、文本框、文本域)</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onfocus</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onblur</div>
+                            </li>
+                            <li>
+                                <div></div>
+                                <div>onsubmit (提交按钮被点击)</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the third column -->
+            <div class="son son3">
+                <!-- 第三列的第一个卡片 -->
+                <div class="card">
+                    <div class="title">三个重要坐标</div>
+                    <div>
+                        <ul class="detail">
+                            <li>
+                                <div>偏移</div>
+                                <div>
+                                    offsetHeight | offsetWidth <br>
+                                    offsetLeft | offsetTop
+                                </div>
+                            </li>
+                            <li>
+                                <div>卷去</div>
+                                <div>
+                                    scrollWidth | scrollHeight <br>
+                                    scrollLeft | scrollTop
+                                </div>
+                            </li>
+                            <li>
+                                <div>可视区</div>
+                                <div>
+                                    clientWidth | clientHeight <br>
+                                    clientLeft | clientTop
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
